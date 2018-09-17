@@ -8,6 +8,14 @@
   <link rel="stylesheet" href="./css/css.2.css">
   <script src="jquery-1.9.1.min.js"></script>
   <script src="template-web.js"></script>
+  <style>
+  .hohoh{
+    /* 
+    *break-after: always; 
+    */
+    backface-visibility: unset;
+  }
+  </style>
 </head>
 
 <body>
@@ -84,9 +92,9 @@
 </script>
 <!-- rfq 和 Bidderlist 和 第1轮报价 -->
 <script type="text/html" id="rfqTemp">
-  <ul>
+  <ul class='ul'>
     {{ each byRfqs }}
-    <li class="rfqbranch{{$index}}">
+    <li class="rfqbranch{{$index}} li">
       {{ if $value.rfqNo }}
       <div class="danyuan3 rfqpoint">
         <div class="lefthand"></div><div class="yuan"></div><div class="heighthand"></div>
@@ -230,9 +238,9 @@
 <!-- TF审核  -->
 <script type="text/html" id="tfTemp">
   {{ if byTfs && byTfs != '' }}
-  <ul>
+  <ul class='ul'>
     {{ each byTfs }}
-    <li>
+    <li class="li">
       {{ if $value.tfNo }}
         <div class="danyuan1 tfpoint">
           <div class="lefthand"></div><div class="yuan"></div><div class="heighthand"></div>
@@ -268,9 +276,9 @@
 </script>
 <script type="text/html" id="contractTemp">
   {{ if byContracts && byContracts != '' }}
-  <ul>
+  <ul class='ul'>
     {{ each byContracts }}
-    <li>
+    <li class="li">
       {{ if $value.contractNo }}
       <div class="danyuan2 htpoint">
         <div class="lefthand"></div><div class="yuan"></div><div class="heighthand"></div>

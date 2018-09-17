@@ -22,14 +22,16 @@
   margin-left: -69px;
   margin-left: -75px;
   background-color: green;
+  background-color: #428bca;
 }
 .danyuan1 .heighthand:before {
   content: '';
   width: 5px;
-  height: 14px;
+  height: 13px;
   background-color: green;
+  background-color: #428bca;
   position: absolute;
-  top: -14px;
+  top: -13px;
 }
 .danyuan1 .lefthand {
   vertical-align: middle;
@@ -37,12 +39,14 @@
   width: 86px;
   height: 5px;
   background-color: blue;
+  background-color: #8EB4E3;
 }
 .danyuan1 .lefthand:before {
   content: '';
   width: 5px;
   height: 5px;
   background-color: blue;
+  background-color: #8EB4E3;
   position: absolute;
   left: -5px;
 }
@@ -52,6 +56,7 @@
   height: 26px;
   width: 26px;
   background-color: red;
+  background-color: #428bca;
   border-radius: 50%;
 }
 .danyuan1 > div.describe {
@@ -72,14 +77,16 @@
   margin-left: -69px;
   margin-left: -75px;
   background-color: green;
+  background-color: #8EB4E3;
 }
 .danyuan2 .heighthand:before {
   content: '';
   width: 5px;
-  height: 14px;
+  height: 13px;
   background-color: green;
+  background-color: #8EB4E3;
   position: absolute;
-  top: -14px;
+  top: -13px;
 }
 .danyuan2 .lefthand {
   vertical-align: middle;
@@ -87,12 +94,14 @@
   width: 86px;
   height: 5px;
   background-color: blue;
+  background-color: #8EB4E3;
 }
 .danyuan2 .lefthand:before {
   content: '';
   width: 5px;
   height: 5px;
   background-color: blue;
+  background-color: #8EB4E3;
   position: absolute;
   left: -5px;
 }
@@ -102,6 +111,7 @@
   height: 20px;
   width: 20px;
   border: 3px solid red;
+  border: 3px solid #428bca;
   border-radius: 50%;
   text-align: center;
 }
@@ -124,14 +134,16 @@
   margin-left: -66px;
   margin-left: -75px;
   background-color: green;
+  background-color: #8EB4E3;
 }
 .danyuan3 .heighthand:before {
   content: '';
   width: 5px;
-  height: 14px;
+  height: 13px;
   background-color: green;
+  background-color: #8EB4E3;
   position: absolute;
-  top: -14px;
+  top: -13px;
 }
 .danyuan3 .lefthand {
   vertical-align: middle;
@@ -139,12 +151,14 @@
   width: 92px;
   height: 5px;
   background-color: blue;
+  background-color: #8EB4E3;
 }
 .danyuan3 .lefthand:before {
   content: '';
   width: 5px;
   height: 5px;
   background-color: blue;
+  background-color: #8EB4E3;
   position: absolute;
   left: -5px;
 }
@@ -154,6 +168,7 @@
   height: 16px;
   width: 16px;
   border: 2px solid red;
+  border: 2px solid #428bca;
   border-radius: 50%;
   text-align: center;
 }
@@ -162,13 +177,13 @@
   right: -22px;
   text-align: center;
 }
-ul.ul,
-li.li {
+ul,
+li {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-ul.ul {
+ul {
   display: inline-block;
   vertical-align: text-top;
 }
@@ -199,40 +214,41 @@ ul.ul {
 .htpoint.danyuan2 > .heighthand {
   display: inline-block;
 }
-li.li:nth-of-type(1) > .rfqpoint.danyuan3 > .heighthand {
+li:nth-of-type(1) > .rfqpoint.danyuan3 > .heighthand {
   display: none;
 }
-li.li:nth-of-type(1) > .tfpoint.danyuan1 > .heighthand {
+li:nth-of-type(1) > .tfpoint.danyuan1 > .heighthand {
   display: none;
 }
-li.li:nth-of-type(1) > .htpoint.danyuan2 > .heighthand {
+li:nth-of-type(1) > .htpoint.danyuan2 > .heighthand {
   display: none;
 }
-li.li:not(:first-child) {
+li:not(:first-child) {
   padding-left: 43px;
 }
-li.li:not(:first-child) > .rfqpoint.danyuan3 > .lefthand {
+li:not(:first-child) > .rfqpoint.danyuan3 > .lefthand {
   width: 49px;
 }
-li.li:not(:first-child) > .tfpoint.danyuan1 > .lefthand {
+li:not(:first-child) > .tfpoint.danyuan1 > .lefthand {
   width: 43px;
 }
-li.li:not(:first-child) > .htpoint.danyuan2 > .lefthand {
+li:not(:first-child) > .htpoint.danyuan2 > .lefthand {
   width: 43px;
 }
-ul.ul {
+ul {
   position: relative;
 }
-ul.ul:before {
+ul:before {
   content: '';
   width: 5px;
   height: 100%;
   position: absolute;
   background-color: orange;
-  left: 33px;
-  top: 13px;
+  background-color: #8EB4E3;
+  left: 37px;
+  top: 16px;
 }
-ul.ul:after {
+ul:after {
   content: '';
   width: 5px;
   height: 26.4px;
@@ -242,12 +258,13 @@ ul.ul:after {
   left: 37px;
   bottom: -16px;
 }
-li.li > .danyuan3.zzpoint > .line {
+li > .danyuan3.zzpoint > .line {
   display: inline-block;
   vertical-align: middle;
   width: 20px;
   height: 5px;
   background-color: blue;
+  background-color: #8EB4E3;
 }
 .formhead {
   height: 30px;
