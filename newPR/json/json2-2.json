@@ -1,0 +1,242 @@
+{
+  "sowSubmitDate": "",
+  "sowStarDateNum": "",
+  "bidderlistCreateDate": "",
+  "maxbyOfferNum": 1,
+  "subject": "QC小组培训（成果总结辅导）Quality control team training(summarize)",
+  "sowConfirmDateNum": "",
+  "sowConfirmDate": "",
+  "department": "质量评审规划/Quality audit & Planning",
+  "sowStarDate": "",
+  "byRfqs": [
+    {
+      "subject": "QC小组培训（成果总结辅导）Quality control team training(summarize)",
+      "department": "质量评审规划/Quality audit & Planning",
+      "bidderListStatus": "3",
+      "rfqMoney": "300",
+      "sowStarDate": "",
+      "bidderListNo": "GBID00257410",
+      "requestor": "Sun Yi,孙轶(103172)",
+      "prId": 145381,
+      "prNo": "AEQD150027",
+      "rfqNo": "GRFQ00152723",
+      "prdisDate": "",
+      "taStarDate": "",
+      "byTfs": [
+        {
+          "tfApproveDate": "tf时间",
+          "byContracts": [
+            {
+              "pigeonholeDate": "2016-12-05 10:45:40.0",
+              "contractNo": "PS11006366",
+              "approveDate": "",
+              "contractStatus": "1"
+            },
+            {
+              "pigeonholeDate": "2016-12-05 10:45:40.0",
+              "contractNo": "PS11006366",
+              "approveDate": "",
+              "contractStatus": "1"
+            }
+          ],
+          "tfStatus": "11",
+          "tfNo": "GTRF00138830",
+          "tfId": "138830"
+        },
+        {
+          "tfApproveDate": "",
+          "byContracts": [
+            {
+              "pigeonholeDate": "2016-12-05 10:45:40.0",
+              "contractNo": "PS11006366",
+              "approveDate": "",
+              "contractStatus": "1"
+            },
+            {
+              "pigeonholeDate": "2016-12-05 10:45:40.0",
+              "contractNo": "PS11006366",
+              "approveDate": "",
+              "contractStatus": "1"
+            },
+            {
+              "pigeonholeDate": "2016-12-05 10:45:40.0",
+              "contractNo": "PS11006366",
+              "approveDate": "",
+              "contractStatus": "1"
+            },
+            {
+              "pigeonholeDate": "2016-12-05 10:45:40.0",
+              "contractNo": "PS11006366",
+              "approveDate": "",
+              "contractStatus": "1"
+            }
+          ],
+          "tfStatus": "11",
+          "tfNo": "GTRF00138830",
+          "tfId": "138830"
+        },
+        {
+          "tfApproveDate": "",
+          "byContracts": [
+            {
+              "pigeonholeDate": "2016-12-05 10:45:40.0",
+              "contractNo": "PS11006366",
+              "approveDate": "",
+              "contractStatus": "1"
+            }
+          ],
+          "tfStatus": "11",
+          "tfNo": "GTRF00138830",
+          "tfId": "138830"
+        }
+      ],
+      "byOffers": [
+        {
+          "offerDate": "哈哈额",
+          "taSubmitDate": "",
+          "taStarDate": "",
+          "round": "1",
+          "taConfirmDate": ""
+        },
+        {
+          "offerDate": "哈哈3",
+          "taSubmitDate": "",
+          "taStarDate": "",
+          "round": "1",
+          "taConfirmDate": ""
+        }
+      ],
+      "sowSubmitDate": "",
+      "bidderlistCreateDate": "2016-12-05 09:33:48.0",
+      "bidderListApproveDate": "2016-12-05 09:33:48.0",
+      "rfqDesc": "D2SC/DCT 海外零件手提空运服务申请 D2SC/DCT oversea parts hand carry service",
+      "sowConfirmDate": "",
+      "taSubmitDate": "",
+      "rfqSubmitDate": "2016-11-08 16:28:18.0",
+      "buyerName": "",
+      "rfqId": "152723",
+      "taConfirmDate": "ta时间",
+      "prType": "1",
+      "reqReason": "通过QC小组培训和成果总结辅导，使各基地相关人员能掌握基本的质量问题解决工具；并通过各基地的QC小组活动能让质量文化建设在班组建设发挥积极作用；能发挥员工主人翁精神，激发员工的积极性和创造性；使员工主动寻求质量改进机会，形成全员参与质量的氛围。For personnel can command quality tool via quality control team training (summarize)",
+      "prAcceptDate": ""
+    },
+    {
+      "subject": "QC小组培训（成果总结辅导）Quality control team training(summarize)",
+      "department": "质量评审规划/Quality audit & Planning",
+      "bidderListStatus": "3",
+      "rfqMoney": "20",
+      "sowStarDate": "",
+      "bidderListNo": "GBID02000696",
+      "requestor": "Sun Yi,孙轶(103172)",
+      "prId": 145381,
+      "prNo": "AEQD150027",
+      "rfqNo": "GRFQ02000969",
+      "prdisDate": "",
+      "taStarDate": "2017-02-13 15:49:00.0",
+      "byTfs": [
+        {
+          "tfApproveDate": "2017-02-09 13:38:08.0",
+          "byContracts": [
+            {
+              "pigeonholeDate": "2017-02-28 16:13:31.0",
+              "contractNo": "PS11007132",
+              "approveDate": "",
+              "contractStatus": "11"
+            }
+          ],
+          "tfStatus": "11",
+          "tfNo": "GTRF02000156",
+          "tfId": "2000156"
+        }
+      ],
+      "byOffers": [
+        {
+          "offerDate": "",
+          "taSubmitDate": "20170215140135",
+          "taStarDate": "20170213154900",
+          "round": "1",
+          "taConfirmDate": "20170208152658"
+        },{
+          "offerDate": "哈哈55",
+          "taSubmitDate": "",
+          "taStarDate": "",
+          "round": "1",
+          "taConfirmDate": ""
+        }
+      ],
+      "sowSubmitDate": "",
+      "bidderlistCreateDate": "2017-02-08 15:17:01.0",
+      "bidderListApproveDate": "2017-02-08 15:18:30.0",
+      "rfqDesc": "QC小组培训（成果总结辅导）Quality control team training(summarize)",
+      "sowConfirmDate": "",
+      "taSubmitDate": "2017-02-15 14:01:35.0",
+      "rfqSubmitDate": "2017-02-08 15:12:38.0",
+      "buyerName": "",
+      "rfqId": "2000969",
+      "taConfirmDate": "2017-02-08 15:26:58.0",
+      "prType": "1",
+      "reqReason": "通过QC小组培训和成果总结辅导，使各基地相关人员能掌握基本的质量问题解决工具；并通过各基地的QC小组活动能让质量文化建设在班组建设发挥积极作用；能发挥员工主人翁精神，激发员工的积极性和创造性；使员工主动寻求质量改进机会，形成全员参与质量的氛围。For personnel can command quality tool via quality control team training (summarize)",
+      "prAcceptDate": ""
+    },
+    {
+      "subject": "QC小组培训（成果总结辅导）Quality control team training(summarize)",
+      "department": "质量评审规划/Quality audit & Planning",
+      "bidderListStatus": "3",
+      "rfqMoney": "12",
+      "sowStarDate": "",
+      "bidderListNo": "GBID02000698",
+      "requestor": "Sun Yi,孙轶(103172)",
+      "prId": 145381,
+      "prNo": "AEQD150027",
+      "rfqNo": "GRFQ02000971",
+      "prdisDate": "",
+      "taStarDate": "",
+      "byTfs": [
+        {
+          "tfApproveDate": "2017-02-15 19:03:17.0",
+          "byContracts": [
+            {
+              "pigeonholeDate": "2017-03-06 17:17:46.0",
+              "contractNo": "PS21158725",
+              "approveDate": "2017-03-06 17:13:21.0",
+              "contractStatus": "1"
+            }
+          ],
+          "tfStatus": "11",
+          "tfNo": "GTRF02000157",
+          "tfId": "2000157"
+        }
+      ],
+      "byOffers": [
+        {
+          "offerDate": "",
+          "taSubmitDate": "",
+          "taStarDate": "",
+          "round": "1",
+          "taConfirmDate": ""
+        }
+      ],
+      "sowSubmitDate": "",
+      "bidderlistCreateDate": "2017-02-08 16:13:49.0",
+      "bidderListApproveDate": "2017-02-08 16:15:52.0",
+      "rfqDesc": "QC小组培训（成果总结辅导）Quality control team training(summarize)",
+      "sowConfirmDate": "",
+      "taSubmitDate": "",
+      "rfqSubmitDate": "2017-02-08 16:11:39.0",
+      "buyerName": "",
+      "rfqId": "2000971",
+      "taConfirmDate": "",
+      "prType": "1",
+      "reqReason": "通过QC小组培训和成果总结辅导，使各基地相关人员能掌握基本的质量问题解决工具；并通过各基地的QC小组活动能让质量文化建设在班组建设发挥积极作用；能发挥员工主人翁精神，激发员工的积极性和创造性；使员工主动寻求质量改进机会，形成全员参与质量的氛围。For personnel can command quality tool via quality control team training (summarize)",
+      "prAcceptDate": ""
+    }
+  ],
+  "sowSubmitDateNum": "",
+  "buyerName": "徐茜,Xu Qian",
+  "requestor": "Sun Yi,孙轶(103172)",
+  "prNo": "AEQD150027",
+  "prId": 145381,
+  "prdisDate": "",
+  "reqReason": "通过QC小组培训和成果总结辅导，使各基地相关人员能掌握基本的质量问题解决工具；并通过各基地的QC小组活动能让质量文化建设在班组建设发挥积极作用；能发挥员工主人翁精神，激发员工的积极性和创造性；使员工主动寻求质量改进机会，形成全员参与质量的氛围。For personnel can command quality tool via quality control team training (summarize)",
+  "prAcceptDate": ""
+}

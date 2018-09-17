@@ -1,0 +1,421 @@
+/*清除浮动代码*/
+.clearfix:after{display:block;clear:both;content:"";visibility:hidden;height:0}
+.clearfix{zoom:1}
+
+.danyuan1{
+    font-size: 12px;
+    // border: 1px solid transparent;
+    display: inline-block;
+    // vertical-align: text-top;
+    position: relative;
+    .heighthand{
+        // display: inline-block;  //显示
+        display: none;
+        vertical-align: super;
+        height: 70px;
+        width: 5px;
+        margin-left: -69px;
+        margin-left: -75px;
+        background-color: green;
+        background-color: #428bca;
+
+        &:before{
+            content: '';
+            width: 5px;
+            height: 13px;
+            background-color: green;
+            background-color: #428bca;
+            position: absolute;
+            top: -13px;
+        }
+    }
+    .lefthand{
+        vertical-align: middle;
+        display: inline-block;
+        width: 86px;
+        height: 5px;
+        background-color: blue;
+        background-color: #8EB4E3;
+        &:before{
+            content: '';
+            width: 5px;
+            height: 5px;
+            background-color: blue;
+            background-color: #8EB4E3;
+            position: absolute;
+            left: -5px;
+        }
+    }
+    .yuan{
+        display: inline-block;
+        vertical-align: middle;
+        height: 26px;
+        width: 26px;
+        background-color: red;
+        background-color: #428bca;
+
+        border-radius: 50%;
+        }
+    >div.describe{
+        position: absolute;
+        // top:0;
+        right: -22px;
+        text-align: center;
+        // margin-right: -88px;
+        // display: inline-block;
+        // text-align: center;
+    }   
+}
+.danyuan2{
+    font-size: 12px;
+    // border: 1px solid transparent;
+    display: inline-block;
+    position: relative;
+    .heighthand{
+        // display: inline-block;
+        display: none;
+        vertical-align: super;
+        height: 70px;
+        width: 5px;
+        margin-left: -69px;
+        margin-left: -75px;
+        background-color: green;
+        background-color: #8EB4E3;
+
+
+        &:before{
+            content: '';
+            width: 5px;
+            height: 13px;
+            background-color: green;
+            background-color: #8EB4E3;
+
+
+            position: absolute;
+            top: -13px;
+        }
+    }
+    .lefthand{
+        vertical-align: middle;
+        display: inline-block;
+        width: 86px;
+        height: 5px;
+        background-color: blue;
+        background-color: #8EB4E3;
+
+
+        &:before{
+            content: '';
+            width: 5px;
+            height: 5px;
+            background-color: blue;
+            background-color: #8EB4E3;
+
+
+            position: absolute;
+            left: -5px;
+        }
+    }
+    .yuan{
+        display: inline-block;
+        vertical-align: middle;
+        height: 20px;
+        width: 20px;
+        border: 3px solid red;
+        border: 3px solid #428bca;
+        border-radius: 50%;
+        text-align: center;
+        }
+    >div.describe{
+        position: absolute;
+        // top:0;
+        right: -22px;
+        text-align: center;
+        // display: inline-block;
+        // text-align: center;
+ 
+  
+    }   
+}
+.danyuan3{
+    font-size: 12px;
+    padding-bottom: 2.8px;
+    // border: 1px solid transparent;
+    display: inline-block;
+    position: relative;
+    .heighthand{
+        // display: inline-block;
+        display: none;
+        vertical-align: super;
+        height: 70px;
+        width: 5px;
+        margin-left: -66px;
+        margin-left: -75px;
+        background-color: green;
+        background-color: #8EB4E3;
+
+
+        &:before{
+            content: '';
+            width: 5px;
+            height: 13px;
+            background-color: green;
+            background-color: #8EB4E3;
+
+
+            position: absolute;
+            top: -13px;
+        }
+    }
+    .lefthand{
+        vertical-align: middle;
+        display: inline-block;
+        width: 92px;
+        height: 5px;
+        background-color: blue;
+        background-color: #8EB4E3;
+
+        &:before{
+            content: '';
+            width: 5px;
+            height: 5px;
+            background-color: blue;
+            background-color: #8EB4E3;
+            position: absolute;
+            left: -5px;
+
+        }
+    }
+    .yuan{
+        display: inline-block;
+        vertical-align: middle;
+        height: 16px;
+        width: 16px;
+        border: 2px solid red;
+        border:2px solid #428bca;
+
+        border-radius: 50%;
+        text-align: center;
+        }
+    >div.describe{
+        position: absolute;
+        // top:0;
+        right: -22px;
+        text-align: center;
+        // display: inline-block;
+        // text-align: center;
+
+    }   
+}
+
+ul,li{
+  margin: 0;
+  padding: 0;
+  list-style:none;
+}
+ul{
+    display: inline-block;
+    vertical-align: text-top;
+}
+
+#formwork{
+    padding: 0 20px;
+    white-space:nowrap;
+}
+// li{
+//     // word-wrap: break-word;
+//     white-space:normal;
+// }
+
+//=============================细化
+//置灰
+.bgcg1{
+    background-color: gray !important;
+    &:before{
+    background-color: gray !important;
+    }
+}
+.bgcg2{
+    border: 3px solid gray !important;
+}
+.bgcg3{
+    border: 2px solid gray !important;
+}
+
+//PR分发
+.prpoint.danyuan1>.lefthand{
+    display: none;
+}
+.prpoint.danyuan1>.describe{
+    right: -9px !important;
+}
+
+// .sowpoint.danyuan3>.heighthand{
+//     display: none;
+// }
+//显示高手
+.rfqpoint.danyuan3,.tfpoint.danyuan1,.htpoint.danyuan2{
+    >.heighthand{
+        display: inline-block;
+    }
+}
+// 第一个li高手删去
+li:nth-of-type(1){
+// li:first-child{
+  // rfq第一个li高手删去
+    >.rfqpoint.danyuan3>.heighthand{
+            display: none;
+        }
+  // tf第一个li高手删去
+        >.tfpoint.danyuan1>.heighthand{
+        display: none;
+    }
+  // ht第一个li高手删去
+    >.htpoint.danyuan2>.heighthand{
+        display: none;
+    }
+}
+// 除第一个li左手删去
+li:not(:first-child){
+    padding-left: 43px;
+  // rfq除第一个li左手删去
+    >.rfqpoint.danyuan3>.lefthand{
+        width: 49px;
+    }
+  // tf除第一个li左手删去
+    >.tfpoint.danyuan1>.lefthand{
+        width: 43px;
+    }
+  // ht除第一个li左手删去
+    >.htpoint.danyuan2>.lefthand{
+        width: 43px;
+    }
+}
+//========1
+// li{
+//     position: relative;
+//     &:before{
+//     content: '';
+//     width: 5px;
+//     height: 100%;
+//     position: absolute;
+//     background-color: orchid;
+//     // left: 0px;
+//     // top:0px;
+//     }
+// }
+// li:first-child{
+//     position: relative;
+//     &:before{
+//     content: '';
+//     width: 0px;
+//     height: 0;
+//     position: absolute;
+//     background-color: rgb(218, 211, 112);
+// }
+// }
+
+//========2
+ul{
+    position: relative;
+    &:before{
+        content: '';
+        width: 5px;
+        height: 100%;
+        position: absolute;
+        background-color: orange;
+        background-color: #8EB4E3;
+
+        left: 37px;
+        top:16px;
+    }
+    &:after{
+        content: '';
+        width: 5px;
+        height: 26.4px;
+        height: 26.6px;
+        position: absolute;
+        background-color:#FFF;
+        left: 37px;
+        bottom:-16px;
+    }
+}
+
+
+//========3
+// ul{
+//     position: relative;
+//     >li:nth-of-type(1){
+//         &:before{
+//             content: '';
+//             width: 5px;
+//             height: 100%;
+//             position: absolute;
+//             // background-color: orchid;
+//             left: 37px;
+//             top:16px;
+//         }
+//         &:after{
+//             content: '';
+//             width: 5px;
+//             height: 26.4px;
+//             position: absolute;
+//             // background-color: #fff;
+//             left: 37px;
+//             bottom: -16px;
+//         }
+//     }
+// }
+
+
+
+//报价最终修改
+li>.danyuan3.zzpoint{
+    >.line{
+        display: inline-block;
+        vertical-align:middle;
+        width: 20px;
+        height: 5px;
+        background-color: blue;
+        background-color: #8EB4E3;
+
+
+    }
+}
+
+
+//头部
+.formhead{
+    height: 30px;
+    font-size:18px; 
+    vertical-align: middle;
+    white-space:nowrap;
+    font-weight: 200;
+    margin-bottom: 10px;
+    // letter-spacing: 1px;
+    background-color: pink;
+    >span{
+        display: inline-block;
+        text-align: center;
+        border: 1px solid #333333;
+        background-color:#DCE6F1;
+        &:nth-child(1){
+            width: 204px;
+        }
+        &:nth-child(2){
+            width: 238px;
+        }
+        &:nth-child(3){
+            min-width: 226px;
+            width: 900px;
+        }
+        &:nth-child(4){
+            width: 120px;
+        }
+        &:nth-child(5){
+            width: 238px;
+    margin-right: 20px;
+}
+    }
+
+}

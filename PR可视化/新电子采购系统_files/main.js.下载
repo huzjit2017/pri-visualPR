@@ -1,0 +1,72 @@
+function oncMainMenu(){
+	if($(".col-md-2").is(":visible")){
+		$("#divOpen").removeClass("col-md-10");
+		$("#divOpen").addClass("col-md-12");
+		$(".col-md-2").hide();
+	}else{
+		$(".col-md-2").show(500);
+		$("#divOpen").removeClass("col-md-12");
+		$("#divOpen").addClass("col-md-10");
+	}
+}
+
+//ajax系统登录
+function signOff(){
+
+	$('#signOffForm').submit();
+}
+function refreshUserWorkLanguage(){
+
+	$.ajax({
+		url:"./platform/api/login/refreshUserWorkLanguage",
+		type : "get",
+		dataType:"json",
+		cache : false,
+		success:function(data){
+			location.reload();
+		},error: function(xhr,textStatus,msg) {
+			location.reload();
+		}
+	});
+}
+
+function changeToUrl(){
+	var changeToUrl = $("#changeToUrl").val();
+	toURL(this,'./sq/api/'+changeToUrl,'divOpen');
+}
+
+$(function(){
+	/*var firstCodeValue = $('#firstCodeVal').val();
+	//首页面的判断显示
+	if(firstCodeValue=="01"){
+		//加载左侧菜单
+		toURL(null,'./platform/api/baseFunc/loadFunctionAll/?code=01','main-navLoad',null);
+		//进入第一个页面（待办）
+		toURL(this,'./gp/api/workFlow/init','divOpen');
+	}else if(firstCodeValue=="20"){
+		//加载左侧菜单
+		toURL(null,'./platform/api/baseFunc/loadFunctionAll/?code=20','main-navLoad',null);
+		//进入首页
+		toURL(this,'./sq/api/index','divOpen');
+	}else if(firstCodeValue=="28"){
+		//加载左侧菜单
+		toURL(null,'./platform/api/baseFunc/loadFunctionAll/?code=28','main-navLoad',null);
+		//进入首页
+		toURL(this,'./sq/api/index/majordomo','divOpen');		
+	}
+	document.title = getNative("main.title");
+	
+	$('.topli').click(function(){
+		$("#divOpen").html("");
+		$("#divOpen").empty();
+		$("#divOpen").html("欢迎进入eProcurement系统   <br/>Welcome.... ");
+	});*/
+	searchGo();
+});
+
+//帮助按钮 查看和下载帮助文档
+function helpDownload(){
+	//firstClass=GP_L&secondClass=GP_M&thirdClass=GP_S_HELP_APPLYDEPT
+	//main.help.document---帮助文档
+	openNewWindow(BASE_URL_GP+"rfq/dowloadModel?&firstClass=GP_L&secondClass=GP_M&thirdClass=GP_S_HELP_APPLYDEPT&fileTile=main.help.document");
+}

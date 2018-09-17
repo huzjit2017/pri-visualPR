@@ -1,0 +1,82 @@
+/***
+ * 此闭包专门重写$.ajax的error方法，用于整合oauth
+ * 异常处理：当service\dao\controller层抛出exception并且被oauthExceptionHandler捕捉后，
+ * 包装成 status=500，{'errorType':'xxx','errorMsg':'xxxxxx','redirectUrl':'http://xxxx?a=yyy&b=zzz'}的json格式后返回到error方法中(其中errorType的值为authorizationError和otherError;前者为oauth授权错误,后者为业务异常)，
+ * 重写error方法用于判断当errorType为authorizationError时，将当前页面跳转到请求指定的oauth登陆页面（redirectUrl），这样就无需在前端业务代码中做额外判断。
+ * 
+ * Author: xingyue
+ */
+
+(function($){     
+   //备份jquery的ajax方法     
+   var _ajax=$.ajax;     
+        
+   //重写jquery的ajax方法     
+   $.ajax=function(opt){     
+       //备份opt中error和success方法     
+       var fn = {     
+           error:function(XMLHttpRequest, textStatus, errorThrown){},     
+           success:function(data, textStatus,xhr){}     
+        }     
+       
+        if(opt.error){     
+            fn.error=opt.error;     
+        }
+           
+        if(opt.success){     
+            fn.success=opt.success;     
+        }     
+             
+        //判断是否授权错误
+        var checkIfAuthorizationError = function(data){
+        		if(data != null && data.errorType=='authorizationError'){
+        	    	return true;
+        	    }else{
+        	    	return false;
+        	    }
+        	    
+        }
+        //跳转到session超时页面
+        var jumpToAuthorizationPage = function(data){
+        	
+        	var redirectLocation='./';
+        	if(!!data.redirectUrl){
+        		//从请求中获取跳转的目标url
+        		redirectLocation = data.redirectUrl;
+        	}
+        	//当前浏览器重定向到
+        	 window.location.href=redirectLocation;
+        }
+        
+        //扩展增强处理     
+        var _opt = $.extend(opt,{     
+        	
+            //重写error方法
+        	error:function(xhr,textStatus,data){
+        		var jsonResult = "";
+        		try{
+        			//js会根据请求的content-type，将内容写在不同的字段里，如content-type = application/json，会将响应写在responseJSON里， text/html会写在responseText里，等等。
+        			if(!!xhr.responseJSON){
+        				jsonResult = xhr.responseJSON;
+        			}else if (!!xhr.responseXML){
+        				jsonResult = eval("("+xhr.responseXML+")");
+        			}else{
+        				jsonResult = eval("("+xhr.responseText+")");
+        			}
+        		}catch (e) {
+        			jsonResult = "";
+					//alert(xhr.responseText);
+				}
+        		
+        	  if(checkIfAuthorizationError(jsonResult)){
+        		  //如果是授权错误，则直接跳转到登陆页面
+        		  jumpToAuthorizationPage(jsonResult);
+        	  }else{
+        		 //如果不是授权错误，则将错误信息传递下去 
+          		 fn.error(xhr,textStatus,jsonResult);       		  
+        	  }
+          }
+        });     
+       return  _ajax(_opt);     
+    };     
+})(jQuery);   

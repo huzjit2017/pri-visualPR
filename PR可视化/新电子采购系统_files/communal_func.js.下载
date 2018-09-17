@@ -1,0 +1,1117 @@
+/**
+ * 单据状态
+ */
+var STATUS_DRAFT = "0";// 草稿
+var STATUS_APPROVEING = "1";// 审核中
+var STATUS_APPROVE_RETURN = "2";// 审核退回
+var STATUS_APPROVE_PASS = "3";// 审核通过
+
+// 文件下载的地址类型
+var NEWGP = "newgp";
+// 文件下载的地址类型
+var EJPG = "ejpg";
+// 文件下载的地址类型
+var SP = "sp";
+// 文件下载的地址类型
+var OLDEP = "oldep";
+// 文件下载的地址类型
+var NEWPR = "newpr";
+//文件下载的地址类型
+var NEWSQ = 'newsq';
+
+// GP模块访问路径，基础位置
+var BASE_URL_GP = "./gp/api/";
+// SQ模块访问路径，基础位置
+var BASE_URL_SQ = "./sq/api/";
+
+var BASE_URL_PLATFORM = "./platform/api/";
+
+/**
+ * EMAIL格式校验
+ * 
+ * @param str
+ * @returns {Boolean}
+ */
+function isEmailForGP(str) {
+	if (str == "") {
+		return false;
+	}
+	if (str.length > 100) {
+		// window.alert("email地址长度不能超过100位!");
+		return false;
+	}
+	//不需要太严格的校验
+	//^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$
+	var regu = "^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$"
+	var re = new RegExp(regu);
+
+	if (str.search(re) != -1) {
+		return true;
+	} else {
+		// window.alert ("请输入有效合法的E-mail地址 ！")
+		return false;
+	}
+}
+/**
+ * 异步加载一个页面
+ * 
+ * @param ti
+ *            this 当前对象
+ * @param url
+ *            需跳转的url
+ * @param tagid
+ *            被加载的div
+ * @param classS
+ *            需要更改的样子，例如：高亮属性
+ */
+function toURL(ti, url, tagid, classS) {
+	var target = $("#" + tagid);
+	target.empty();
+	target.html("&nbsp;&nbsp;&nbsp;正在加载,请等待...");
+	if (ti != null) {
+		$(".func-a").css({
+			color : "black"
+		});
+		$(ti).css({
+			color : "#0066ab"
+		});
+	}
+	if (classS != null && ti != null) {
+		$("." + classS).removeClass(classS);
+		$(ti).addClass(classS);
+	}
+	if (url.indexOf("?") != -1) {
+		url = url + "&rcode=" + Math.random();
+	} else {
+		url = url + "?rcode=" + Math.random();
+	}
+	target.load(url, function(responseTxt, statusTxt, xhr) {
+
+		// alert('toUrl: afterload statusTxt='+statusTxt);
+		// alert('toUrl: afterload responseTxt='+responseTxt);
+		// alert('toUrl: afterload xhr='+xhr);
+
+		if (statusTxt == "error") {
+			// jquery.load()方法只有在调用成功时(status=200)，会将内容append到dom中，否则不会append内容。
+			// 为了将后台错误信息打印到前台，在回调函数中判断调用结果为失败时，手动将内容添加到dom中 added by xingyue
+			if (typeof responseTxt == "string") {
+				responseTxt = eval("(" + responseTxt + ")");
+			}
+			// alert();
+			target.html(responseTxt.errorMsg);
+		}
+
+		$(this).nativex('refresh');
+	});
+
+}
+
+function activeM(i) {
+
+	$(".active").removeClass("active");
+	$(i).attr("class", "active");
+}
+function showApp() {
+	if ($(".panel-primary").is(":hidden")) {
+		$(".panel-primary").show(500);
+	} else {
+		$(".panel-primary").hide(500);
+	}
+}
+/**
+ * 展示模态框
+ * 
+ * @param id
+ */
+function modelEject(id) {
+	$('#' + id).modal('show');
+}
+/**
+ * 关闭模态框
+ * 
+ * @param id
+ */
+function modelEjectHide(id) {
+	$('#' + id).modal('hide');
+	$(".modal-backdrop").removeClass("modal-backdrop");
+}
+/**
+ * 显示/隐藏一个提示框，例如：审批记录
+ * 
+ * @param btn
+ * @param dClass
+ */
+function hideShowSearch(ths, dClass) {
+	var ths_val = $(ths).attr("vae");
+	if (ths_val == 'show') {
+		$("." + dClass).hide();
+		$(ths).attr("vae", "hide");
+		$(ths).removeClass("glyphicon-chevron-up");
+		$(ths).addClass("glyphicon-chevron-down");
+		// $(btn).append("<span class='glyphicon glyphicon-hand-up'
+		// ></span>收起");
+	} else {
+		$("." + dClass).show();
+		$(ths).attr("vae", "show");
+		$(ths).removeClass("glyphicon-chevron-down");
+		$(ths).addClass("glyphicon-chevron-up");
+
+		// $(btn).append("<span class='glyphicon
+		// glyphicon-hand-down'></span>展开");
+	}
+}
+/**
+ * 清空查询条件，需要引入class="clearInput"
+ */
+function clearInput() {
+	$(".clearInput").val("");
+	$('.selectpicker').selectpicker('val', "");
+}
+/**
+ * 全选功能
+ * 
+ * @param b
+ */
+function selectAll(b) {
+	theSelect = $("input");
+	for (i = 0; i < theSelect.length; i++) {
+		if (theSelect[i].type == "checkbox" && theSelect[i].disabled == false) {
+			theSelect[i].checked = b;
+		}
+	}
+}
+/**
+ * 查询列表时间格式转换
+ */
+function operateFormatterDate(value, row, index) {
+	if (!!value) {
+		var date = new Date(value);
+		return [ date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() ].join('');
+	}
+}
+function operateFormatterDateHMS(value, row, index) {
+	var createDate = new Date(value);
+	var yr = createDate.getFullYear() + '';
+	var mh = (createDate.getMonth() + 1) + '';
+	var de = createDate.getDate() + '';
+	var hs = createDate.getHours() + '';
+	var ms = createDate.getMinutes() + '';
+	var ss = createDate.getSeconds();
+	var padSS = (ss < 10) ? '0' + ss : ss;
+	var formatDate = yr + "-" + mh + "-" + de + " " + hs + ":" + ms + ":" + padSS;
+	return formatDate;
+}
+/**
+ * 修改时间格式
+ */
+function formatterDateSpan(dateClass) {
+	var dateClassList = $("." + dateClass);
+	for (var i = 0; i < dateClassList.length; i++) {
+		if ($.trim($(dateClassList[i]).html()) == '') {
+			$(dateClassList[i]).html('');
+		} else {
+			var date = new Date($(dateClassList[i]).html());
+			$(dateClassList[i]).html(date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate());
+		}
+
+	}
+}
+/**
+ * 打开新窗口
+ */
+function openNewWindow(url, windowName) {
+	xposition = 0;
+	yposition = 0;
+	width = screen.width;
+	height = screen.height;
+
+	if ((parseInt(navigator.appVersion) >= 4)) {
+		xposition = (screen.width - width) / 2;
+		yposition = (screen.height - height) / 2;
+	}
+	if (windowName == null || windowName == "")
+		windowName = "popwindow" + Math.random();
+	else
+		windowName = windowName;
+
+	theproperty = "width=" + width + "," + "height=" + (height - 100) + "," + "location=0," + "menubar=0," + "resizable=1," + "scrollbars=yes," + "status=0," + "titlebar=0," + "toolbar=0," + "hotkeys=0," + "screenx=" + xposition + "," // only
+																																																									// for
+																																																									// Netscape
+			+ "screeny=" + yposition + "," // only for Netscape
+			+ "left=" + (xposition) + "," // IE
+			+ "top=" + yposition; // IE
+
+	var isIe8 = false;
+	try {
+		if(navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion.match(/8./i)=="8."){
+			isIe8 = true;
+		}else if(navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion.match(/7./i)=="7."){
+			isIe8 = true;
+		}else if(navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion.match(/9./i)=="9."){
+			isIe8 = true;
+		}
+		
+	} catch (e) {
+		alert(e);
+	}
+	
+	url = url.substring(2, url.length);
+	url = rootUrl_js+url;
+	
+	var popWindow = null;
+	if(isIe8){
+		window.open(url);
+	}else{
+		window.open(url,windowName,theproperty);
+	}
+	
+	if (popWindow != null){
+		popWindow.focus();
+	}	
+	
+	
+}
+/**
+ * 将bootstrap选中的单行对象填充form中 对象的属性名需要与表单项的的name值相同
+ */
+function loadDataToForm(obj, formId) {// jsonStr
+	if (typeof obj == "string") {
+		obj = eval("(" + obj + ")");
+	}
+	// alert(obj.ttPurchaserequestDetailId);
+	var key, value, tagName, type, arr;
+	for (x in obj) {
+		key = x;
+		value = obj[x];
+
+		if (formId != undefined) {
+			$("#" + formId).find("[name='" + key + "'], [name='" + key + "[]']").each(function() {
+				tagName = $(this)[0].tagName;
+				type = $(this).attr('type');
+				if (tagName == 'INPUT') {
+					if (type == 'radio') {
+						$(this).attr('checked', $(this).val() == value);
+					} else if (type == 'checkbox') {
+						arr = value.split(',');
+						for (var i = 0; i < arr.length; i++) {
+							if ($(this).val() == arr[i]) {
+								$(this).attr('checked', true);
+								break;
+							}
+						}
+					} else {
+						$(this).val(value);
+					}
+				} else if (tagName == 'SELECT' || tagName == 'TEXTAREA') {
+					$(this).val(value);
+				}else{
+					$(this).html(value);
+				}
+
+			});
+		}
+	}
+}
+function getSelectPosition(positionId, positionNameCn) {
+	var selectPositionArea = $("#selectPositionArea").val();
+	$("#" + selectPositionArea + "Id").val(positionId);
+	$("#" + selectPositionArea + "Name").val(positionNameCn);
+}
+/**
+ * 选择bidderList
+ * 
+ * @param selectBidderListArea
+ * @returns {Boolean}
+ */
+function selectBidderListOpenWindow(selectBidderListArea) {
+	$("#selectBidderListArea").val(selectBidderListArea);
+	openNewWindow("./gp/api/bidderlist/selectBidderlist", "选择bidderList");
+}
+
+/*
+ * 选择bidderlist
+ */
+function getSelectBidderList(bidderlistNo, ttBidderlistId) {
+	var selectPositionArea = $("#selectBidderListArea").val();
+	$("#" + selectPositionArea + "Id").val(ttBidderlistId);
+	$("#" + selectPositionArea + "No").val(bidderlistNo);
+}
+
+function selectTrackingFormOpenWindow(selectTrackingformArea) {
+	$("#selectTrackingformArea").val(selectTrackingformArea);
+	openNewWindow("./gp/api/tf/selectTrackingform", "选择Trackingform");
+}
+/*
+ * 选择trackingform
+ */
+function getSelectTrackingForm(trackingformNumber, ttBidderlistId) {
+	var selectTrackingformArea = $("#selectTrackingformArea").val();
+	if ($("#" + selectTrackingformArea + "Id").val() == "") {
+		$("#" + selectTrackingformArea + "Id").val(ttBidderlistId);
+		$("#" + selectTrackingformArea + "No").val(trackingformNumber);
+	} else {
+		$("#" + selectTrackingformArea + "Id").val($("#" + selectTrackingformArea + "Id").val() + "," + ttBidderlistId);
+		$("#" + selectTrackingformArea + "No").val($("#" + selectTrackingformArea + "No").val() + "," + trackingformNumber);
+	}
+}
+/**
+ * 选择供应商控件
+ * 
+ * @param tmSupplierId
+ * @param cnName
+ * @param dunsCode
+ */
+function getSelectSupplier(tmSupplierId, cnName, dunsCode) {
+	var selectSupplierArea = $("#selectSupplierArea").val();
+	$("#" + selectSupplierArea + "Id").val(tmSupplierId);
+	$("#" + selectSupplierArea + "Name").val(cnName);
+	$("#" + selectSupplierArea + "Code").val(dunsCode);
+}
+
+/**
+ * 选择用户控件
+ * 
+ * @param positionId
+ * @param userId
+ * @param userNameCn
+ */
+function getSelectUser(positionId, userId, userNameCn,valueType) {
+	var selectUserArea = $("#selectUserArea").val();
+	if(valueType == null){
+		$("#" + selectUserArea + "PositionId").val(positionId);
+		$("#" + selectUserArea + "Id").val(userId);
+		$("#" + selectUserArea + "Name").val(userNameCn);
+	}else if(valueType == 'optionId'){
+		$("#"+selectUserArea+"Id").html("<option value=\""+userId+"\" >"+userNameCn+"</option>");
+	}else if(valueType == 'option'){
+		$("#"+selectUserArea+"Name").val(userNameCn);
+		$("#"+selectUserArea+"PositionId").val(positionId);
+	}
+}
+
+/**
+ * 选择用户控件
+ * 
+ * @param positionId
+ * @param userId
+ * @param userNameCn
+ */
+function getSelectUserSQ(positionId, userId, userNameCn,valueType) {
+	var selectUserArea = $("#selectUserArea").val();
+	if(valueType == null){
+		$("#" + selectUserArea + "PositionId").val(positionId);
+		$("#" + selectUserArea + "Id").val(userId);
+		$("#" + selectUserArea + "Name").val(userNameCn);
+	}else if(valueType == 'optionId'){
+		$("#"+selectUserArea+"Id").html("<option value=\""+userId+"\" >"+userNameCn+"</option>");
+	}else if(valueType == 'option'){
+		$("#"+selectUserArea+"Name").val(userNameCn);
+		$("#"+selectUserArea+"PositionId").val(positionId);
+	}
+}
+/**
+ * 获取用户详情
+ * @param positionId
+ * @param userId
+ * @param userNameCn
+ * @param tel
+ * @param email
+ */
+function getSelectUserInfo(positionId, userId, userNameCn,tel,email) {
+	var selectUserArea = $("#selectUserArea").val();
+	$("#" + selectUserArea + "PositionId").val(positionId);
+	$("#" + selectUserArea + "Id").val(userId);
+	$("#" + selectUserArea + "Name").val(userNameCn);
+	$("#" + selectUserArea + "Tel").text(tel);
+	$("#" + selectUserArea + "Email").text(email);
+}
+/**
+ * 选择用户控件
+ * 
+ * @param positionId
+ * @param userId
+ * @param userNameCn
+ */
+function getSelectUserList(approveUser,positionId) {
+	var selectUserArea = $("#selectUserArea").val();
+	var index=$("#" + selectUserArea + "PositionId").parents("tr").index();
+	var rows = $('#deliverInfo').bootstrapTable('getData');
+	var tsRoleId=$('#tsRoleId' + index).val();
+	$("#role" + index + "Name").val(approveUser);
+	$('#role' + index + 'PositionId').val(positionId)
+	for(var i=0;i<rows.length;i++){
+		if($('#tsRoleId' + i).val()==tsRoleId){
+				$("#role" + i + "Name").val(approveUser);
+				$('#role' + i + 'PositionId').val(positionId)
+				if(!$('#notNeed' + i).is(':checked')){
+					$("#role" + i + "Name").hide();
+			}
+		}
+	}
+}
+/**
+ * 选择用户控件
+ * 
+ * @param positionId
+ * @param userId
+ * @param userNameCn
+ */
+function getSelectPureUser(userCd, userId, userNameCn) {
+	var selectUserArea = $("#selectUserArea").val();
+	$("#" + selectUserArea + "Cd").val(userCd);// 域账号
+	$("#" + selectUserArea + "Id").val(userId);// tmUserId
+	$("#" + selectUserArea + "Name").val(userNameCn);// name
+}
+
+/**
+ * 选择零件控件
+ * 
+ * @param tmSupplierId
+ * @param cnName
+ * @param dunsCode
+ */
+function getSelectPart(partId, partNo, partDesc) {
+	var SelectPartArea = $("#selectPartArea").val();
+	$("#" + SelectPartArea + "Id").val(partId);
+	$("#" + SelectPartArea + "No").val(partNo);
+	$("#" + SelectPartArea + "Desc").val(partDesc);
+}
+
+/**
+ * 通过角色查询用户
+ * 
+ * @param tmSupplierId
+ * @param cnName
+ * @param dunsCode
+ */
+function getUserByRole(tmUserId, tmPositionId, lastName, firstName) {
+	var SelectPartArea = $("#selectPartArea").val();
+	$("#" + SelectPartArea + "Id").val(partId);
+	$("#" + SelectPartArea + "No").val(partNo);
+	$("#" + SelectPartArea + "Desc").val(partDesc);
+}
+
+function getSelectProjectNo(projectNo) {
+	$("#projectNo").val(projectNo);
+}
+
+/**
+ * 检查是否可以选择数据（如果父页面的文本框是disabled，那么将不允许选择）
+ */
+function checkCanSelect() {
+	var selectPositionArea = $("#selectPositionArea").val();
+	if ($("#" + selectPositionArea + "Name").prop("disabled")) {
+		alert("文本框是不可编辑状态下，禁止选择数据。");
+		return false;
+	}
+	return true;
+}
+/**
+ * 选择人员岗位信息，弹出新页面
+ */
+function selectPositionOpenWindow(selectPositionArea, roles, underling) {
+	$("#selectPositionArea").val(selectPositionArea);
+	if (!checkCanSelect())
+		return false;
+	openNewWindow("./platform/api/position/selectPosition/?roles=" + roles + "&underling=" + underling, "选择岗位");
+}
+
+function selectDeliverUserOpenWindow(roleNo,approveUser,positionId){
+	openNewWindow("./sq/api/ppqp/selectDeliverApproveUser?roleNo="+roleNo+"&approveUser="+approveUser+"&positionId="+positionId, "选择用户");
+}
+
+/**
+ * 根据角色和专业组,岗位信息,用户信息 查看用户信息，弹出新页面
+ */
+function selectUserOpenWindow(selectUserArea){
+	$("#selectUserArea").val(selectUserArea);
+	if(!checkCanSelect()) return false;
+	openNewWindow("./gp/api/jpg/selectUser","选择用户");
+}
+
+/**
+ * sq根据角色和专业组,岗位信息,用户信息 查看用户信息，弹出新页面
+ */
+function selectUserOpenWindowSQ(roleNo,selectUserArea,type,valueType,smt) {
+	$("#selectUserArea").val(selectUserArea);
+	if (!checkCanSelect())
+		return false;
+	if(valueType==null){
+	openNewWindow("./sq/api/userAndPosition/selectUser?type="+type+"&roleNo="+roleNo+"&smt="+smt, "选择用户");
+    }else{
+    openNewWindow("./sq/api/userAndPosition/selectUserList?type="+type+"&valueType="+valueType+"&roleNo="+roleNo, "选择用户");
+    }
+}
+/**
+ * 纯用户信息,只查看tm_user一张表，查询用户类型(SGM和供应商) 弹出新页面
+ */
+function selectPureUserOpenWindow(selectUserArea, emplFlag) {
+	$("#selectUserArea").val(selectUserArea);
+	if (!checkCanSelect())
+		return false;
+	openNewWindow("./gp/api/bidderlist/selectUser?emplFlag=" + emplFlag, "选择用户");
+}
+/**
+ * 选择供应商信息，弹出新页面
+ */
+function selectSupplierOpenWindow(selectSupplierArea) {
+	$("#selectSupplierArea").val(selectSupplierArea);
+	if (!checkCanSelect())
+		return false;
+	openNewWindow("./gp/api/supplier/SupplierChooce", "查询供应商");
+}
+/**
+ * 选择零件信息，弹出新页面
+ * 
+ * @param selectPartArea
+ * @param isSingle
+ * @param roles
+ * @param underling
+ * @returns {Boolean}
+ */
+function selectPartOpenWindow(selectPartArea, isSingle) {
+	$("#selectPartArea").val(selectPartArea);
+	if (!checkCanSelect())
+		return false;
+	openNewWindow("./sq/api/sqpart/init?isSingle=" + isSingle, "查询零件");
+}
+/**
+ * 选择pr信息，弹出新页面
+ */
+function selectPrOpenWindow(selectPositionArea) {
+	$("#selectPositionArea").val(selectPositionArea);
+	if (!checkCanSelect())
+		return false;
+	openNewWindow(BASE_URL_GP + "pr/choicePrQuery/?noaddpr=Y&onlybuyer=Y", "选择PR");
+}
+/**
+ * 选择选择合同信息，弹出新页面
+ */
+function selectContractOpenWindow(selectPositionArea) {
+	$("#selectContractArea").val(selectPositionArea);
+	if (!checkCanSelect())
+		return false;
+	openNewWindow(BASE_URL_GP + "tf/choiceGpcontractList", "选择合同");
+}
+
+/**
+ * 选择选择合同信息，弹出新页面
+ */
+function selectAllContractOpenWindow(selectPositionArea, batchNo) {
+	$("#selectPositionArea").val(selectPositionArea);
+	if (!checkCanSelect())
+		return false;
+	openNewWindow(BASE_URL_GP + "internalapproval/chooseContractInit?batchNo=" + batchNo, "选择合同");
+}
+/**
+ * 所有控件不可操作
+ * 
+ * @param targetId
+ *            目标域的ID
+ */
+function hideInputAll(targetId) {
+	$("#" + targetId).find("input").attr("disabled", "disabled");
+	$("#" + targetId).find("select").attr("disabled", "disabled");
+	$("#" + targetId).find("textarea").attr("disabled", "disabled");
+}
+/**
+ * 所有控件可操作
+ * 
+ * @param targetId
+ *            目标域的ID
+ */
+function showInputAll(targetId) {
+	$("#" + targetId).find("input").attr("disabled", false);
+	$("#" + targetId).find("select").attr("disabled", false);
+	$("#" + targetId).find("textarea").attr("disabled", false);
+}
+
+/**
+ * 通过语言返回中文或英文
+ * 
+ * @param dataCn
+ * @param dataEn
+ * @returns {String}
+ */
+function returnDataByLanguage(dataCn, dataEn) {
+	var language = $("#nativex_currentLanguage").val();
+	var str = "";
+	if (language == "zh_CN") {
+		str = dataCn;
+	} else {
+		str = dataEn;
+	}
+	return str
+}
+function oncMainMenu() {
+	if ($(".col-md-2").is(":visible")) {
+		$("#divOpen").removeClass("col-md-10");
+		$("#divOpen").addClass("col-md-12");
+		$(".col-md-2").hide();
+
+	} else {
+		$(".col-md-2").show(500);
+		$("#divOpen").removeClass("col-md-12");
+		$("#divOpen").addClass("col-md-10");
+	}
+}
+/**
+ * 是否为空（可判断数字是否小于0，字符串类型）
+ * 
+ * @param str
+ * @returns {Boolean}
+ */
+function isEmpty(obj) {
+	if (obj == null) {
+		return true;
+	}
+	var objType = typeof obj;
+	if (objType == "object") {
+		if (obj.length <= 0) {
+			return true;
+		}
+	} else if (objType == "string") {
+		if (obj == ""/* || obj.trim() == "" */) {
+			return true;
+		}
+		if (!isNaN(obj) && Number(obj) <= 0) {// 代表是数字
+			return true;
+		}
+	} else if (objType == "number") {
+		if (Number(obj) <= 0) {
+			return true;
+		}
+	}
+	return false;
+}
+/**
+ * JS中获取国际化key对应的文字
+ * 
+ * @param key
+ */
+function getNative(ukey) {
+	var val = $.nativex("getOneItem", {
+		key : ukey
+	});
+	return val;
+}
+/**
+ * 将页面上需要转换为国际化显示的处理掉
+ */
+function needI18nKeyInit() {
+	var needI18nKeys = $(".needI18nKey");
+	for (var i = 0; i < needI18nKeys.length; i++) {
+		var tmp = getNative($(needI18nKeys[i]).attr("vtKey"));
+		if (!isEmpty(tmp)) {
+			$(needI18nKeys[i]).html(tmp);
+		}
+	}
+}
+
+$(function() {
+	$('.navbar-toggle').click(function() {
+
+		if ($("#divOpen").is(":visible")) {
+			$(".col-md-2").hide();
+			$("#divOpen").hide();
+		} else {
+			$(".col-md-2").show();
+			$("#divOpen").show();
+		}
+	});
+});
+function toDate(str) {
+	var sd = str.split("-");
+	return new Date(sd[0], sd[1], sd[2]);
+}
+function compareCalendar(date1, date2) {
+	var d1 = toDate(date1);
+	var d2 = toDate(date2);
+	return d1 > d2;
+}
+function openBoReportPage(cuid, paramesOther) {
+
+	var parames = "sIDType=CUID&iDocID=" + cuid;
+	$.ajax({
+		url : BASE_URL_GP + "bo/getBoReportKey",
+		type : "POST",
+		dataType : "json",
+		cache : false,
+		data : {
+			params : parames,
+			paramesOther : paramesOther
+		},
+		success : function(data) {
+			if (!isEmpty(data)) {
+				window.open(data.url);
+			} else {
+				alert("无法打开此报表");
+			}
+		},
+		error : function(xhr, textStatus, msg) {
+			alert(msg.errorMsg);
+		}
+	});
+}
+/**
+ * 报表中心公共方法
+ * 
+ * @param tagid
+ * @param menuNo
+ * @param paramesOther
+ */
+function openBoReportPageLoad(tagid, menuNo, paramesOther) {
+	var parames = menuNo;
+	$.ajax({
+		url : BASE_URL_GP + "bo/getBoReportUrl",
+		type : "POST",
+		dataType : "json",
+		cache : false,
+		data : {
+			params : parames,
+			paramesOther : paramesOther
+		},
+		success : function(data) {
+			if (!isEmpty(data)) {
+				var url = data.url;
+				if (menuNo == "060102" || menuNo == "060104") {
+					window.open(url);
+				} else {
+					$("#" + tagid).attr("src", url);
+					var ifm = document.getElementById(tagid);
+					ifm.height = document.documentElement.clientHeight;
+				}
+			} else {
+				alert("无法打开此报表");
+			}
+		},
+		error : function(xhr, textStatus, msg) {
+			alert(msg.errorMsg);
+		}
+	});
+}
+// 检验长度
+function lengthCheck(obj, length) {
+	var v = true;
+	var valueLenth = unicodeLength(obj.value);
+	if (valueLenth > length) {
+		obj.focus();
+		return false;
+	}
+
+	return v;
+}
+
+// 含有中文的长度校验
+function unicodeLength(str) {
+	return (new String(str)).unicodeLength();
+}
+String.prototype.unicodeLength = function() {
+	var l = 0;
+	for (var i = 0; i < this.length; i++) {
+		if (this.charCodeAt(i) > 255)
+			l += 2;
+		else
+			l++;
+	}
+	return l;
+}
+/**
+ * 日期转化YYYY-MM-HH
+ * 
+ * @param spanClass：class
+ * 
+ */
+function dateText(spanClass) {
+	var language = nativex_currentLanguage;
+	var defalutValue = $("." + spanClass);
+	for (var q = 0; q < defalutValue.length; q++) {
+		var value = $(defalutValue[q]).html();
+		if (!!value) {
+			var date = new Date(value);
+			$(defalutValue[q]).html(date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate());
+		}
+	}
+}
+
+function btDisable() {
+	$("#formSearch").find("button").attr("disabled", false);
+}
+
+/**
+ * 选择车型By工厂，弹出新页面
+ * 
+ * @param selectCarModelArea
+ * @param isSingle
+ */
+function carModelInfoByPlantOpenWindow(selectCarModelArea, isSingle,selectPlant) {
+	$("#modelHiddenArea").val(selectCarModelArea);
+	if (!checkCanSelect())
+		return false;
+	openNewWindow("./sq/api/spcr/toCarModalListByPlant?isSingle=" + isSingle +"&selectPlant=" + selectPlant, "");
+}
+/**
+ * 选择车型By工厂
+ * 
+ * @param supplierId
+ * @param supplierName
+ */
+function getCarModelInfoByPlant(tmModelId,modelCode, modelName) {
+	var modelHiddenArea = $("#modelHiddenArea").val();
+	$("#" + modelHiddenArea + "Id").val(tmModelId);
+	$("#" + modelHiddenArea + "Code").val(modelCode);
+	$("#" + modelHiddenArea+ "Name").val(modelName);
+}
+/**
+ * 查询页面平台车型下拉框
+ * @param selectId：页面select标签id
+ * @param id：类型为model：平台ID，类型为project：车型ID
+ * @param defalutValue：选中的值
+ */
+function loadCalModelInput(selectId,id, defalutValue) {
+	$.ajax({
+		url:BASE_URL_SQ + 'projectModel/queryModelByPlatformToSelect',
+		async: false,
+		data:{"id":id
+		    },
+		success:function(data){
+			$("#"+selectId).empty();
+			$("#"+selectId).append("<option value=\"\">"+getNative("Please.select.a")+"</option>");//请选择
+			
+			$.each(data,function(i,val){
+				if(val.tmModelId == defalutValue){
+					$("#"+selectId).append("<option value=\""+val.modelCode+"\" selected>"+val.modelCode+"</option>");
+				} else {
+					$("#"+selectId).append("<option value=\""+val.modelCode+"\">"+val.modelCode+"</option>");
+				}
+			});
+		}
+	});
+}
+
+/**
+ * 零件By供应商，弹出新页面
+ * 
+ * @param selectPartArea
+ * @param isSingle
+ */
+function partInfoBySupplierOpenWindow(selectPartArea, isSingle,tmSupplierId) {
+	$("#partHiddenArea").val(selectPartArea);
+	if (!checkCanSelect())
+		return false;
+	openNewWindow("./sq/api/spcr/toSqSupplierPart?isSingle=" + isSingle +"&tmSupplierId=" + tmSupplierId, "");
+}
+/**
+ * 选择零件By供应商
+ * 
+ * @param supplierId
+ * @param supplierName
+ */
+function getPartInfoBySupplier(partId, partNo,partDesc,partNoDesc) {
+	var partHiddenArea = $("#partHiddenArea").val();
+	$("#" + partHiddenArea + "Id").val(partId);
+	$("#" + partHiddenArea+ "No").val(partNo);
+	$("#" + partHiddenArea+ "Desc").val(partDesc);
+	$("#" + partHiddenArea+ "NoDesc").val(partNoDesc);
+}
+/**
+ * 选择供应商信息，弹出新页面
+ * 
+ * @param selectPartArea
+ * @param isSingle
+ */
+function supplierInfoOpenWindow(selectPartArea, isSingle,type) {
+	$("#supplierHiddenArea").val(selectPartArea);
+	if (!checkCanSelect())
+		return false;
+	openNewWindow("./sq/api/supplier/supList?isSingle=" + isSingle+"&type="+type, "");
+}
+/**
+ * 选择供应商
+ * 
+ * @param supplierId
+ * @param supplierName
+ */
+function getSupplier(supplierId, supplierName, duns) {
+	var supplierHiddenArea = $("#supplierHiddenArea").val();
+	if (supplierHiddenArea == 'duns') {
+		$("#tmSupplierId").val(supplierId);
+		$("#supplierName").val(supplierName);
+		$("#" + supplierHiddenArea).val(duns);
+	}else if(supplierHiddenArea == 'mouldDuns'){
+		$("#mouldDuns").val(duns);
+		$("#mouldSupplier").val(supplierName);
+	}else if(supplierHiddenArea == 'gaugeDuns'){
+		$("#gaugeDuns").val(duns);
+		$("#gaugeSupplier").val(supplierName);
+	}else if(supplierHiddenArea == 'mouldApproveDuns'){
+		$("#tmSupplierId").val(supplierId);
+		$("#supplierName").val(supplierName);
+		$("#duns").val(duns);
+		var duns=$('#duns').val();
+		$('#supplierContacts').empty();
+		$('#supplierContacts').append('<option value="">'+getNative("input.choice.choose")+'</option>');
+		$('#email').html("");
+		$('#phone').html("");
+		$.ajax({
+			type : "POST",
+			data:{"duns":$("#duns").val()},
+			cache:false,
+			url : BASE_URL_SQ+"mould/searchAllSupplierUser",
+			success : function(data) {
+				for(var i=0;i<data.rows.length;i++){
+					$('#supplierContacts').append("<option value=\""+data.rows[i].userCd+","+
+							data.rows[i].phone+","+data.rows[i].email+"\">"+data.rows[i].name+"</option>");
+				}
+			},
+			error : function(xhr, textStatus, msg) {
+				alert(msg.errorMsg);
+			}
+		});
+	}else if(supplierHiddenArea == 'outSupplier'){
+		$("#" + supplierHiddenArea).val(supplierId);
+		$("#" + supplierHiddenArea+"Name").val(supplierName);
+	} else if(supplierHiddenArea == 'dunsText'){
+		$("#tmSupplierId").val(supplierId);
+		$("#supplierName").val(supplierName);
+		$("#duns").text(duns);
+	} else {
+		$("#" + supplierHiddenArea).val(duns);
+		$("#" + supplierHiddenArea+"Id").val(supplierId);
+		$("#" + supplierHiddenArea+"Name").val(supplierName);
+	}
+	
+	try {
+		if(dosomething != undefined){
+			dosomething();
+		}
+	} catch (e) {
+	}
+	
+}
+/**
+ * 选择供应商
+ * 
+ * @param supplierId
+ * @param supplierName
+ */
+function getSupplierInfo(supplierId, supplierName) {
+	var supplierHiddenArea = $("#supplierHiddenArea").val();
+	var optionHtml = "";
+	$("#" + supplierHiddenArea + " option").not(":first").remove();
+	$.each(supplierId, function(index, value) {
+		optionHtml = "<option value=" + value + ">" + supplierName[index] + "</option>";
+		$("#" + supplierHiddenArea).append(optionHtml);
+	});
+	$("#" + supplierHiddenArea).get(0).selectedIndex = 1;
+}
+/**
+ * 顶部提示成功
+ * @param str
+ */
+function alertSuccess(str){
+	alert(str);
+}
+/**
+ * 顶部提示失败
+ * @param str
+ */
+function alertError(str){
+	alert(str);
+}
+/**
+ * 锚点页面滚动
+ */
+function gotoScrollIntoView(id){
+	var topHeight = $(".navbar-fixed-top").height();
+	$("html,body").animate({
+		scrollTop: $("#"+id).offset().top - topHeight
+	});
+}
+
+/**
+ * todo_list 申请人弹出新页面 根据用户来源
+ */
+function chooseUserOpenWindow(selectUserArea, emplFlag) {
+	$("#selectUserArea").val(selectUserArea);
+	if (!checkCanSelect()){return false;}
+	openNewWindow(BASE_URL_SQ+"workFlow/chooseUser?emplFlag=" + emplFlag, "选择用户");
+}
+
+/**
+ * 初始设置Disabled
+ * @param thi
+ */
+function setDisabled(thi){
+	$(thi).attr("disabled","disabled");
+	$(thi).addClass("disabled-tag");
+}
+/**
+ * 提交之前取消Disabled
+ */
+function removeDisabled(){
+	$(".disabled-tag").attr("disabled",false);
+	$(".disabled-tag").addClass("disabled-tag-tmp");
+	$(".disabled-tag").removeClass("disabled-tag");
+}
+/**
+ * 提交失败，重新设置Disabled
+ */
+function setDisabledByTagTmp(){
+	$(".disabled-tag-tmp").attr("disabled","disabled");
+	$(".disabled-tag-tmp").addClass("disabled-tag");
+	$(".disabled-tag-tmp").removeClass("disabled-tag-tmp");
+}
+function delTime0(){
+	var time0s = $(".time0");
+	for(var i=0;i<time0s.length;i++){
+		if($(time0s[i]).html().indexOf(".0") == $(time0s[i]).html().length - 2){
+			$(time0s[i]).html($(time0s[i]).html().substring(0,$(time0s[i]).html().length-2));
+		}
+	}
+}
+/**
+ * 下载导入模板
+ * @param id
+ */
+function openDownloadExcel(id){
+	openNewWindow("./platform/api/common/commonDocumentEdit?id="+id);
+}
+/**
+ * 回车查询功——第一个参数是输入框的公共样式, 第二个参数是查询按钮的ID
+ * @param className
+ * @param searchID
+ */
+function enterSearch(className,searchID){
+	$('.'+className).keydown(function(event){
+		if(event.keyCode  == 13){
+			if(!document.getElementById(searchID).disabled){
+				$("#"+searchID).click();
+			}
+		}
+	});
+}
+//老税率编辑时候需要清除掉。yuxh 2018-04-21
+function oldTaxCodeClear(control){
+	if($(control).attr("disabled") != "disabled"){
+		$(control).find("option[value='Y1']").remove();
+		$(control).find("option[value='Y7']").remove();
+		$(control).find("option[value='Z1']").remove();
+		$(control).find("option[value='Z2']").remove();
+		$(control).find("option[value='V1']").remove();
+		$(control).find("option[value='V4']").remove();
+	}
+}
+function checkUseOldTaxCode(){
+	
+	var checkStr = ",Y1,Y7,Z1,Z2,V1,V4,";
+	var checkUseOldTaxCodeClass = $(".checkUseOldTaxCodeClass");
+	for(var i=0;i<checkUseOldTaxCodeClass.length;i++){
+		if(checkStr.indexOf(($(checkUseOldTaxCodeClass[i]).val())) != -1){
+			alert("禁止选择已失效的税率。");
+			$(checkUseOldTaxCodeClass[i]).focus();
+			return false;
+		}
+	}
+	return true;
+}

@@ -1,0 +1,373 @@
+{
+  "sowSubmitDate": "",
+  "sowStarDateNum": "",
+  "bidderlistCreateDate": "",
+  "maxbyOfferNum": 4,
+  "subject": "冲压车间冲压线频繁启动部件更换",
+  "sowConfirmDateNum": "",
+  "sowConfirmDate": "",
+  "department": "JQ North Plant Press Area(ANPS)",
+  "sowStarDate": "",
+  "byRfqs": [
+    {
+      "subject": "冲压车间冲压线频繁启动部件更换",
+      "department": "JQ North Plant Press Area(ANPS)",
+      "bidderListStatus": "3",
+      "sowStarDate": "",
+      "rfqMoney": "127500",
+      "bidderListNo": "GBID00036534",
+      "requestor": "Li Jun,李骏(4088)",
+      "prId": 21711,
+      "prNo": "ANVP000568",
+      "rfqNo": "GRFQ00029608",
+      "prdisDate": "",
+      "taStarDate": "",
+      "byTfs": [
+        {
+          "tfApproveDate": "",
+          "byContracts": [],
+          "tfStatus": "11",
+          "tfNo": "GTRF00023962",
+          "tfId": "23962"
+        }
+      ],
+      "byOffers": [
+        {
+          "offerDate": "",
+          "taSubmitDate": "",
+          "taStarDate": "",
+          "round": "1",
+          "taConfirmDate": ""
+        },
+        {
+          "offerDate": "",
+          "taSubmitDate": "",
+          "taStarDate": "",
+          "round": "",
+          "taConfirmDate": ""
+        },
+        {
+          "offerDate": "",
+          "taSubmitDate": "",
+          "taStarDate": "",
+          "round": "",
+          "taConfirmDate": ""
+        },
+        {
+          "offerDate": "",
+          "taSubmitDate": "",
+          "taStarDate": "",
+          "round": "",
+          "taConfirmDate": ""
+        }
+      ],
+      "sowSubmitDate": "",
+      "bidderlistCreateDate": "2008-01-31 11:37:24.0",
+      "bidderListApproveDate": "2008-01-31 11:37:24.0",
+      "rfqDesc": "冲压车间冲压线频繁启动部件更换",
+      "sowConfirmDate": "",
+      "taSubmitDate": "",
+      "rfqSubmitDate": "2008-01-31 11:32:04.0",
+      "buyerName": "",
+      "rfqId": "29608",
+      "taConfirmDate": "",
+      "prType": "1",
+      "prAcceptDate": ""
+    },
+    {
+      "subject": "冲压车间冲压线频繁启动部件更换",
+      "department": "JQ North Plant Press Area(ANPS)",
+      "bidderListStatus": "3",
+      "sowStarDate": "",
+      "rfqMoney": "96762.9",
+      "bidderListNo": "GBID00036627",
+      "requestor": "Li Jun,李骏(4088)",
+      "prId": 21711,
+      "prNo": "ANVP000568",
+      "rfqNo": "GRFQ00029683",
+      "prdisDate": "",
+      "taStarDate": "",
+      "byTfs": [
+        {
+          "tfApproveDate": "",
+          "byContracts": [
+            {
+              "pigeonholeDate": "2008-02-16 10:29:26.0",
+              "contractNo": "PS21005748",
+              "approveDate": "",
+              "contractStatus": "1"
+            }
+          ],
+          "tfStatus": "11",
+          "tfNo": "GTRF00024018",
+          "tfId": "24018"
+        }
+      ],
+      "byOffers": [
+        {
+          "offerDate": "",
+          "taSubmitDate": "",
+          "taStarDate": "",
+          "round": "1",
+          "taConfirmDate": ""
+        },
+        {
+          "offerDate": "",
+          "taSubmitDate": "",
+          "taStarDate": "",
+          "round": "2",
+          "taConfirmDate": ""
+        },
+        {
+          "offerDate": "",
+          "taSubmitDate": "",
+          "taStarDate": "",
+          "round": "3",
+          "taConfirmDate": ""
+        },
+        {
+          "offerDate": "",
+          "taSubmitDate": "",
+          "taStarDate": "",
+          "round": "4",
+          "taConfirmDate": ""
+        }
+      ],
+      "sowSubmitDate": "",
+      "bidderlistCreateDate": "2008-02-02 11:08:26.0",
+      "bidderListApproveDate": "2008-02-02 11:08:26.0",
+      "rfqDesc": "冲压车间冲压线频繁启动部件更换 Wohrle",
+      "sowConfirmDate": "",
+      "taSubmitDate": "",
+      "rfqSubmitDate": "2008-02-02 11:01:40.0",
+      "buyerName": "",
+      "rfqId": "29683",
+      "taConfirmDate": "",
+      "prType": "1",
+      "prAcceptDate": ""
+    },
+    {
+      "subject": "冲压车间冲压线频繁启动部件更换",
+      "department": "JQ North Plant Press Area(ANPS)",
+      "bidderListStatus": "3",
+      "sowStarDate": "",
+      "rfqMoney": "243021.6",
+      "bidderListNo": "GBID00036649",
+      "requestor": "Li Jun,李骏(4088)",
+      "prId": 21711,
+      "prNo": "ANVP000568",
+      "rfqNo": "GRFQ00029706",
+      "prdisDate": "",
+      "taStarDate": "",
+      "byTfs": [
+        {
+          "tfApproveDate": "",
+          "byContracts": [
+            {
+              "pigeonholeDate": "2008-02-21 16:21:02.0",
+              "contractNo": "PS21005902",
+              "approveDate": "",
+              "contractStatus": "1"
+            }
+          ],
+          "tfStatus": "11",
+          "tfNo": "GTRF00024317",
+          "tfId": "24317"
+        }
+      ],
+      "byOffers": [
+        {
+          "offerDate": "",
+          "taSubmitDate": "",
+          "taStarDate": "",
+          "round": "1",
+          "taConfirmDate": ""
+        },
+        {
+          "offerDate": "",
+          "taSubmitDate": "",
+          "taStarDate": "",
+          "round": "2",
+          "taConfirmDate": ""
+        },
+        {
+          "offerDate": "",
+          "taSubmitDate": "",
+          "taStarDate": "",
+          "round": "3",
+          "taConfirmDate": ""
+        },
+        {
+          "offerDate": "",
+          "taSubmitDate": "",
+          "taStarDate": "",
+          "round": "",
+          "taConfirmDate": ""
+        }
+      ],
+      "sowSubmitDate": "",
+      "bidderlistCreateDate": "2008-02-02 15:32:44.0",
+      "bidderListApproveDate": "2008-02-02 15:32:44.0",
+      "rfqDesc": "冲压车间冲压线频繁启动部件更换 Siemens",
+      "sowConfirmDate": "",
+      "taSubmitDate": "",
+      "rfqSubmitDate": "2008-02-02 15:31:09.0",
+      "buyerName": "",
+      "rfqId": "29706",
+      "taConfirmDate": "",
+      "prType": "1",
+      "prAcceptDate": ""
+    },
+    {
+      "subject": "冲压车间冲压线频繁启动部件更换",
+      "department": "JQ North Plant Press Area(ANPS)",
+      "bidderListStatus": "3",
+      "sowStarDate": "",
+      "rfqMoney": "303066",
+      "bidderListNo": "GBID00037207",
+      "requestor": "Li Jun,李骏(4088)",
+      "prId": 21711,
+      "prNo": "ANVP000568",
+      "rfqNo": "GRFQ00029882",
+      "prdisDate": "",
+      "taStarDate": "",
+      "byTfs": [
+        {
+          "tfApproveDate": "",
+          "byContracts": [
+            {
+              "pigeonholeDate": "2008-02-28 16:08:32.0",
+              "contractNo": "PS21006053",
+              "approveDate": "",
+              "contractStatus": "1"
+            }
+          ],
+          "tfStatus": "11",
+          "tfNo": "GTRF00024526",
+          "tfId": "24526"
+        }
+      ],
+      "byOffers": [
+        {
+          "offerDate": "",
+          "taSubmitDate": "",
+          "taStarDate": "",
+          "round": "1",
+          "taConfirmDate": ""
+        },
+        {
+          "offerDate": "",
+          "taSubmitDate": "",
+          "taStarDate": "",
+          "round": "2",
+          "taConfirmDate": ""
+        },
+        {
+          "offerDate": "",
+          "taSubmitDate": "",
+          "taStarDate": "",
+          "round": "3",
+          "taConfirmDate": ""
+        },
+        {
+          "offerDate": "",
+          "taSubmitDate": "",
+          "taStarDate": "",
+          "round": "4",
+          "taConfirmDate": ""
+        }
+      ],
+      "sowSubmitDate": "",
+      "bidderlistCreateDate": "2008-02-19 11:51:52.0",
+      "bidderListApproveDate": "2008-02-19 11:51:52.0",
+      "rfqDesc": "冲压车间冲压线频繁启动部件更换 Telemecanique",
+      "sowConfirmDate": "",
+      "taSubmitDate": "",
+      "rfqSubmitDate": "2008-02-13 15:38:44.0",
+      "buyerName": "",
+      "rfqId": "29882",
+      "taConfirmDate": "",
+      "prType": "1",
+      "prAcceptDate": ""
+    },
+    {
+      "subject": "冲压车间冲压线频繁启动部件更换",
+      "department": "JQ North Plant Press Area(ANPS)",
+      "bidderListStatus": "3",
+      "sowStarDate": "",
+      "rfqMoney": "45726",
+      "bidderListNo": "GBID00037941",
+      "requestor": "Li Jun,李骏(4088)",
+      "prId": 21711,
+      "prNo": "ANVP000568",
+      "rfqNo": "GRFQ00030478",
+      "prdisDate": "",
+      "taStarDate": "",
+      "byTfs": [
+        {
+          "tfApproveDate": "",
+          "byContracts": [
+            {
+              "pigeonholeDate": "",
+              "contractNo": "PS21158713",
+              "approveDate": "2017-03-02 17:41:17.0",
+              "contractStatus": "9"
+            }
+          ],
+          "tfStatus": "11",
+          "tfNo": "GTRF00024914",
+          "tfId": "24914"
+        }
+      ],
+      "byOffers": [
+        {
+          "offerDate": "",
+          "taSubmitDate": "",
+          "taStarDate": "",
+          "round": "1",
+          "taConfirmDate": ""
+        },
+        {
+          "offerDate": "",
+          "taSubmitDate": "",
+          "taStarDate": "",
+          "round": "",
+          "taConfirmDate": ""
+        },
+        {
+          "offerDate": "",
+          "taSubmitDate": "",
+          "taStarDate": "",
+          "round": "",
+          "taConfirmDate": ""
+        },
+        {
+          "offerDate": "",
+          "taSubmitDate": "",
+          "taStarDate": "",
+          "round": "",
+          "taConfirmDate": ""
+        }
+      ],
+      "sowSubmitDate": "",
+      "bidderlistCreateDate": "2008-02-29 14:51:56.0",
+      "bidderListApproveDate": "2008-02-29 14:51:56.0",
+      "rfqDesc": "冲压车间冲压线频繁启动部件更换 GE",
+      "sowConfirmDate": "",
+      "taSubmitDate": "",
+      "rfqSubmitDate": "2008-02-28 11:39:11.0",
+      "buyerName": "",
+      "rfqId": "30478",
+      "taConfirmDate": "",
+      "prType": "1",
+      "prAcceptDate": ""
+    }
+  ],
+  "sowSubmitDateNum": "",
+  "buyerName": "徐茜,Xu Qian",
+  "requestor": "Li Jun,李骏(4088)",
+  "prNo": "ANVP000568",
+  "prId": 21711,
+  "prdisDate": "",
+  "prAcceptDate": ""
+}

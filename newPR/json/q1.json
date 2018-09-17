@@ -1,0 +1,385 @@
+{
+  "prAcceptDate": "2018-08-27 14:55:26",
+  "subject": "K类测试单据",
+  "byRfqs": [
+    {
+      "prAcceptDate": "2018-08-27 14:55:26",
+      "rfqDesc": "测试JPC助理批量审批",
+      "rfqMoney": "1500",
+      "subject": "K类测试单据",
+      "prId": 2013066,
+      "rfqId": "2002438",
+      "prType": "1",
+      "sowSubmitDate": "",
+      "taSubmitDate": "",
+      "bidderListNo": "GBID02003146",
+      "rfqSubmitDate": "2018-08-27 14:55:55",
+      "prNo": "ARFD180827",
+      "reqReason": "测试数据22",
+      "taStarDate": "",
+      "department": "mobile TEST",
+      "sowConfirmDate": "",
+      "prdisDate": "2018-08-27 14:54:55",
+      "bidderListStatus": "4",
+      "rfqNo": "GRFQ02002438",
+      "buyerName": "",
+      "requestor": "WPSJQ Test001,门户测试(200001)",
+      "bidderlistCreateDate": "2018-08-27 14:57:00",
+      "byOffers": [
+        {
+          "round": "1",
+          "taSubmitDate": "",
+          "offerDate": "",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        },
+        {
+          "round": "",
+          "taSubmitDate": "",
+          "offerDate": "",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        },
+        {
+          "round": "",
+          "taSubmitDate": "",
+          "offerDate": "",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        },
+        {
+          "round": "",
+          "taSubmitDate": "",
+          "offerDate": "",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        }
+      ],
+      "byTfs": [],
+      "bidderListApproveDate": "",
+      "taConfirmDate": "",
+      "sowStarDate": ""
+    },
+    {
+      "prAcceptDate": "2018-08-27 14:55:26",
+      "rfqDesc": "K类测试单据-测试目标价审批",
+      "rfqMoney": "410000",
+      "subject": "K类测试单据",
+      "prId": 2013066,
+      "rfqId": "2002439",
+      "prType": "1",
+      "sowSubmitDate": "",
+      "taSubmitDate": "",
+      "bidderListNo": "GBID02003148",
+      "rfqSubmitDate": "2018-08-27 15:32:56",
+      "prNo": "ARFD180827",
+      "reqReason": "测试数据22",
+      "taStarDate": "",
+      "department": "mobile TEST",
+      "sowConfirmDate": "",
+      "prdisDate": "2018-08-27 14:54:55",
+      "bidderListStatus": "3",
+      "rfqNo": "GRFQ02002439",
+      "buyerName": "",
+      "requestor": "WPSJQ Test001,门户测试(200001)",
+      "bidderlistCreateDate": "2018-08-27 16:30:26",
+      "byOffers": [
+        {
+          "round": "1",
+          "taSubmitDate": "",
+          "offerDate": "20180907162800",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        },
+        {
+          "round": "2",
+          "taSubmitDate": "",
+          "offerDate": "20180907163500",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        },
+        {
+          "round": "3",
+          "taSubmitDate": "",
+          "offerDate": "20180831163600",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        },
+        {
+          "round": "4",
+          "taSubmitDate": "",
+          "offerDate": "20180908164000",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        }
+      ],
+      "byTfs": [
+        {
+          "tfStatus": "0",
+          "tfNo": "GTRF02000886",
+          "tfApproveDate": "",
+          "byContracts": [],
+          "tfId": "2000886"
+        }
+      ],
+      "bidderListApproveDate": "2018-08-27 16:30:26",
+      "taConfirmDate": "",
+      "sowStarDate": ""
+    },
+    {
+      "prAcceptDate": "2018-08-27 14:55:26",
+      "rfqDesc": "测试目标价和RFQ删除问题",
+      "rfqMoney": "410010",
+      "subject": "K类测试单据",
+      "prId": 2013066,
+      "rfqId": "2002443",
+      "prType": "1",
+      "sowSubmitDate": "",
+      "taSubmitDate": "",
+      "bidderListNo": "GBID02003150",
+      "rfqSubmitDate": "2018-08-28 15:05:16",
+      "prNo": "ARFD180827",
+      "reqReason": "测试数据22",
+      "taStarDate": "",
+      "department": "mobile TEST",
+      "sowConfirmDate": "",
+      "prdisDate": "2018-08-27 14:54:55",
+      "bidderListStatus": "3",
+      "rfqNo": "GRFQ02002443",
+      "buyerName": "",
+      "requestor": "WPSJQ Test001,门户测试(200001)",
+      "bidderlistCreateDate": "2018-08-28 15:14:01",
+      "byOffers": [
+        {
+          "round": "1",
+          "taSubmitDate": "",
+          "offerDate": "20180828152500",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        },
+        {
+          "round": "",
+          "taSubmitDate": "",
+          "offerDate": "",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        },
+        {
+          "round": "",
+          "taSubmitDate": "",
+          "offerDate": "",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        },
+        {
+          "round": "",
+          "taSubmitDate": "",
+          "offerDate": "",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        }
+      ],
+      "byTfs": [],
+      "bidderListApproveDate": "2018-08-28 15:14:01",
+      "taConfirmDate": "",
+      "sowStarDate": ""
+    },
+    {
+      "prAcceptDate": "2018-08-27 14:55:26",
+      "rfqDesc": "K类测试单据-测试目标价",
+      "rfqMoney": "400000",
+      "subject": "K类测试单据",
+      "prId": 2013066,
+      "rfqId": "2002445",
+      "prType": "1",
+      "sowSubmitDate": "",
+      "taSubmitDate": "",
+      "bidderListNo": "GBID02003154",
+      "rfqSubmitDate": "2018-08-28 17:18:30",
+      "prNo": "ARFD180827",
+      "reqReason": "测试数据22",
+      "taStarDate": "",
+      "department": "mobile TEST",
+      "sowConfirmDate": "",
+      "prdisDate": "2018-08-27 14:54:55",
+      "bidderListStatus": "3",
+      "rfqNo": "GRFQ02002445",
+      "buyerName": "",
+      "requestor": "WPSJQ Test001,门户测试(200001)",
+      "bidderlistCreateDate": "2018-08-28 17:25:48",
+      "byOffers": [
+        {
+          "round": "1",
+          "taSubmitDate": "",
+          "offerDate": "20180908172300",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        },
+        {
+          "round": "2",
+          "taSubmitDate": "",
+          "offerDate": "20180908173000",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        },
+        {
+          "round": "",
+          "taSubmitDate": "",
+          "offerDate": "",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        },
+        {
+          "round": "",
+          "taSubmitDate": "",
+          "offerDate": "",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        }
+      ],
+      "byTfs": [
+        {
+          "tfStatus": "0",
+          "tfNo": "GTRF02000887",
+          "tfApproveDate": "",
+          "byContracts": [],
+          "tfId": "2000887"
+        }
+      ],
+      "bidderListApproveDate": "2018-08-28 17:25:48",
+      "taConfirmDate": "",
+      "sowStarDate": ""
+    },
+    {
+      "prAcceptDate": "2018-08-27 14:55:26",
+      "rfqDesc": "测试延期报价-002",
+      "rfqMoney": "1400",
+      "subject": "K类测试单据",
+      "prId": 2013066,
+      "rfqId": "2002449",
+      "prType": "1",
+      "sowSubmitDate": "",
+      "taSubmitDate": "",
+      "bidderListNo": "GBID02003161",
+      "rfqSubmitDate": "2018-08-30 10:07:39",
+      "prNo": "ARFD180827",
+      "reqReason": "测试数据22",
+      "taStarDate": "",
+      "department": "mobile TEST",
+      "sowConfirmDate": "",
+      "prdisDate": "2018-08-27 14:54:55",
+      "bidderListStatus": "3",
+      "rfqNo": "GRFQ02002449",
+      "buyerName": "",
+      "requestor": "WPSJQ Test001,门户测试(200001)",
+      "bidderlistCreateDate": "2018-08-30 10:08:46",
+      "byOffers": [
+        {
+          "round": "1",
+          "taSubmitDate": "",
+          "offerDate": "20180830101200",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        },
+        {
+          "round": "2",
+          "taSubmitDate": "",
+          "offerDate": "20180830110300",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        },
+        {
+          "round": "",
+          "taSubmitDate": "",
+          "offerDate": "",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        },
+        {
+          "round": "",
+          "taSubmitDate": "",
+          "offerDate": "",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        }
+      ],
+      "byTfs": [],
+      "bidderListApproveDate": "2018-08-30 10:08:46",
+      "taConfirmDate": "",
+      "sowStarDate": ""
+    },
+    {
+      "prAcceptDate": "2018-08-27 14:55:26",
+      "rfqDesc": "延期报价-003",
+      "rfqMoney": "970",
+      "subject": "K类测试单据",
+      "prId": 2013066,
+      "rfqId": "2002452",
+      "prType": "1",
+      "sowSubmitDate": "",
+      "taSubmitDate": "",
+      "bidderListNo": "GBID02003163",
+      "rfqSubmitDate": "2018-08-30 11:11:13",
+      "prNo": "ARFD180827",
+      "reqReason": "测试数据22",
+      "taStarDate": "",
+      "department": "mobile TEST",
+      "sowConfirmDate": "",
+      "prdisDate": "2018-08-27 14:54:55",
+      "bidderListStatus": "3",
+      "rfqNo": "GRFQ02002452",
+      "buyerName": "",
+      "requestor": "WPSJQ Test001,门户测试(200001)",
+      "bidderlistCreateDate": "2018-08-30 11:11:41",
+      "byOffers": [
+        {
+          "round": "1",
+          "taSubmitDate": "",
+          "offerDate": "20180830111500",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        },
+        {
+          "round": "",
+          "taSubmitDate": "",
+          "offerDate": "",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        },
+        {
+          "round": "",
+          "taSubmitDate": "",
+          "offerDate": "",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        },
+        {
+          "round": "",
+          "taSubmitDate": "",
+          "offerDate": "",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        }
+      ],
+      "byTfs": [],
+      "bidderListApproveDate": "2018-08-30 11:11:41",
+      "taConfirmDate": "",
+      "sowStarDate": ""
+    }
+  ],
+  "sowConfirmDateNum": "",
+  "prId": 2013066,
+  "maxbyOfferNum": 4,
+  "buyerName": "徐茜,Xu Qian",
+  "sowStarDateNum": "",
+  "requestor": "WPSJQ Test001,门户测试(200001)",
+  "bidderlistCreateDate": "",
+  "sowSubmitDate": "",
+  "prNo": "ARFD180827",
+  "reqReason": "测试数据22",
+  "department": "mobile TEST",
+  "sowSubmitDateNum": "",
+  "sowConfirmDate": "",
+  "prdisDate": "2018-08-27 14:54:55",
+  "sowStarDate": ""
+}

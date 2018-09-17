@@ -1,0 +1,215 @@
+body{
+	font-size: 12px;
+	/* font-family: "雅黑"; */
+}
+/* .main-function{
+	font-family: "雅黑";
+} */
+.tdTitle{
+	text-align: right;
+	padding-right: 15px;
+	width: 100px;
+	height: 12px;
+}
+
+.tdTitle1{
+	text-align: right;
+	padding-right: 15px;
+	width: 210px;
+	height: 12px;
+}
+
+.tdValue{
+	/* font-size:14px; */
+}
+.navHost{
+	height: 30px;text-align: left;line-height: 30px;
+	background-color: #f4f5f8;
+}
+.navbar-nav a{
+	height: 75px;
+	padding-top: 0px;
+}
+.navbar-header a{
+	height:80px;
+	line-height:50px;
+}
+#tree .list-group-item{
+	height:35px;
+	overflow:hidden;
+	line-height:35px;
+}
+.nav-header.collapsed > span.glyphicon-chevron-toggle:before {
+	content: "\e114";
+}
+.nav-header > span.glyphicon-chevron-toggle:before {
+	content: "\e113";
+}
+.secondmenu a {
+  text-align: left;
+}
+.secondmenu li.active {
+  background-color: #eee;
+  border-color: #428bca;
+}
+.spacing-high{
+	border-collapse:separate; border-spacing:10px;
+}
+.navigation-top-border{
+	background-color:#33a3dc;
+}
+.approve-head{
+	background-color:#ddeffd;
+}
+.query-btn{
+	float:right;margin-top:10px;
+}
+.nav-left{
+	background-color: #ddeffd;
+}
+.input2{
+	width: 50px;
+	height: 28px;
+}
+.input3{
+	width: 100px;
+	height: 28px;
+}
+
+.input4{
+	width: 160px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	height: 32px;
+}
+
+.input5{
+	width: 220px;
+	margin-top: 1px;
+	margin-bottom: 2px;
+	height: 28px;
+}
+
+.input6{
+	margin-top: 5px;
+	height: 28px;
+	width: 95%;
+}
+
+.input7{
+	width: 500px;
+	margin-top: 1px;
+	margin-bottom: 2px;
+	height: 28px;
+}
+
+.input8{
+	width: 500px;
+	margin-top: 1px;
+	margin-bottom: 2px;
+	height: 28px;
+}
+
+.yiji-1{background-image: url(../images/yiji-1.png);width: 30px;height: 30px;background-size: 30px 30px;margin-left: auto;
+margin-right: auto;margin-bottom: 5px;}
+.yiji-2{background-image: url(../images/yiji-2.png);width: 30px;height: 30px;background-size: 30px 30px;margin-left: auto;
+margin-right: auto;margin-bottom: 5px;}
+.yiji-3{background-image: url(../images/yiji-4.png);width: 30px;height: 30px;background-size: 30px 30px;margin-left: auto;
+margin-right: auto;margin-bottom: 5px;}
+.yiji-4{background-image: url(../images/yiji-3.png);width: 30px;height: 30px;background-size: 30px 30px;margin-left: auto;
+margin-right: auto;margin-bottom: 5px;}
+.yiji-5{background-image: url(../images/yiji-5.png);width: 30px;height: 30px;background-size: 30px 30px;margin-left: auto;
+margin-right: auto;margin-bottom: 5px;}
+.yiji-6{background-image: url(../images/yiji-6.png);width: 30px;height: 30px;background-size: 30px 30px;margin-left: auto;
+margin-right: auto;margin-bottom: 5px;}
+.yiji-7{background-image: url(../images/yiji-7.png);width: 30px;height: 30px;background-size: 30px 30px;margin-left: auto;
+margin-right: auto;margin-bottom: 5px;}
+.yiji-8{background-image: url(../images/yiji-8.png);width: 30px;height: 30px;background-size: 30px 30px;margin-left: auto;
+margin-right: auto;margin-bottom: 5px;}
+.function3Son{
+	margin-left: 15px;padding-left: 0px;
+}
+.topfunctiona{
+	background-color: #ddeffd;
+}
+.functionTop{
+	margin-left: 0px;padding-left: 0px;
+}
+.func-a{
+	cursor: pointer;
+	border-top: 1px solid #e2f2ff;
+	border-left: 1px solid #e2f2ff;
+	border-right: 1px solid #e2f2ff;
+}
+.table-bordered > tbody > tr > td > a {
+	line-height: 1.4285;
+	decoration:underline;
+	color:#428bca;
+}
+.form_datetime{
+	width: 100px;
+	height: 28px;
+}
+.form_money{
+	width: 100px;
+	height: 28px;
+}
+.date_td_one{
+	width: 100px;
+}
+.date_td_two{
+	width: 10px;
+}
+.info-head-padin > tr > td{
+	padding-top: 8px;
+	color: #a8a8a8;
+}
+.info-head-padin  td{
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+.info-title{
+	padding-top: 8px;
+	color: #5E6C82;
+	width: 12%;
+	text-align: right;
+	padding-right: 8px;
+	font-size: 12.5px;
+}
+.info-value{
+	width: 18%;
+}
+.btn-sm{
+	width: 120px;
+}
+.btn-sm2{
+	width: 160px;
+}
+.nav-tabs > li > a{
+	line-height: 12px;
+}
+.glyphicon-search{
+	cursor:pointer;
+}
+.navbar-nav li{
+	cursor:pointer;
+}
+.navbar-nav .active{
+	background-color: #1874CD;
+}
+.redspan{
+	color:red;
+}
+a{
+	cursor:pointer;
+}
+.headDiv{
+	margin-top: -18px;
+}
+.glyphicon{
+	cursor:pointer;
+}
+.br-div-line{
+	height: 20px;
+	background-color: #f5f5f5;
+}

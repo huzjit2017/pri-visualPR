@@ -1,0 +1,28 @@
+/**
+ * 编写处理FORM表单数据为json字符串的jquery扩展
+ * @param $
+ */
+(function($) {
+	$.fn.formValueToJson = function(formId,splitChar) {
+		var serializeObj = {};
+		var array = $('#'+formId).serializeArray();
+		$(array).each(
+				function() {
+					if (serializeObj[this.name]) {
+						if(!!splitChar){
+							serializeObj[this.name] = serializeObj[this.name]+splitChar+this.value;
+						}else{
+							if ($.isArray(serializeObj[this.name])) {
+								serializeObj[this.name].push(this.value);
+							} else {
+								serializeObj[this.name] = [serializeObj[this.name], this.value ];
+							}
+						}
+						
+					} else {
+						serializeObj[this.name] = this.value;
+					}
+				});
+		return JSON.stringify(serializeObj);
+	};
+})(jQuery);

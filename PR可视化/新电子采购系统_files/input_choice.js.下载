@@ -1,0 +1,135 @@
+/**
+ * 查询页面下拉框
+ * @param selectId：页面select标签id
+ * @param tableName：表名
+ * @param fieldName：字段名
+ * @param defalutValue：选中的值
+ * nativex_currentLanguage 在comment jsp中
+ */
+function loadSelectInputChoice(selectId, tableName, fieldName, defalutValue) {
+	var language = nativex_currentLanguage;
+	$.ajax({
+		url:"./platform/api/baseFunc/queryInputChoice",
+		async: false,
+		data:{"tableName":tableName,
+			  "fieldName":fieldName
+		    },
+		success:function(data){
+
+			if($("."+selectId+" option").length > 1){
+				$("."+selectId).empty();
+			}
+			
+			$.each(data,function(i,val){
+				if(language == "zh_CN"){
+					if(val.code == defalutValue){
+						$("."+selectId).append("<option value=\""+val.code+"\" selected>"+val.chineseValue+"</option>");
+					} else {
+						$("."+selectId).append("<option value=\""+val.code+"\">"+val.chineseValue+"</option>");
+					}
+				}else{
+					if(val.code == defalutValue){
+						$("."+selectId).append("<option value=\""+val.code+"\" selected>"+val.englishValue+"</option>");
+					} else {
+						$("."+selectId).append("<option value=\""+val.code+"\">"+val.englishValue+"</option>");
+					}
+				}
+			});
+		}
+	});
+}
+/**
+ * 批量下拉框默认选中
+ * @param selectClass
+ */
+function chooseSelectVal(selectClass){
+	var selectIds = $("."+selectClass);
+	for(var i=0;i<selectIds.length;i++){
+		$(selectIds[i]).val($(selectIds[i]).attr("dfval"));
+	}
+}
+/**
+ * 查询页面放置文本
+ * @param selectId：页面span标签id
+ * @param tableName：表名
+ * @param fieldName：字段名
+ * @param defalutValue：选中的值
+ * nativex_currentLanguage 在comment jsp中
+ */
+function loadSpanText(spanClass, tableName, fieldName) {
+	var language = nativex_currentLanguage;
+	var defalutValue = $("."+spanClass);
+	$.ajax({
+		url:"./platform/api/baseFunc/queryInputChoice",
+		type : "POST",
+		dataType:"json",
+		cache : false,
+		async: false,
+		data:{"tableName":tableName,
+			  "fieldName":fieldName
+		    },
+		success:function(data){
+			for(var q=0;q<defalutValue.length;q++){
+				$.each(data,function(i,val){
+					if(language == "zh_CN"){
+						if(val.code == $(defalutValue[q]).html()){
+							$(defalutValue[q]).html(val.chineseValue);
+						}
+					}else{
+						if(val.code == $(defalutValue[q]).html()){
+							$(defalutValue[q]).html(val.englishValue);
+						}
+					}
+				});
+			}
+		}
+	});
+}
+function loadCurrenySpanText(spanClass) {
+	var language = nativex_currentLanguage;
+	var defalutValue = $("."+spanClass);
+	$.ajax({
+		url:"./platform/api/currency/queryCurrencyDistinct",
+		type : "POST",
+		dataType:"json",
+		cache : false,
+		async: false,
+		success:function(data){
+			for(var q=0;q<defalutValue.length;q++){
+				$.each(data,function(i,val){
+					if(val.tcCurrencyId == $(defalutValue[q]).html()){
+						$(defalutValue[q]).html(val.currencyCode);
+					}
+				});
+			}
+		}
+	});
+}
+/**
+ * 加载货币下拉框
+ */
+function loadSelectCurrencyDistinct(selectClss){
+	
+	$.ajax({
+		url:"./platform/api/currency/queryCurrencyDistinct",
+		async: false,
+		success:function(data){
+			$.each(data,function(i,val){
+				$("."+selectClss).append("<option value=\""+val.tcCurrencyId+"\">"+val.currencyCode+"</option>");
+			});
+		},error: function(xhr,textStatus,msg) {
+			alert(msg.errorMsg);
+		}
+	});
+}
+function loadJsonInputChoice(tableName,fieldName){
+	$.ajax({
+		url:"./platform/api/baseFunc/queryInputChoice?tableName="+tableName+"&fieldName="+fieldName,
+		async: false,
+		success:function(data){
+			alert(getNative("To.obtain")+data);//获取json
+		},error: function(xhr,textStatus,msg) {
+			alert(msg.errorMsg);
+		}
+	});
+}

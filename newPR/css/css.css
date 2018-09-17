@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+/*清除浮动代码*/
+.clearfix:after {
+  display: block;
+  clear: both;
+  content: "";
+  visibility: hidden;
+  height: 0;
+}
+.clearfix {
+  zoom: 1;
+}
+ul {
+  list-style: none;
+}
+.point {
+  display: inline-block;
+  text-align: center;
+  margin: 5px 0 35px 70px;
+  position: relative;
+}
+.point > .dot1 {
+  display: inline-block;
+  border: 15px solid #f00;
+  border-radius: 50%;
+  position: relative;
+}
+.point > .dot2 {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border: 3px solid #f00;
+  border-radius: 50%;
+  position: relative;
+}
+.point > .dot3 {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: relative;
+}
+.point > .dot3 > .dot3num {
+  float: left;
+  margin: 7px;
+  width: 21px;
+  height: 21px;
+  border: 3px solid #00f;
+  border-radius: 50%;
+}
+.point > .dot3 > .dot3num:before {
+  content: '';
+  width: 7px;
+  height: 5px;
+  background-color: blue;
+  position: absolute;
+  top: 15px;
+  left: 0;
+}
+.point > .dot4 {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: relative;
+}
+.point > .dot4 > .dot4num {
+  width: 35px;
+  height: 5px;
+  background-color: pink;
+  background-color: blue;
+  margin-top: 50%;
+}
+.point:before {
+  content: '';
+  width: 70px;
+  height: 5px;
+  position: absolute;
+  top: 15px;
+  right: 100%;
+  background-color: blue;
+}
+.main {
+  border: 1px solid #ddd;
+}
+.main .content {
+  border: 1px solid red;
+  font-size: 16px;
+}
+.main .content .content-header {
+  border: 1px solid pink;
+}
+.main .content .content-header .content-header {
+  display: flex;
+}

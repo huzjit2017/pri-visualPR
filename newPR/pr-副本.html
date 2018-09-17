@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="./css/css.css">
+  <script src="jquery-1.9.1.min.js"></script>
+  <script src="template-web.js"></script>
+</head>
+
+<body>
+  <div class="main">
+    <h2>可视化</h2>
+    <ul class="jige">
+      <li>
+        <div class="point">
+          <span class="dot1"></span>
+          <div class="clearfix">
+            <h5>TF审核</h5>
+            <p class="TFdate">
+              <!-- {{$value.byTfs[0].tfApproveDate}} -->
+              17/7/3
+            </p>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="point">
+          <span class="dot2"></span>
+          <div class="clearfix">
+            <h5 title="{{$value.contractNo}}">合同审核</h5>
+            <p class="HTapproveDate">{{$value.byTfs[0].byContracts[0].approveDate}}</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div class="content">
+      <div class="content-header">
+        <div class="part1">1</div>
+        <div class="part2">2</div>
+        <div class="part3">3</div>
+        <div class="part4">4</div>
+      </div>
+      <div class="content-body">
+        <div class="part1">1</div>
+        <div class="part2">2</div>
+        <div class="part3">3</div>
+        <div class="part4">4</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="cc"></div>
+
+</body>
+
+</html>
+<script type="text/html" id="kk1">
+	<ul>
+		<li>{{ include 'kk2' data }}</li>
+			<li>姓名{{name}}</li>
+			<li>性别{{sex}}</li>
+			<li>年龄{{age}}</li>
+	</ul>
+	</script>
+<script type="text/html" id="kk2">
+		<ul>
+			
+				<div>kk22
+						{{ include 'kk3' data }}
+				</div>
+		</ul>
+		</script>
+
+<script type="text/html" id="kk3">
+			<ul>
+				
+					<div>kk33
+ 
+						cc:{{name}}cc
+					</div>
+			</ul>
+			</script>
+
+<script>
+  $(function () {
+    $.ajax({
+      url: './json/json1.json',
+      type: "get",
+      dataType: "json",
+      cache: false,
+      success: function (data) {
+        var result = data
+        console.log(result)
+        // 开始
+        var personData = {
+          name: "刘强",
+          sex: "男",
+          age: 23
+        };
+        var result = template("kk1", personData);
+
+        //将返回的模板结果添加到界面中
+        // document.body.innerHTML = result;
+        $('#cc').html(result)
+
+        // 结束
+      },
+      error: function (e) {
+        alert(e)
+      }
+    });
+
+  })
+</script>

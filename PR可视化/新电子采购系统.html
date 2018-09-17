@@ -1,0 +1,2256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0058)http://10.203.96.165/newepsit/platform/api/login/toSysMain -->
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+
+
+
+  <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+  <!-- 设定页面根地址 -->
+
+  <!--<base href="http://10.203.96.165/newepsit/">-->
+  <base href=".">
+
+  <script type="text/javascript">
+    var userSequenceId = "219044";
+    var nativex_currentLanguage = "zh_CN";
+    var My97DatePicker_dpBase_url = "http://10.203.96.165/newepsit/static/My97DatePicker/";
+    var rootUrl_js = "http://10.203.96.165/newepsit/";
+  </script>
+  <!-- bootstrap和jquery相关的css和js -->
+  <script type="text/javascript" src="./新电子采购系统_files/jquery-1.9.1.min.js.下载"></script>
+  <style type="text/css" abt="234"></style>
+  <link rel="stylesheet" href="./新电子采购系统_files/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="./新电子采购系统_files/bootstrap.min.css">
+  <script type="text/javascript" src="./新电子采购系统_files/bootstrap.min.js.下载"></script>
+  <script type="text/javascript" src="./新电子采购系统_files/jquery.i18n.properties.min.js.下载"></script>
+  <script>//console.log('a')
+  </script>
+  <script>//remove 17173 video ad
+    doAdblock();
+    function doAdblock() {
+      (function () {
+        function A() { }
+        A.prototype = {
+          rules: {
+            '17173_in': {
+              'find': /http:\/\/f\.v\.17173cdn\.com\/(\d+\/)?flash\/PreloaderFile(Customer)?\.swf/,
+              'replace': "http://swf.adtchrome.com/17173_in_20150522.swf"
+            },
+            '17173_out': {
+              'find': /http:\/\/f\.v\.17173cdn\.com\/(\d+\/)?flash\/PreloaderFileFirstpage\.swf/,
+              'replace': "http://swf.adtchrome.com/17173_out_20150522.swf"
+            },
+            '17173_live': {
+              'find': /http:\/\/f\.v\.17173cdn\.com\/(\d+\/)?flash\/Player_stream(_firstpage)?\.swf/,
+              'replace': "http://swf.adtchrome.com/17173_stream_20150522.swf"
+            },
+            '17173_live_out': {
+              'find': /http:\/\/f\.v\.17173cdn\.com\/(\d+\/)?flash\/Player_stream_(custom)?Out\.swf/,
+              'replace': "http://swf.adtchrome.com/17173.out.Live.swf"
+            }
+          },
+          _done: null,
+          get done() {
+            if (!this._done) {
+              this._done = new Array();
+            }
+            return this._done;
+          },
+          addAnimations: function () {
+            var style = document.createElement('style');
+            style.type = 'text/css';
+            style.innerHTML = 'object,embed{\
+                -webkit-animation-duration:.001s;-webkit-animation-name:playerInserted;\
+                -ms-animation-duration:.001s;-ms-animation-name:playerInserted;\
+                -o-animation-duration:.001s;-o-animation-name:playerInserted;\
+                animation-duration:.001s;animation-name:playerInserted;}\
+                @-webkit-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}\
+                @-ms-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}\
+                @-o-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}\
+                @keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}';
+            document.getElementsByTagName('head')[0].appendChild(style);
+          },
+          animationsHandler: function (e) {
+            if (e.animationName === 'playerInserted') {
+              this.replace(e.target);
+            }
+          },
+          replace: function (elem) {
+            if (this.done.indexOf(elem) != -1) return;
+            this.done.push(elem);
+            var player = elem.data || elem.src;
+            if (!player) return;
+            var i, find, replace = false;
+            for (i in this.rules) {
+              find = this.rules[i]['find'];
+              if (find.test(player)) {
+                replace = this.rules[i]['replace'];
+                if ('function' === typeof this.rules[i]['preHandle']) {
+                  this.rules[i]['preHandle'].bind(this, elem, find, replace, player)();
+                } else {
+                  this.reallyReplace.bind(this, elem, find, replace)();
+                }
+                break;
+              }
+            }
+          },
+          reallyReplace: function (elem, find, replace) {
+            elem.data && (elem.data = elem.data.replace(find, replace)) || elem.src && ((elem.src = elem.src.replace(find, replace)) && (elem.style.display = 'block'));
+            var b = elem.querySelector("param[name='movie']");
+            this.reloadPlugin(elem);
+          },
+          reloadPlugin: function (elem) {
+            var nextSibling = elem.nextSibling;
+            var parentNode = elem.parentNode;
+            parentNode.removeChild(elem);
+            var newElem = elem.cloneNode(true);
+            this.done.push(newElem);
+            if (nextSibling) {
+              parentNode.insertBefore(newElem, nextSibling);
+            } else {
+              parentNode.appendChild(newElem);
+            }
+          },
+          init: function () {
+            var handler = this.animationsHandler.bind(this);
+            document.body.addEventListener('webkitAnimationStart', handler, false);
+            document.body.addEventListener('msAnimationStart', handler, false);
+            document.body.addEventListener('oAnimationStart', handler, false);
+            document.body.addEventListener('animationstart', handler, false);
+            this.addAnimations();
+          }
+        };
+        new A().init();
+      })();
+    }
+    //remove baidu search ad
+    if (document.URL.indexOf('www.baidu.com') >= 0) {
+      if (document && document.getElementsByTagName && document.getElementById && document.body) {
+        var aa = function () {
+          var all = document.body.querySelectorAll("#content_left div,#content_left table");
+          for (var i = 0; i < all.length; i++) {
+            if (/display:\s?(table|block)\s!important/.test(all[i].getAttribute("style"))) { all[i].style.display = "none"; all[i].style.visibility = 'hidden'; }
+          }
+          all = document.body.querySelectorAll('.result.c-container[id="1"]');
+          //if(all.length == 1) return;
+          for (var i = 0; i < all.length; i++) {
+            if (all[i].innerHTML && all[i].innerHTML.indexOf('广告') > -1) {
+              all[i].style.display = "none"; all[i].style.visibility = 'hidden';
+            }
+          }
+        }
+        aa();
+        document.getElementById('wrapper_wrapper').addEventListener('DOMSubtreeModified', aa)
+      };
+    }
+    //remove sohu video ad
+    if (document.URL.indexOf("tv.sohu.com") >= 0) {
+      if (document.cookie.indexOf("fee_status=true") == -1) { document.cookie = 'fee_status=true' };
+    }
+    //remove 56.com video ad
+    if (document.URL.indexOf("56.com") >= 0) {
+      if (document.cookie.indexOf("fee_status=true") == -1) { document.cookie = 'fee_status=true' };
+    }
+    //fore iqiyi enable html5 player function
+    if (document.URL.indexOf("iqiyi.com") >= 0) {
+      if (document.cookie.indexOf("player_forcedType=h5_VOD") == -1) {
+        document.cookie = 'player_forcedType=h5_VOD'
+        if (localStorage.reloadTime && Date.now() - parseInt(localStorage.reloadTime) < 60000) {
+          console.log('no reload')
+        } else {
+          location.reload()
+          localStorage.reloadTime = Date.now();
+        }
+      }
+    }
+  </script>
+  <style type="text/css">
+    object,
+    embed {
+      -webkit-animation-duration: .001s;
+      -webkit-animation-name: playerInserted;
+      -ms-animation-duration: .001s;
+      -ms-animation-name: playerInserted;
+      -o-animation-duration: .001s;
+      -o-animation-name: playerInserted;
+      animation-duration: .001s;
+      animation-name: playerInserted;
+    }
+
+    @-webkit-keyframes playerInserted {
+      from {
+        opacity: 0.99;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @-ms-keyframes playerInserted {
+      from {
+        opacity: 0.99;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @-o-keyframes playerInserted {
+      from {
+        opacity: 0.99;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes playerInserted {
+      from {
+        opacity: 0.99;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+  <link href="./新电子采购系统_files/WdatePicker.css" rel="stylesheet" type="text/css">
+  <style>
+    .rfq>li .point:last-child>.dot3>.dot3num:after {
+      width: 0px !important;
+    }
+  </style>
+  <style>
+    .rfq>li .point:last-child>span:after {
+      width: 0px !important;
+    }
+  </style>
+  <style>
+    .firstpoint>span:after {
+      width: 0px !important;
+    }
+  </style>
+  <style>
+    .rfq.branchpoint:before {
+      width: 0px !important;
+    }
+  </style>
+  <style>
+    .rfq.branchpoint:after {
+      width: 0px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch0:before {
+      height: 70px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: -70px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch1:before {
+      height: 70px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 0px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch2 .tfbranch0:before {
+      height: 70px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch2 .tfbranch0>.point:first-child {
+      margin-left: 35px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch2 .tfbranch0>.point:first-child:before {
+      width: 35px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch2 .tfbranch0>.branchpoint>.branch>.point:first-child {
+      margin-left: 35px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch2 .tfbranch0>.branchpoint>.branch>.point:first-child:before {
+      width: 35px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch2>.branchpoint>.branch>.point:first-child {
+      margin-left: 35px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch2>.branchpoint>.branch>.point:first-child:before {
+      width: 35px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch2:before {
+      height: 210px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 140px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch3:before {
+      height: 210px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 140px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch4:before {
+      height: 280px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 210px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch5:before {
+      height: 350px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 280px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch6:before {
+      height: 420px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 350px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch7:before {
+      height: 490px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 420px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch8:before {
+      height: 560px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 490px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch9:before {
+      height: 630px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 560px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch10:before {
+      height: 700px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 630px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch11:before {
+      height: 770px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 700px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch12:before {
+      height: 840px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 770px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch13:before {
+      height: 910px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 840px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch14:before {
+      height: 980px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 910px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch15:before {
+      height: 1050px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 980px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch16:before {
+      height: 1120px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 1050px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch17:before {
+      height: 1190px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 1120px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch18:before {
+      height: 1260px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 1190px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch19:before {
+      height: 1330px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 1260px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch20 .tfbranch0:before {
+      height: 70px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch20 .tfbranch0>.point:first-child {
+      margin-left: 35px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch20 .tfbranch0>.point:first-child:before {
+      width: 35px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch20 .tfbranch0>.branchpoint>.branch>.point:first-child {
+      margin-left: 35px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch20 .tfbranch0>.branchpoint>.branch>.point:first-child:before {
+      width: 35px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch20>.branchpoint>.branch>.point:first-child {
+      margin-left: 35px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch20>.branchpoint>.branch>.point:first-child:before {
+      width: 35px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch20:before {
+      height: 1470px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 1400px !important;
+    }
+  </style>
+  <style>
+    .rfq>li .point:last-child>.dot3>.dot3num:after {
+      width: 0px !important;
+    }
+  </style>
+  <style>
+    .rfq>li .point:last-child>span:after {
+      width: 0px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch0:before {
+      height: 70px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: -70px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch1:before {
+      height: 70px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 0px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch2 .tfbranch0:before {
+      height: 70px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch2 .tfbranch0>.point:first-child {
+      margin-left: 35px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch2 .tfbranch0>.point:first-child:before {
+      width: 35px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch2 .tfbranch0>.branchpoint>.branch>.point:first-child {
+      margin-left: 35px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch2 .tfbranch0>.branchpoint>.branch>.point:first-child:before {
+      width: 35px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch2>.branchpoint>.branch>.point:first-child {
+      margin-left: 35px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch2>.branchpoint>.branch>.point:first-child:before {
+      width: 35px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch2:before {
+      height: 210px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 140px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch3:before {
+      height: 210px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 140px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch4:before {
+      height: 280px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 210px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch5:before {
+      height: 350px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 280px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch6:before {
+      height: 420px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 350px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch7:before {
+      height: 490px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 420px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch8:before {
+      height: 560px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 490px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch9:before {
+      height: 630px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 560px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch10:before {
+      height: 700px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 630px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch11:before {
+      height: 770px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 700px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch12:before {
+      height: 840px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 770px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch13:before {
+      height: 910px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 840px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch14:before {
+      height: 980px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 910px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch15:before {
+      height: 1050px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 980px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch16:before {
+      height: 1120px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 1050px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch17:before {
+      height: 1190px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 1120px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch18:before {
+      height: 1260px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 1190px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch19:before {
+      height: 1330px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 1260px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch20 .tfbranch0:before {
+      height: 70px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch20 .tfbranch0>.point:first-child {
+      margin-left: 35px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch20 .tfbranch0>.point:first-child:before {
+      width: 35px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch20 .tfbranch0>.branchpoint>.branch>.point:first-child {
+      margin-left: 35px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch20 .tfbranch0>.branchpoint>.branch>.point:first-child:before {
+      width: 35px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch20>.branchpoint>.branch>.point:first-child {
+      margin-left: 35px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch20>.branchpoint>.branch>.point:first-child:before {
+      width: 35px !important;
+    }
+  </style>
+  <style>
+    .rfqbranch20:before {
+      height: 1470px !important;
+    }
+  </style>
+  <style>
+    .rfq:after {
+      height: 1400px !important;
+    }
+  </style>
+  <style>
+    .rfq>li .point:last-child>.dot3>.dot3num:after {
+      width: 0px !important;
+    }
+  </style>
+  <style>
+    .rfq>li .point:last-child>span:after {
+      width: 0px !important;
+    }
+  </style>
+</head>
+
+<body class="" style="">
+  <script type="text/javascript" src="./新电子采购系统_files/ep.ajax.js.下载"></script>
+  <script type="text/javascript" src="./新电子采购系统_files/html5shiv.min.js.下载"></script>
+  <script type="text/javascript" src="./新电子采购系统_files/respond.js.下载"></script>
+  <!-- 国际化控件-->
+  <script type="text/javascript" src="./新电子采购系统_files/ep.nativex.js.下载"></script>
+  <script type="text/javascript" src="./新电子采购系统_files/jquery.validate.min.js.下载"></script>
+  <script type="text/javascript" src="./新电子采购系统_files/messages_zh.js.下载"></script>
+  <link rel="stylesheet" href="./新电子采购系统_files/screen.css">
+  <link rel="stylesheet" href="./新电子采购系统_files/communal_func.css">
+  <script type="text/javascript" src="./新电子采购系统_files/communal_func.js.下载"></script>
+  <script type="text/javascript" src="./新电子采购系统_files/formValueToJson.js.下载"></script>
+
+
+  <link rel="stylesheet" type="text/css" href="./新电子采购系统_files/style.css">
+  <link rel="stylesheet" type="text/css" href="./新电子采购系统_files/style.min.css">
+  <link rel="stylesheet" type="text/css" href="./新电子采购系统_files/style.min.css">
+  <link rel="stylesheet" type="text/css" href="./新电子采购系统_files/style.min(1).css">
+  <link rel="stylesheet" type="text/css" href="./新电子采购系统_files/style(1).css">
+  <script src="./新电子采购系统_files/jstree.js.下载"></script>
+  <script src="./新电子采购系统_files/jstree.min.js.下载"></script>
+  <title id="title">新电子采购系统</title>
+  <!-- 新一般采购应用系统 -->
+  <link rel="stylesheet" href="./新电子采购系统_files/communal_func.css">
+  <link rel="stylesheet" href="./新电子采购系统_files/index.css">
+
+
+  <!--顶部导航开始-->
+  <nav class="navbar navbar-default headDiv topNav">
+    <div class="container-fluid">
+      <div class="navbar-header col-sm-2">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navOpen">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="javascript:void(0);">
+          <img src="./新电子采购系统_files/logo-z.png">
+        </a>
+      </div>
+      <input type="hidden" id="firstCodeVal" value="01">
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav col-sm-10">
+          <!--   <li class="active"><a href="#"><img src="images/yiji-1.png" alt="">
+          <div>我的工作台</div>
+        </a></li> -->
+
+
+
+          <li onclick="toURL(this,&#39;./platform/api/baseFunc/loadFunctionAll/?code=01&#39;,&#39;main-navLoad&#39;,&#39;active&#39;);"
+            class="" style="width: 12.5%;">
+            <a>
+              <div class="">
+                <img src="./新电子采购系统_files/yiji-1.png" width="30px;" height="30px;">
+              </div>
+              <span i18nkey="My.desk">我的工作台</span>
+            </a>
+          </li>
+
+
+
+
+
+
+
+          <li class="topli active" onclick="toURL(this,&#39;./platform/api/baseFunc/loadFunctionAll/?code=02&#39;,&#39;main-navLoad&#39;,&#39;active&#39;);"
+            style="width: 12.5%; color: rgb(0, 102, 171);">
+            <a>
+              <div class="">
+                <img src="./新电子采购系统_files/yiji-2.png" width="30px;" height="30px;">
+              </div>
+              <span i18nkey="Procurement.execution">采购执行</span>
+            </a>
+          </li>
+
+
+
+
+
+
+          <li class="topli" onclick="toURL(this,&#39;./platform/api/baseFunc/loadFunctionAll/?code=03&#39;,&#39;main-navLoad&#39;,&#39;active&#39;);"
+            style="width: 12.5%; color: rgb(0, 102, 171);">
+            <a>
+              <div class="">
+                <img src="./新电子采购系统_files/yiji-3.png" width="30px;" height="30px;">
+              </div>
+              <span i18nkey="Contract.management">合同管理</span>
+            </a>
+          </li>
+
+
+
+
+
+
+          <li class="topli" onclick="toURL(this,&#39;./platform/api/baseFunc/loadFunctionAll/?code=04&#39;,&#39;main-navLoad&#39;,&#39;active&#39;);"
+            style="width: 12.5%;">
+            <a>
+              <div class="">
+                <img src="./新电子采购系统_files/yiji-4.png" width="30px;" height="30px;">
+              </div>
+              <span i18nkey="Supplier.management">供应商管理</span>
+            </a>
+          </li>
+
+
+
+
+
+
+          <li class="topli" onclick="toURL(this,&#39;./platform/api/baseFunc/loadFunctionAll/?code=05&#39;,&#39;main-navLoad&#39;,&#39;active&#39;);"
+            style="width: 12.5%;">
+            <a>
+              <div class="">
+                <img src="./新电子采购系统_files/yiji-5.png" width="30px;" height="30px;">
+              </div>
+              <span i18nkey="Other.procurement.module">其它采购模块</span>
+            </a>
+          </li>
+
+
+
+
+
+
+          <li class="topli" onclick="toURL(this,&#39;./platform/api/baseFunc/loadFunctionAll/?code=06&#39;,&#39;main-navLoad&#39;,&#39;active&#39;);"
+            style="width: 12.5%;">
+            <a>
+              <div class="">
+                <img src="./新电子采购系统_files/yiji-6.png" width="30px;" height="30px;">
+              </div>
+              <span i18nkey="The.report.center">报表中心</span>
+            </a>
+          </li>
+
+
+
+
+
+
+          <li class="topli" onclick="toURL(this,&#39;./platform/api/baseFunc/loadFunctionAll/?code=07&#39;,&#39;main-navLoad&#39;,&#39;active&#39;);"
+            style="width: 12.5%;">
+            <a>
+              <div class="">
+                <img src="./新电子采购系统_files/yiji-8.png" width="30px;" height="30px;">
+              </div>
+              <span i18nkey="The.business.management">业务管理</span>
+            </a>
+          </li>
+
+
+
+
+
+
+          <li class="topli" onclick="toURL(this,&#39;./platform/api/baseFunc/loadFunctionAll/?code=08&#39;,&#39;main-navLoad&#39;,&#39;active&#39;);"
+            style="width: 12.5%;">
+            <a>
+              <div class="">
+                <img src="./新电子采购系统_files/yiji-7.png" width="30px;" height="30px;">
+              </div>
+              <span i18nkey="System.management">系统管理</span>
+            </a>
+          </li>
+
+
+
+
+          <!--<div class="dropdown">-->
+          <!--<a href="#" data-toggle="dropdown">-->
+          <!--<b class="caret"></b>-->
+          <!--</a>-->
+          <!--<ul class="dropdown-menu dropdown-menu-right"></ul>-->
+          <!--</div>-->
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--顶部导航结束-->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2 main-function">
+        <ul id="main-nav" class="main-nav nav nav-tabs nav-stacked nav-left">
+          <li>
+            <div style="text-align:center;height: 35px;line-height: 35px;">
+              <span i18nkey="welcome">欢迎</span>
+              <!-- 欢迎  -->徐茜,Xu Qian
+              <span i18nkey="landing">登陆</span> |
+              <!--  <a onclick="refreshUserWorkLanguage();" title="切换语言/switch language"> -->zh_CN
+              <!-- </a> -->
+              <!-- 登陆 -->
+            </div>
+          </li>
+          <li style="background-color: #d3e4f0;">
+            <div style="text-align:center;">
+              <button class="btn btn-link" type="button" i18nkey="main.btncancellation" onclick="signOff();">注销</button>
+              <button class="btn btn-link" type="button" i18nkey="main.btnHelp" onclick="helpDownload();">帮助</button>
+              <table align="center">
+                <form action="http://10.203.96.165/newepsit/platform/api/login/signOff" id="signOffForm" method="GET"></form>
+                <!-- 注销 -->
+
+                <!-- 帮助 -->
+              </table>
+            </div>
+          </li>
+        </ul>
+        <ul id="main-navLoad" class="main-nav nav nav-tabs nav-stacked nav-left treeul">
+
+
+
+
+
+
+
+
+          <li>
+
+            <a href="http://10.203.96.165/newepsit/#GP0201" class="nav-header" data-toggle="collapse" style="background-color: #ddeffd;"
+              aria-expanded="true">
+              <i class="glyphicon "></i>&nbsp; 工作管理界面
+              <span class="pull-right glyphicon glyphicon-chevron-toggle"></span>
+            </a>
+
+
+            <!-- 第三级 -->
+
+            <ul id="GP0201" class="nav nav-list secondmenu function3Son collapse in" aria-expanded="true" style="">
+
+
+
+
+
+
+
+
+
+              <li>
+                <a onclick="toURL(this,&#39;./gp/api/workmanage/queryWorkManage&#39;,&#39;divOpen&#39;);" class="func-a" style="color: black;">
+                  <i class="glyphicon "></i>&nbsp; 合同类
+                </a>
+              </li>
+
+
+
+              <li>
+                <a onclick="toURL(this,&#39;./gp/api/workmanage/queryWorkManageAgreement&#39;,&#39;divOpen&#39;);" class="func-a" style="color: black;">
+                  <i class="glyphicon "></i>&nbsp; 协议类
+                </a>
+              </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </ul>
+
+          </li>
+
+
+
+
+
+
+
+          <li>
+
+            <a href="http://10.203.96.165/newepsit/#GP0202" class="nav-header collapsed" data-toggle="collapse" style="background-color: #ddeffd;">
+              <i class="glyphicon "></i>&nbsp; JPC审批
+              <span class="pull-right glyphicon glyphicon-chevron-toggle"></span>
+            </a>
+
+
+            <!-- 第三级 -->
+
+            <ul id="GP0202" class="nav nav-list secondmenu collapse function3Son">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              <li>
+                <a onclick="toURL(this,&#39;./gp/api/apply/init&#39;,&#39;divOpen&#39;);" class="func-a" style="color: black;">
+                  <i class="glyphicon "></i>&nbsp; JPC申请单
+                </a>
+              </li>
+
+
+
+              <li>
+                <a onclick="toURL(this,&#39;./gp/api/calendar/queryJpc&#39;,&#39;divOpen&#39;);" class="func-a" style="color: black;">
+                  <i class="glyphicon "></i>&nbsp; JPC日历
+                </a>
+              </li>
+
+
+
+              <li>
+                <a onclick="toURL(this,&#39;./gp/api/agenda/init&#39;,&#39;divOpen&#39;);" class="func-a" style="color: black;">
+                  <i class="glyphicon "></i>&nbsp; JPC日程安排
+                </a>
+              </li>
+
+
+
+              <li>
+                <a onclick="toURL(this,&#39;./gp/api/agenda/queryJpcListCalender&#39;,&#39;divOpen&#39;);" class="func-a" style="color: black;">
+                  <i class="glyphicon "></i>&nbsp; JPC审核
+                </a>
+              </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </ul>
+
+          </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <li>
+
+            <a href="http://10.203.96.165/newepsit/#GP0203" class="nav-header collapsed" data-toggle="collapse" style="background-color: #ddeffd;">
+              <i class="glyphicon "></i>&nbsp; 业务数据查询
+              <span class="pull-right glyphicon glyphicon-chevron-toggle"></span>
+            </a>
+
+
+            <!-- 第三级 -->
+
+            <ul id="GP0203" class="nav nav-list secondmenu collapse function3Son">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              <li>
+                <a onclick="toURL(this,&#39;./gp/api/pr/queryPR&#39;,&#39;divOpen&#39;);" class="func-a" style="color: black;">
+                  <i class="glyphicon "></i>&nbsp; 采购申请（PR）
+                </a>
+              </li>
+
+
+
+              <li>
+                <a onclick="toURL(this,&#39;./gp/api/rfq/rfqHome&#39;,&#39;divOpen&#39;);" class="func-a" style="color: black;">
+                  <i class="glyphicon "></i>&nbsp; RFQ
+                </a>
+              </li>
+
+
+
+              <li>
+                <a onclick="toURL(this,&#39;./gp/api/bidderlist/blEnter&#39;,&#39;divOpen&#39;);" class="func-a" style="color: black;">
+                  <i class="glyphicon "></i>&nbsp; Bidderlist
+                </a>
+              </li>
+
+
+
+              <li>
+                <a onclick="toURL(this,&#39;./gp/api/tf/queryTF&#39;,&#39;divOpen&#39;);" class="func-a" style="color: black;">
+                  <i class="glyphicon "></i>&nbsp; TrackingForm
+                </a>
+              </li>
+
+
+
+              <li>
+                <a onclick="toURL(this,&#39;./gp/api/pr/queryLockPR&#39;,&#39;divOpen&#39;);" class="func-a" style="color: black;">
+                  <i class="glyphicon "></i>&nbsp; PR锁定
+                </a>
+              </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </ul>
+
+          </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <li>
+
+            <a href="http://10.203.96.165/newepsit/#GP0204" class="nav-header collapsed" data-toggle="collapse" style="background-color: #ddeffd;">
+              <i class="glyphicon "></i>&nbsp; 报价管理
+              <span class="pull-right glyphicon glyphicon-chevron-toggle"></span>
+            </a>
+
+
+            <!-- 第三级 -->
+
+            <ul id="GP0204" class="nav nav-list secondmenu collapse function3Son">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              <li>
+                <a onclick="toURL(this,&#39;./gp/api/supplierQuote/intoSlrQuotePage&#39;,&#39;divOpen&#39;);" class="func-a" style="color: black;">
+                  <i class="glyphicon "></i>&nbsp; 代供应商报价
+                </a>
+              </li>
+
+
+
+              <li>
+                <a onclick="toURL(this,&#39;./gp/api/supplierQuote/intoReverseAuctionPage&#39;,&#39;divOpen&#39;);" class="func-a" style="color: black;">
+                  <i class="glyphicon "></i>&nbsp; 反向竞价监控
+                </a>
+              </li>
+
+
+
+              <li>
+                <a onclick="toURL(this,&#39;./gp/api/supplierQuote/intoOnLineQuotePage&#39;,&#39;divOpen&#39;);" class="func-a" style="color: black;">
+                  <i class="glyphicon "></i>&nbsp; 线上报价管理监控
+                </a>
+              </li>
+
+
+
+
+
+
+
+
+
+
+            </ul>
+
+          </li>
+
+
+
+
+
+
+
+
+
+          <li>
+
+            <a href="http://10.203.96.165/newepsit/#GPPR_view" class="nav-header" data-toggle="collapse" style="background-color: #ddeffd;"
+              aria-expanded="true">
+              <i class="glyphicon "></i>&nbsp; PR可视化
+              <span class="pull-right glyphicon glyphicon-chevron-toggle"></span>
+            </a>
+
+
+            <!-- 第三级 -->
+
+            <ul id="GPPR_view" class="nav nav-list secondmenu function3Son collapse in" aria-expanded="true" style="">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              <li>
+                <a onclick="toURL(this,&#39;./gp/api/workmanage/visualizationPRList&#39;,&#39;divOpen&#39;);" class="func-a" style="color: black;">
+                  <i class="glyphicon "></i>&nbsp; 按采购员查询
+                </a>
+              </li>
+
+
+
+              <li>
+                <a onclick="toURL(this,&#39;./gp/api/workmanage/visualizationPRByOne&#39;,&#39;divOpen&#39;);" class="func-a" style="color: rgb(0, 102, 171);">
+                  <i class="glyphicon "></i>&nbsp; 按PR查询
+                </a>
+              </li>
+
+
+
+
+            </ul>
+
+          </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </ul>
+      </div>
+      <div id="divOpen" class="col-md-10">
+
+
+
+        <div class="container-fluid container-fluidDIV">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="navHost">
+                &nbsp;&nbsp;&nbsp;
+                <span class="glyphicon glyphicon-th-large" onclick="oncMainMenu();"></span>&nbsp;&nbsp; 您当前的位置：采购执行 -&gt; PR可视化 -&gt; 【按PR查询】
+                <span class="glyphicon glyphicon-chevron-up" vae="show" onclick="hideShowSearch(this,&#39;query-telescopic&#39;);"></span>
+                <style>
+                  table {
+                    white-space: nowrap;
+                  }
+
+                  table>thead>.visualizationhead {
+                    background-color: #ccc;
+                  }
+
+                  table>thead>.visualizationhead>td>div {
+                    height: 40px;
+                    background-color: palegoldenrod;
+                    background-color: #ddeffd;
+                    display: inline-block;
+                    line-height: 40px;
+                    font-size: 16px;
+                    font-weight: 700;
+                    text-align: center;
+                  }
+
+                  table>thead>.visualizationhead>td>div:nth-child(1) {
+                    width: 160px;
+                  }
+
+                  table>thead>.visualizationhead>td>div:nth-child(2) {
+                    width: 220px;
+                  }
+
+                  table>thead>.visualizationhead>td>div:nth-child(4) {
+                    width: 125px;
+                  }
+
+                  table>thead>.visualizationhead>td>div:nth-child(5) {
+                    width: 230px;
+                  }
+
+                  table>tbody>.visualizationbody>td {
+                    padding-top: 25px;
+                    vertical-align: top;
+                  }
+
+                  table>tbody>.visualizationbody>td .point {
+                    display: inline-block;
+                    text-align: center;
+                    margin: 5px 0 35px 70px;
+                    position: relative;
+                  }
+
+                  table>tbody>.visualizationbody>td .point:before {
+                    content: '';
+                    width: 70px;
+                    height: 5px;
+                    position: absolute;
+                    top: 15px;
+                    right: 100%;
+                    background-color: blue;
+                  }
+
+                  table>tbody>.visualizationbody>td .point>.dot1 {
+                    display: inline-block;
+                    width: 30px;
+                    height: 30px;
+                    border: 15px solid #f00;
+                    border-radius: 50%;
+                    position: relative;
+                  }
+
+                  table>tbody>.visualizationbody>td .point>.dot1:after {
+                    content: '';
+                    width: 5px;
+                    height: 5px;
+                    background-color: blue;
+                    position: absolute;
+                    top: 0;
+                    right: -20px;
+                  }
+
+                  table>tbody>.visualizationbody>td .point>.dot2 {
+                    display: inline-block;
+                    width: 30px;
+                    height: 30px;
+                    border: 3px solid #f00;
+                    border-radius: 50%;
+                    position: relative;
+                  }
+
+                  table>tbody>.visualizationbody>td .point>.dot2:after {
+                    content: '';
+                    width: 4px;
+                    height: 5px;
+                    background-color: blue;
+                    position: absolute;
+                    top: 50%;
+                    right: -7px;
+                  }
+
+                  table>tbody>.visualizationbody>td .point>.dot3 {
+                    display: inline-block;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    position: relative;
+                  }
+
+                  table>tbody>.visualizationbody>td .point>.dot3>.dot3num {
+                    float: left;
+                    margin: 7px;
+                    width: 21px;
+                    height: 21px;
+                    border: 3px solid #00f;
+                    border-radius: 50%;
+                  }
+
+                  table>tbody>.visualizationbody>td .point>.dot3>.dot3num:before {
+                    content: '';
+                    width: 7px;
+                    height: 5px;
+                    background-color: blue;
+                    position: absolute;
+                    top: 15px;
+                    left: 0;
+                  }
+
+                  table>tbody>.visualizationbody>td .point>.dot3>.dot3num:after {
+                    content: '';
+                    width: 7px;
+                    height: 5px;
+                    background-color: blue;
+                    position: absolute;
+                    top: 15px;
+                    right: -4px;
+                  }
+
+                  table>tbody>.visualizationbody>td .point>.dot3>.dot3num.ta {
+                    font-size: 12px;
+                    border: 3px solid #f00;
+                  }
+
+                  table>tbody>.visualizationbody>td .point>.dot4 {
+                    display: inline-block;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    position: relative;
+                  }
+
+                  table>tbody>.visualizationbody>td .point>.dot4>.dot4num {
+                    width: 35px;
+                    height: 5px;
+                    background-color: pink;
+                    background-color: blue;
+                    margin-top: 50%;
+                  }
+
+                  table>tbody>.visualizationbody>td .point>div {
+                    width: 100px;
+                    position: absolute;
+                    top: 100%;
+                    left: -35px;
+                    background-color: lightskyblue;
+                  }
+
+                  table>tbody>.visualizationbody>td .point>div>h5,
+                  table>tbody>.visualizationbody>td .point>div p {
+                    margin: 0;
+                    font-size: 12px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                  }
+
+                  table>tbody>.visualizationbody>td .firstpoint:before {
+                    display: none;
+                  }
+
+                  table>tbody>.visualizationbody>td .branchpoint {
+                    vertical-align: top;
+                    display: inline-block;
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                    padding-left: 35px;
+                    position: relative;
+                  }
+
+                  table>tbody>.visualizationbody>td .branchpoint:before {
+                    content: '';
+                    display: inline-block;
+                    width: 70px;
+                    height: 5px;
+                    position: absolute;
+                    top: 20px;
+                    left: 0;
+                    background-color: gold;
+                    background-color: blue;
+                  }
+
+                  table>tbody>.visualizationbody>td .branchpoint:after {
+                    content: '';
+                    display: inline-block;
+                    width: 5px;
+                    height: 75px;
+                    position: absolute;
+                    top: 20px;
+                    background-color: #CCC;
+                    background-color: blue;
+                  }
+
+                  table>tbody>.visualizationbody>td .branchpoint>.branch {
+                    position: relative;
+                  }
+
+                  table>tbody>.visualizationbody>td .branchpoint>.branch:before {
+                    content: '';
+                    display: inline-block;
+                    width: 5px;
+                    height: 70px;
+                    position: absolute;
+                    bottom: -20px;
+                    left: 0;
+                    background-color: yellowgreen;
+                    background-color: blue;
+                  }
+
+                  table>tbody>.visualizationbody>td .branchpoint>.branch:last-child:before {
+                    display: none;
+                  }
+
+                  .subject_wd {
+                    width: 160px;
+                    overflow: hidden;
+                    display: inline-block;
+                    height: 37px;
+                  }
+
+                  .status_span {
+                    display: inline-block;
+                    width: 20px;
+                    height: 20px;
+                    border: 10px solid #fff;
+                    border-radius: 50%;
+                    position: relative;
+                  }
+                </style>
+              </div>
+
+              <!--查询列表 begin-->
+              <div class="panel panel-default">
+                <div class="panel-body query-telescopic">
+                  <input type="hidden" id="selectSupplierArea">
+                  <input type="hidden" id="selectPositionArea">
+
+                  <form id="formSearch" class="form-horizontal">
+
+                    <input type="hidden" id="queryBtn" name="queryBtn" value="N">
+                    <div class="col-md-12">
+                      <table class="col-md-12">
+                        <tbody>
+                          <tr>
+                            <td class="tdTitle" i18nkey="query.WM.requestNumber">PR编号</td>
+                            <!-- PR编号 -->
+                            <td colspan="3" class="tdValue">
+                              <input name="requestNumber" class="form-control input5 clearInput" id="requestNumberName" type="text" required="required">
+                              <span class="glyphicon glyphicon-search" id="selectPR"></span>
+                            </td>
+                            <td>
+                              <button type="button" class="btn btn-default btn-sm" id="clearInputBtn" i18nkey="native.button.btnClear">清 空</button>
+                              <!-- 清空 -->
+                              <button type="button" id="btn_query" class="btn btn-primary btn-sm" i18nkey="native.button.btnSearch">查 询</button>
+                              <!-- 查询 -->
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <!--查询列表 end-->
+            </div>
+            <div class="col-md-12">
+              <!--列表展示信息 begin-->
+              <div class="panel panel-default ">
+                <div class="panel-body">
+                  <table class="table table-striped table-hover table-bordered">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <b>PR主题</b>
+                        </td>
+                        <td id="subject" class="infoTd subject_wd" title="2017-04-01NPR非Apps商品上线测试（非项目性费用性）本币">2017-04-01NPR非Apps商品上线测试（非项目性费用性）本币</td>
+                        <td>
+                          <b>申请部门</b>
+                        </td>
+                        <td id="department" class="infoTd">SGM测试专用</td>
+                        <td>
+                          <b>申请人</b>
+                        </td>
+                        <td id="requestor" class="infoTd">WPSJQ Test001,杨影元(200001)</td>
+                        <td>
+                          <b>采购员</b>
+                        </td>
+                        <td id="buyerName" class="infoTd">徐茜,Xu Qian</td>
+                        <td>
+                          <b>要求完成时间</b>
+                        </td>
+                        <td id="yq_date" class="infoTd">60天</td>
+                        <td>
+                          <b>完成状态</b>
+                        </td>
+                        <td style="width: 50px;">
+                          <span class="status_span" id="status" style="border-color: rgb(51, 198, 51);"></span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="12" id="visualizationbodytd" class="infoTd"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="mainOpen" style="">
+                    <table>
+                      <thead>
+                        <tr class="visualizationhead">
+                          <td>
+                            <div id="pr_div" style="width: 260px;">PR阶段</div>
+                            <div>Bidderlist阶段</div>
+                            <div id="offer_div" style="width: 651px;">报价阶段</div>
+                            <div style="width: 135px;">Trackingform阶段</div>
+                            <div>合同阶段</div>
+                          </td>
+                          <!--<td class="e" colspan="">Bidderlist阶段</td>-->
+                          <!--<td class="f">报价</td>-->
+                          <!--<td class="g">Trackingform</td>-->
+                          <!--<td class="h">合同</td>-->
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="visualizationbody" style="display: table-row;">
+                          <td>
+
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <script src="./新电子采购系统_files/template-web.js.下载"></script>
+                  <script id="tpl" type="text/html">
+  <!---->
+  <div class="point firstpoint">
+    <span class="dot1" title="分发时间:{{prdisDate}}&#10;接收时间:{{prAcceptDate}}"></span>
+    <div class="clearfix">
+      <h5>PR分发</h5>
+      <p>{{prdisDate}}</p>
+    </div>
+  </div>
+  <!--节点2-->
+  {{if sowStarDate}}
+  <div class="point">
+    <span class="dot3">
+
+{{if sowSubmitDateNum > sowStarDateNum && sowConfirmDateNum < sowSubmitDateNum}}
+      <div class="dot3num"
+           title="SOW发起时间:{{sowStarDate}}&#10;SOW提交时间:{{sowSubmitDate}}&#10;SOW确认时间:&#10;"></div>
+
+{{else if sowConfirmDateNum > sowSubmitDateNum && sowSubmitDateNum > sowStarDateNum}}
+<div class="dot3num"
+           title="SOW发起时间:{{sowStarDate}}&#10;SOW提交时间:{{sowSubmitDate}}&#10;SOW确认时间:{{sowConfirmDate}}&#10;"></div>
+{{else}}
+<div class="dot3num"
+           title="SOW发起时间:{{sowStarDate}}&#10;SOW提交时间:&#10;SOW确认时间:&#10;"></div>
+{{/if}}
+    </span>
+    <div class="clearfix">
+      <h5>SOW确认</h5>
+	{{if sowConfirmDateNum > sowStarDateNum && sowConfirmDateNum > sowSubmitDateNum}}
+      <p>{{sowConfirmDate}}</p>
+	{{/if}}
+    </div>
+  </div>
+  {{/if}}
+  <!---->
+  <ul class="branchpoint rfq">
+    {{ each byRfqs }}
+    <!--rfq-->
+    <li class="branch rfqbranch{{$index}}">
+      {{if $value.rfqSubmitDate}}
+      <div class="point">
+        <span class="dot3">
+          <div class="dot3num"></div>
+        </span>
+        <div class="clearfix">
+          <h5 title="{{$value.rfqNo}}">RFQ提交</h5>
+          <p class="RFQdate">{{$value.rfqSubmitDate}}</p>
+        </div>
+      </div>
+      {{/if}}
+      {{if $value.bidderListNo}}
+      <div class="point">
+        <span class="dot2"></span>
+        <div class="clearfix">
+          <h5 title="{{$value.bidderListNo}}">Bidderlist审核</h5>
+          <p class="Bidderlistdate">{{$value.bidderListApproveDate}}</p>
+        </div>
+      </div>
+      {{/if}}
+		{{if !($value.bidderListNo)}}
+		<div class="point">
+         <span class="dot4">
+          <div class="dot4num"></div>
+        </span>
+      </div>
+	 {{/if}}
+      <!---->
+      <!---->
+      {{ each $value.byOffers }}
+     {{if $value.offerDate}}
+     <!--2-->
+     {{if $value.taStarDate <= $value.offerDate && $value.offerDate!=0 && $value.taStarDate}}
+     <div class="point">
+       <span class="dot3">
+         <!--1-->
+{{if $value.taSubmitDate > $value.taStarDate && $value.taConfirmDate < $value.taSubmitDate}}
+     <div class="dot3num ta"
+          title="TA发起时间:{{$value.taStarDate}}&#10;TA提交时间:{{$value.taSubmitDate}}&#10;TA确认时间:&#10;">TA</div>
+{{else if $value.taConfirmDate > $value.taSubmitDate}}
+<div class="dot3num ta"
+      title="TA发起时间:{{$value.taStarDate}}&#10;TA提交时间:{{$value.taSubmitDate}}&#10;TA确认时间:{{$value.taConfirmDate}}&#10;">TA</div>
+	{{else}}
+	<div class="dot3num ta"
+        title="TA发起时间:{{$value.taStarDate}}&#10;TA提交时间:&#10;TA确认时间:&#10;">TA</div>
+	{{/if}}
+
+         <!--1-->
+       </span>
+       <div class="clearfix">
+         <h5></h5>
+         <p class="TAConfirmDate{{$index}}">{{$value.taConfirmDate}}</p>
+       </div>
+     </div>
+     {{/if}}
+     <!--2-->
+     <div class="point">
+        <span class="dot3">
+         <div class="dot3num">{{$index+1}}</div>
+       </span>
+       <div class="clearfix">
+         <h5>第{{$index+1}}轮报价</h5>
+         <p class="OFFERdate{{$index}}">{{$value.offerDate}}</p>
+       </div>
+     </div>
+     {{if $value.taStarDate >= $value.offerDate && $value.offerDate!=0 && $value.taStarDate}}
+     <div class="point">
+       <span class="dot3">
+{{if $value.taSubmitDate > $value.taStarDate && $value.taConfirmDate < $value.taSubmitDate}}
+     <div class="dot3num ta"
+          title="TA发起时间:{{$value.taStarDate}}&#10;TA提交时间:{{$value.taSubmitDate}}&#10;TA确认时间:&#10;">TA</div>
+
+{{else if $value.taConfirmDate > $value.taSubmitDate}}
+<div class="dot3num ta"
+      title="TA发起时间:{{$value.taStarDate}}&#10;TA提交时间:{{$value.taSubmitDate}}&#10;TA确认时间:{{$value.taConfirmDate}}&#10;">TA</div>
+	{{else}}
+	<div class="dot3num ta"
+        title="TA发起时间:{{$value.taStarDate}}&#10;TA提交时间:&#10;TA确认时间:&#10;">TA</div>
+	{{/if}}
+       </span>
+       <div class="clearfix">
+         <h5></h5>
+         <p class="TAConfirmDate{{$index}}">{{$value.taConfirmDate}}</p>
+       </div>
+     </div>
+     {{/if}}
+     {{/if}}
+		
+
+		{{if $value.taStarDate == "" && $value.offerDate == "" }}
+     <div class="point pointline">
+        <span class="dot4">
+         <div class="dot4num"></div>
+       </span>
+     </div>
+     {{/if}}
+     {{/each}}
+
+      <!---->
+      <!---->
+
+      <!--tf-->
+      {{if $value.byTfs.length>1}}
+      <ul class="branchpoint tf">
+        {{ each $value.byTfs }}
+        <li class="branch tfbranch{{$index}}">
+          <div class="point">
+            <span class="dot1"></span>
+            <div class="clearfix">
+              <h5>TF审核</h5>
+              <p class="TFdate">{{$value.tfApproveDate}}</p>
+            </div>
+          </div>
+          <!--ht-->
+          {{if $value.byContracts.length>1}}
+          <ul class="branchpoint ht">
+            {{ each $value.byContracts }}
+            <!--ht-->
+            <li class="branch htbranch{{$index}}">
+              <div class="point">
+                <span class="dot2"></span>
+                <div class="clearfix">
+                  <h5 title="{{$value.contractNo}}">合同审核</h5>
+                  <p class="HTapproveDate">{{$value.approveDate}}</p>
+                </div>
+              </div>
+              <!---->
+              <div class="point">
+                <span class="dot3">
+                  <div class="dot3num"></div>
+                </span>
+                <div class="clearfix">
+                  <h5>合同归档</h5>
+                  <p class="HTpigeonholeDate">{{$value.pigeonholeDate}}</p>
+                </div>
+              </div>
+              <!---->
+            </li>
+            {{/each}}
+          </ul>
+          {{else if $value.byContracts.length==1}}
+          <div class="point">
+            <span class="dot2"></span>
+            <div class="clearfix">
+              <h5 title="{{$value.contractNo}}">合同审核</h5>
+              <p class="HTapproveDate">{{$value.byContracts[0].approveDate}}</p>
+            </div>
+          </div>
+          <!---->
+          <div class="point">
+            <span class="dot3">
+              <div class="dot3num"></div>
+            </span>
+            <div class="clearfix">
+              <h5>合同归档</h5>
+              <p class="HTpigeonholeDate">{{$value.byContracts[0].pigeonholeDate}}</p>
+            </div>
+          </div>
+          <!---->
+          {{/if}}
+        </li><!--tf-->
+        {{/each}}
+      </ul>
+      {{else if $value.byTfs.length==1}}
+      <div class="point">
+        <span class="dot1"></span>
+        <div class="clearfix">
+          <h5>TF审核</h5>
+          <p class="TFdate">{{$value.byTfs[0].tfApproveDate}}</p>
+        </div>
+      </div>
+      <!--1-->
+      {{if $value.byTfs[0].byContracts.length>1 }}
+      <ul class="branchpoint ht">
+        {{ each $value.byTfs[0].byContracts }}
+        <li class="branch rfqbranch{{$index}}">
+          <div class="point">
+            <span class="dot2"></span>
+            <div class="clearfix">
+              <h5 title="{{$value.contractNo}}">合同审核</h5>
+              <p class="HTapproveDate">{{$value.approveDate}}</p>
+            </div>
+          </div>
+          <!---->
+			{{if $value.pigeonholeDate != ""}}
+          <div class="point">
+            <span class="dot3">
+              <div class="dot3num"></div>
+            </span>
+            <div class="clearfix">
+              <h5>合同归档</h5>
+              <p class="HTpigeonholeDate">{{$value.pigeonholeDate}}</p>
+            </div>
+          </div>
+			{{/if}}
+          <!---->
+        </li>
+        {{/each}}
+      </ul>
+      {{else if $value.byTfs[0].byContracts.length==1 }}
+      <div class="point">
+        <span class="dot2"></span>
+        <div class="clearfix">
+          <h5 title="{{$value.contractNo}}">合同审核</h5>
+          <p class="HTapproveDate">{{$value.byTfs[0].byContracts[0].approveDate}}</p></div>
+      </div>
+      <!---->
+{{if $value.byTfs[0].byContracts[0].pigeonholeDate != ""}}
+      <div class="point">
+         <span class="dot3">
+          <div class="dot3num"></div>
+        </span>
+        <div class="clearfix">
+          <h5>合同归档</h5>
+          <p class="HTpigeonholeDate">{{$value.byTfs[0].byContracts[0].pigeonholeDate}}</p>
+        </div>
+      </div>
+{{/if}}
+      <!---->
+      {{/if}}
+      <!--1-->
+      {{/if}}
+    </li> <!--rfq-->
+    {{ /each }}
+  </ul>
+</script>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 物品类别选择  begin 注意：页面收集值的地方加入class="choiceCtId"，可以自动赋值进去-->
+        <!-- 调用 modelEject('choiceCt'); -->
+        <div id="choiceCtModel">
+        </div>
+
+        <script type="text/javascript" src="./新电子采购系统_files/input_choice.js.下载"></script>
+        <script type="text/javascript" src="./新电子采购系统_files/visualization_pr.js.下载"></script>
+        <!-- loading -->
+        <div class="modal fade in" id="loading" style="margin-top: 15%; display: none;" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+          data-backdrop="static">
+          <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h5 class="modal-title" id="myModalLabel" i18nkey="Being.loaded.in">正在加载中...请稍后。</h5>
+              </div>
+              <div class="modal-body">
+                <div class="progress">
+                  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"
+                    style="width: 100%">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    //导航头部允许8个
+    if ($('.navbar-nav>li').length <= 8) {
+      $('.navbar-nav>.dropdown').css("display", "none");
+      $('.navbar-nav>li').css("width", 100 / ($('.navbar-nav>li').length) + "%")
+    } else {
+      $('.nav.navbar-nav').append('<div class="dropdown">\n' +
+        '          <a href="#" data-toggle="dropdown">\n' +
+        '            <b class="caret"></b>\n' +
+        '          </a>\n' +
+        '          <ul class="dropdown-menu dropdown-menu-right"></ul>\n' +
+        '        </div>\n')
+      $('.navbar-nav>li').css("width", "12.5%")
+      $('.navbar-nav>.dropdown').css("display", "block").children(".dropdown-menu")
+        .append($('.navbar-nav>li').eq(7).nextAll('li').css("width", "100%"))
+    };
+    //点击换
+    $('.navbar-nav').on("click", 'li', function () {
+      $(this).parents('.navbar-nav').find('li').removeClass("active");
+      $(this).addClass("active");
+    })
+  </script>
+  <script type="text/javascript" src="./新电子采购系统_files/main.js.下载"></script>
+</body>
+
+</html>

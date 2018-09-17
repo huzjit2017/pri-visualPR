@@ -1,0 +1,300 @@
+/*清除浮动代码*/
+.clearfix:after {
+  display: block;
+  clear: both;
+  content: "";
+  visibility: hidden;
+  height: 0;
+}
+.clearfix {
+  zoom: 1;
+}
+.danyuan1 {
+  font-size: 12px;
+  display: inline-block;
+  position: relative;
+}
+.danyuan1 .heighthand {
+  display: none;
+  vertical-align: super;
+  height: 70px;
+  width: 5px;
+  margin-left: -69px;
+  margin-left: -75px;
+  background-color: green;
+  background-color: #428bca;
+}
+.danyuan1 .heighthand:before {
+  content: '';
+  width: 5px;
+  height: 13px;
+  background-color: green;
+  background-color: #428bca;
+  position: absolute;
+  top: -13px;
+}
+.danyuan1 .lefthand {
+  vertical-align: middle;
+  display: inline-block;
+  width: 86px;
+  height: 5px;
+  background-color: blue;
+  background-color: #8EB4E3;
+}
+.danyuan1 .lefthand:before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  background-color: blue;
+  background-color: #8EB4E3;
+  position: absolute;
+  left: -5px;
+}
+.danyuan1 .yuan {
+  display: inline-block;
+  vertical-align: middle;
+  height: 26px;
+  width: 26px;
+  background-color: red;
+  background-color: #428bca;
+  border-radius: 50%;
+}
+.danyuan1 > div.describe {
+  position: absolute;
+  right: -22px;
+  text-align: center;
+}
+.danyuan2 {
+  font-size: 12px;
+  display: inline-block;
+  position: relative;
+}
+.danyuan2 .heighthand {
+  display: none;
+  vertical-align: super;
+  height: 70px;
+  width: 5px;
+  margin-left: -69px;
+  margin-left: -75px;
+  background-color: green;
+  background-color: #8EB4E3;
+}
+.danyuan2 .heighthand:before {
+  content: '';
+  width: 5px;
+  height: 13px;
+  background-color: green;
+  background-color: #8EB4E3;
+  position: absolute;
+  top: -13px;
+}
+.danyuan2 .lefthand {
+  vertical-align: middle;
+  display: inline-block;
+  width: 86px;
+  height: 5px;
+  background-color: blue;
+  background-color: #8EB4E3;
+}
+.danyuan2 .lefthand:before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  background-color: blue;
+  background-color: #8EB4E3;
+  position: absolute;
+  left: -5px;
+}
+.danyuan2 .yuan {
+  display: inline-block;
+  vertical-align: middle;
+  height: 20px;
+  width: 20px;
+  border: 3px solid red;
+  border: 3px solid #428bca;
+  border-radius: 50%;
+  text-align: center;
+}
+.danyuan2 > div.describe {
+  position: absolute;
+  right: -22px;
+  text-align: center;
+}
+.danyuan3 {
+  font-size: 12px;
+  padding-bottom: 2.8px;
+  display: inline-block;
+  position: relative;
+}
+.danyuan3 .heighthand {
+  display: none;
+  vertical-align: super;
+  height: 70px;
+  width: 5px;
+  margin-left: -66px;
+  margin-left: -75px;
+  background-color: green;
+  background-color: #8EB4E3;
+}
+.danyuan3 .heighthand:before {
+  content: '';
+  width: 5px;
+  height: 13px;
+  background-color: green;
+  background-color: #8EB4E3;
+  position: absolute;
+  top: -13px;
+}
+.danyuan3 .lefthand {
+  vertical-align: middle;
+  display: inline-block;
+  width: 92px;
+  height: 5px;
+  background-color: blue;
+  background-color: #8EB4E3;
+}
+.danyuan3 .lefthand:before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  background-color: blue;
+  background-color: #8EB4E3;
+  position: absolute;
+  left: -5px;
+}
+.danyuan3 .yuan {
+  display: inline-block;
+  vertical-align: middle;
+  height: 16px;
+  width: 16px;
+  border: 2px solid red;
+  border: 2px solid #428bca;
+  border-radius: 50%;
+  text-align: center;
+}
+.danyuan3 > div.describe {
+  position: absolute;
+  right: -22px;
+  text-align: center;
+}
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+ul {
+  display: inline-block;
+  vertical-align: text-top;
+}
+#formwork {
+  padding: 0 20px;
+  white-space: nowrap;
+}
+.bgcg1 {
+  background-color: gray !important;
+}
+.bgcg1:before {
+  background-color: gray !important;
+}
+.bgcg2 {
+  border: 3px solid gray !important;
+}
+.bgcg3 {
+  border: 2px solid gray !important;
+}
+.prpoint.danyuan1 > .lefthand {
+  display: none;
+}
+.prpoint.danyuan1 > .describe {
+  right: -9px !important;
+}
+.rfqpoint.danyuan3 > .heighthand,
+.tfpoint.danyuan1 > .heighthand,
+.htpoint.danyuan2 > .heighthand {
+  display: inline-block;
+}
+li:nth-of-type(1) > .rfqpoint.danyuan3 > .heighthand {
+  display: none;
+}
+li:nth-of-type(1) > .tfpoint.danyuan1 > .heighthand {
+  display: none;
+}
+li:nth-of-type(1) > .htpoint.danyuan2 > .heighthand {
+  display: none;
+}
+li:not(:first-child) {
+  padding-left: 43px;
+}
+li:not(:first-child) > .rfqpoint.danyuan3 > .lefthand {
+  width: 49px;
+}
+li:not(:first-child) > .tfpoint.danyuan1 > .lefthand {
+  width: 43px;
+}
+li:not(:first-child) > .htpoint.danyuan2 > .lefthand {
+  width: 43px;
+}
+ul {
+  position: relative;
+}
+ul:before {
+  content: '';
+  width: 5px;
+  height: 100%;
+  position: absolute;
+  background-color: orange;
+  background-color: #8EB4E3;
+  left: 37px;
+  top: 16px;
+}
+ul:after {
+  content: '';
+  width: 5px;
+  height: 26.4px;
+  height: 26.6px;
+  position: absolute;
+  background-color: #FFF;
+  left: 37px;
+  bottom: -16px;
+}
+li > .danyuan3.zzpoint > .line {
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 5px;
+  background-color: blue;
+  background-color: #8EB4E3;
+}
+.formhead {
+  height: 30px;
+  font-size: 18px;
+  vertical-align: middle;
+  white-space: nowrap;
+  font-weight: 200;
+  margin-bottom: 10px;
+  background-color: pink;
+}
+.formhead > span {
+  display: inline-block;
+  text-align: center;
+  border: 1px solid #333333;
+  background-color: #DCE6F1;
+}
+.formhead > span:nth-child(1) {
+  width: 204px;
+}
+.formhead > span:nth-child(2) {
+  width: 238px;
+}
+.formhead > span:nth-child(3) {
+  min-width: 226px;
+  width: 900px;
+}
+.formhead > span:nth-child(4) {
+  width: 120px;
+}
+.formhead > span:nth-child(5) {
+  width: 238px;
+  margin-right: 20px;
+}

@@ -1,0 +1,337 @@
+{
+    "sowSubmitDate": "",
+    "sowStarDateNum": "20170405153942",
+    "bidderlistCreateDate": "",
+    "maxbyOfferNum": 7,
+    "subject": "2017-04-01NPR非Apps商品上线测试（非项目性费用性）本币",
+    "sowConfirmDateNum": "",
+    "sowConfirmDate": "",
+    "department": "SGM测试专用",
+    "sowStarDate": "2017-04-05 15:39:42.0",
+    "byRfqs": [
+      {
+        "subject": "2017-04-01NPR非Apps商品上线测试（非项目性费用性）本币",
+        "department": "SGM测试专用",
+        "bidderListStatus": "3",
+        "rfqMoney": "2",
+        "sowStarDate": "2017-04-05 15:39:42.0",
+        "bidderListNo": "GBID02001740",
+        "requestor": "WPSJQ Test001,杨影元(200001)",
+        "prId": 2006843,
+        "prNo": "ARFD170350",
+        "rfqNo": "GRFQ02001657",
+        "prdisDate": "2017-04-05 11:44:42.0",
+        "taStarDate": "",
+        "byTfs": [],
+        "byOffers": [
+          {
+            "offerDate": "",
+            "taSubmitDate": "",
+            "taStarDate": "",
+            "round": "1",
+            "taConfirmDate": ""
+          },
+          {
+            "offerDate": "",
+            "taSubmitDate": "",
+            "taStarDate": "",
+            "round": "",
+            "taConfirmDate": ""
+          },
+          {
+            "offerDate": "",
+            "taSubmitDate": "",
+            "taStarDate": "",
+            "round": "",
+            "taConfirmDate": ""
+          },
+          {
+            "offerDate": "",
+            "taSubmitDate": "",
+            "taStarDate": "",
+            "round": "",
+            "taConfirmDate": ""
+          },
+          {
+            "offerDate": "",
+            "taSubmitDate": "",
+            "taStarDate": "",
+            "round": "",
+            "taConfirmDate": ""
+          },
+          {
+            "offerDate": "",
+            "taSubmitDate": "",
+            "taStarDate": "",
+            "round": "",
+            "taConfirmDate": ""
+          },
+          {
+            "offerDate": "",
+            "taSubmitDate": "",
+            "taStarDate": "",
+            "round": "",
+            "taConfirmDate": ""
+          }
+        ],
+        "sowSubmitDate": "",
+        "bidderlistCreateDate": "2017-05-12 13:51:57.0",
+        "bidderListApproveDate": "2017-05-12 13:51:57.0",
+        "rfqDesc": "测试bidderlist 重复创建",
+        "sowConfirmDate": "",
+        "taSubmitDate": "",
+        "rfqSubmitDate": "2017-05-12 13:42:21.0",
+        "buyerName": "",
+        "rfqId": "2001657",
+        "taConfirmDate": "",
+        "prType": "1",
+        "reqReason": "测试",
+        "prAcceptDate": "2017-04-05 11:45:49.0"
+      },
+      {
+        "subject": "2017-04-01NPR非Apps商品上线测试（非项目性费用性）本币",
+        "department": "SGM测试专用",
+        "bidderListStatus": "3",
+        "rfqMoney": "1",
+        "sowStarDate": "2017-04-05 15:39:42.0",
+        "bidderListNo": "GBID02001742",
+        "requestor": "WPSJQ Test001,杨影元(200001)",
+        "prId": 2006843,
+        "prNo": "ARFD170350",
+        "rfqNo": "GRFQ02001658",
+        "prdisDate": "2017-04-05 11:44:42.0",
+        "taStarDate": "",
+        "byTfs": [],
+        "byOffers": [
+          {
+            "offerDate": "",
+            "taSubmitDate": "",
+            "taStarDate": "",
+            "round": "1",
+            "taConfirmDate": ""
+          },
+          {
+            "offerDate": "",
+            "taSubmitDate": "",
+            "taStarDate": "",
+            "round": "",
+            "taConfirmDate": ""
+          },
+          {
+            "offerDate": "",
+            "taSubmitDate": "",
+            "taStarDate": "",
+            "round": "",
+            "taConfirmDate": ""
+          },
+          {
+            "offerDate": "",
+            "taSubmitDate": "",
+            "taStarDate": "",
+            "round": "",
+            "taConfirmDate": ""
+          },
+          {
+            "offerDate": "",
+            "taSubmitDate": "",
+            "taStarDate": "",
+            "round": "",
+            "taConfirmDate": ""
+          },
+          {
+            "offerDate": "",
+            "taSubmitDate": "",
+            "taStarDate": "",
+            "round": "",
+            "taConfirmDate": ""
+          },
+          {
+            "offerDate": "",
+            "taSubmitDate": "",
+            "taStarDate": "",
+            "round": "",
+            "taConfirmDate": ""
+          }
+        ],
+        "sowSubmitDate": "",
+        "bidderlistCreateDate": "2017-05-12 13:57:44.0",
+        "bidderListApproveDate": "2017-05-12 13:57:44.0",
+        "rfqDesc": "2017-04-01NPR非Apps商品上线测试（非项目性费用性）本币",
+        "sowConfirmDate": "",
+        "taSubmitDate": "",
+        "rfqSubmitDate": "2017-05-12 13:53:35.0",
+        "buyerName": "",
+        "rfqId": "2001658",
+        "taConfirmDate": "",
+        "prType": "1",
+        "reqReason": "测试",
+        "prAcceptDate": "2017-04-05 11:45:49.0"
+      },
+      {
+        "subject": "2017-04-01NPR非Apps商品上线测试（非项目性费用性）本币",
+        "department": "SGM测试专用",
+        "bidderListStatus": "3",
+        "rfqMoney": "2",
+        "sowStarDate": "2017-04-05 15:39:42.0",
+        "bidderListNo": "GBID02001744",
+        "requestor": "WPSJQ Test001,杨影元(200001)",
+        "prId": 2006843,
+        "prNo": "ARFD170350",
+        "rfqNo": "GRFQ02001659",
+        "prdisDate": "2017-04-05 11:44:42.0",
+        "taStarDate": "",
+        "byTfs": [],
+        "byOffers": [
+          {
+            "offerDate": "",
+            "taSubmitDate": "",
+            "taStarDate": "",
+            "round": "1",
+            "taConfirmDate": ""
+          },
+          {
+            "offerDate": "",
+            "taSubmitDate": "",
+            "taStarDate": "",
+            "round": "",
+            "taConfirmDate": ""
+          },
+          {
+            "offerDate": "",
+            "taSubmitDate": "",
+            "taStarDate": "",
+            "round": "",
+            "taConfirmDate": ""
+          },
+          {
+            "offerDate": "",
+            "taSubmitDate": "",
+            "taStarDate": "",
+            "round": "",
+            "taConfirmDate": ""
+          },
+          {
+            "offerDate": "",
+            "taSubmitDate": "",
+            "taStarDate": "",
+            "round": "",
+            "taConfirmDate": ""
+          },
+          {
+            "offerDate": "",
+            "taSubmitDate": "",
+            "taStarDate": "",
+            "round": "",
+            "taConfirmDate": ""
+          },
+          {
+            "offerDate": "",
+            "taSubmitDate": "",
+            "taStarDate": "",
+            "round": "",
+            "taConfirmDate": ""
+          }
+        ],
+        "sowSubmitDate": "",
+        "bidderlistCreateDate": "2017-05-12 14:08:00.0",
+        "bidderListApproveDate": "2017-05-12 14:08:00.0",
+        "rfqDesc": "2017-04-01NPR非Apps商品上线测试（非项目性费用性）本币",
+        "sowConfirmDate": "",
+        "taSubmitDate": "",
+        "rfqSubmitDate": "2017-05-12 13:58:41.0",
+        "buyerName": "",
+        "rfqId": "2001659",
+        "taConfirmDate": "",
+        "prType": "1",
+        "reqReason": "测试",
+        "prAcceptDate": "2017-04-05 11:45:49.0"
+      },
+      {
+        "subject": "2017-04-01NPR非Apps商品上线测试（非项目性费用性）本币",
+        "department": "SGM测试专用",
+        "bidderListStatus": "3",
+        "rfqMoney": "1",
+        "sowStarDate": "2017-04-05 15:39:42.0",
+        "bidderListNo": "GBID02001980",
+        "requestor": "WPSJQ Test001,杨影元(200001)",
+        "prId": 2006843,
+        "prNo": "ARFD170350",
+        "rfqNo": "GRFQ02001660",
+        "prdisDate": "2017-04-05 11:44:42.0",
+        "taStarDate": "",
+        "byTfs": [],
+        "byOffers": [
+          {
+            "offerDate": "",
+            "taSubmitDate": "",
+            "taStarDate": "",
+            "round": "1",
+            "taConfirmDate": ""
+          },
+          {
+            "offerDate": "",
+            "taSubmitDate": "",
+            "taStarDate": "",
+            "round": "",
+            "taConfirmDate": ""
+          },
+          {
+            "offerDate": "",
+            "taSubmitDate": "",
+            "taStarDate": "",
+            "round": "",
+            "taConfirmDate": ""
+          },
+          {
+            "offerDate": "",
+            "taSubmitDate": "",
+            "taStarDate": "",
+            "round": "",
+            "taConfirmDate": ""
+          },
+          {
+            "offerDate": "",
+            "taSubmitDate": "",
+            "taStarDate": "",
+            "round": "",
+            "taConfirmDate": ""
+          },
+          {
+            "offerDate": "",
+            "taSubmitDate": "",
+            "taStarDate": "",
+            "round": "",
+            "taConfirmDate": ""
+          },
+          {
+            "offerDate": "",
+            "taSubmitDate": "",
+            "taStarDate": "",
+            "round": "",
+            "taConfirmDate": ""
+          }
+        ],
+        "sowSubmitDate": "",
+        "bidderlistCreateDate": "2017-06-16 15:54:29.0",
+        "bidderListApproveDate": "2017-06-16 15:54:29.0",
+        "rfqDesc": "2017-04-01NPR非Apps商品上线测试（非项目性费用性）本币",
+        "sowConfirmDate": "",
+        "taSubmitDate": "",
+        "rfqSubmitDate": "2017-05-12 14:19:30.0",
+        "buyerName": "",
+        "rfqId": "2001660",
+        "taConfirmDate": "",
+        "prType": "1",
+        "reqReason": "测试",
+        "prAcceptDate": "2017-04-05 11:45:49.0"
+      }
+    ],
+    "sowSubmitDateNum": "",
+    "buyerName": "徐茜,Xu Qian",
+    "requestor": "WPSJQ Test001,杨影元(200001)",
+    "prNo": "ARFD170350",
+    "prId": 2006843,
+    "prdisDate": "2017-04-05 11:44:42.0",
+    "reqReason": "测试",
+    "prAcceptDate": "2017-04-05 11:45:49.0"
+  }

@@ -1,0 +1,159 @@
+/**
+ * ep.native.js - jQuery 
+ * 
+ * Author: zhang yu
+ * Edited by :Xing Yue
+ *
+ * Dependency:jquery.min.js
+ *            jquery.i18n.properties.min.js
+ */
+
+//闭包作用域，将国际化的自定义方法写在该闭包中，防止全局变量污染后续代码
+(function($){
+
+	/**
+	 * 将自定义的组件方法挂到jquery原型上，以实现'$().组件名' 的调用方式
+	 */
+	$.fn.extend({
+		nativex: function(options, params){
+			return this.each(function(){
+			   var method = $.fn.nativex.methods[options];
+					if(method){
+						method(this,params);
+					}
+				});
+		}
+	});	
+	
+	/**
+	 * 这里是拓展静态方法到jquery原型上，以实现'$.组件名'的调用方式
+	 */
+	$.extend({
+		nativex:function(options,params){
+			var method =  staticMethod[options];
+			if(method){
+				return method(params);
+			}
+		}
+		
+	});
+	
+	/**
+	 * 将方法注册到method数组中
+	 */
+	$.fn.nativex.methods={
+			reload: function(params){
+				//reload方法会重新请求一次property文件，再将property文件的内容刷到页面上
+				reload();
+			},
+			refresh:function(){
+				//refresh方法不会重新请求property文件，只是将现有property文件的内容冲洗刷到页面上。
+				showAllI18nText();
+			}
+
+
+	}
+	
+	
+	var staticMethod = {
+			getOneItem:function(params){
+				//根据当前property文件，获得国际化内容
+				//获得key
+				var key = params.key;
+				//获得参数列表
+				var paramValues = params.params
+
+				var ttt =  getValue(key,paramValues);				
+				return ttt;
+			}			
+			
+			
+	}
+	
+	
+	//根据语言类型读取propertie文件，并且刷新页面
+	function reloadByLanguage(language){
+		jQuery.i18n.properties({
+	        name : ['native','sq'], //资源文件名称
+	        path : 'static/i18n/', //资源文件路径
+	        mode : 'map',    //用Map的方式使用资源文件中的值
+	        language : language,//language,
+	        checkAvailableLanguages : true,  //这个属性开启的时候会检查languages.json.
+	        callback : function() {//加载成功后设置显示内容
+	        	showAllI18nText();
+	        }
+	    });		
+		
+	}
+	
+	
+	//初始化方法
+	function reload(){
+		
+		var language = null;
+		
+		var choosedLanguage = $('#nativex_currentLanguage').val();
+		if(choosedLanguage == null || choosedLanguage == ''){
+			if(nativex_currentLanguage != null && nativex_currentLanguage != undefined && nativex_currentLanguage != ''){
+				choosedLanguage = nativex_currentLanguage;
+			}
+		}
+		if(!!choosedLanguage){
+			//先读取页面上currentLanguage标志位作为语言选择
+			language = choosedLanguage;
+		}else{
+			//如果读不到这个标志位，则使用浏览器默认语言作为语言
+			language = navigator.language ? navigator.language : navigator.browserLanguage;
+			//alert('navigator.language='+navigator.language+';navigator.browserLanguage='+navigator.browserLanguage+';the last language is :'+language);			
+			
+		}
+		
+		//刷新页面
+		reloadByLanguage(language);
+		
+	}
+	
+	
+	function getValue(key,params){	
+		//获得本地化后的内容
+		return $.i18n.prop(key,params);		
+	}
+	
+	
+	//显示所有页面上的国际化内容
+	function showAllI18nText(){
+		$('[i18nKey]').each(function(){
+			var i18nKey = $(this).attr('i18nKey');
+			var value = getValue(i18nKey);
+			$(this).html(value);
+			
+			
+		});
+		
+		
+	}
+	
+	
+
+})(jQuery);
+	
+
+
+//浏览器初始化完毕后调用的方法
+$(function(){
+
+	//初始化的时候读取一下property文件
+	$(this).nativex('reload');
+	
+	//在不请求property文件的情况下，重新刷新页面
+	//$(this).nativex('refresh');
+	
+	//获得某一个国际化条目
+	//var result = $.nativex('getOneItem'
+	//		,{ key:'native.param.test'
+	//		  ,params:['你好','你不好']
+	//		  });	
+	
+	
+});
+

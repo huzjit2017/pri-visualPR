@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>可视化</title>
+  <!-- <link rel="stylesheet" href="./css/css.css"> -->
+  <link rel="stylesheet" href="./css/css.2.css">
+  <script src="jquery-1.9.1.min.js"></script>
+  <script src="template-web.js"></script>
+</head>
+
+<body>
+  <div class="main">
+    <h2>可视化</h2>
+    <div class="formhead clearfix" style="border:1px solid pink">
+      <span>PR阶段</span><span>Bidderlist阶段</span><span>报价</span><span>Trackingform</span><span>合同</span>
+    </div>
+    <div id="formwork"></div>
+  </div>
+</body>
+
+</html>
+<!-- pr -->
+<script type="text/html" id="prSowTemp">
+  {{ if prNo }}
+    <div class="danyuan1 prpoint">
+      <div class="lefthand"></div><div class="yuan" title="分发时间:{{prdisDate}}&#10;接收时间:{{prAcceptDate}}"></div><div class="heighthand"></div>
+      <div class="describe">
+        <div class="title">PR分发</div>
+        <div class="time">{{ prdisDate ? prdisDate.substring(2,10).replace(/\-/g,"/") : '分发中' }}</div>
+      </div>
+    </div>
+    {{ else }}
+    <!-- pr置灰 -->
+      <div class="danyuan1 prpoint">
+        <div class="lefthand bgcg1"></div><div class="yuan bgcg1"></div><div class="heighthand"></div>
+        <div class="describe">
+          <div class="title">PR分发</div>
+          <div class="time"></div>
+        </div>
+      </div> 
+    {{ /if }}
+    {{ include 'sowTemp' $value }}
+
+</script>
+<!-- sow -->
+<script type="text/html" id="sowTemp">
+  {{ if sowStarDate }}
+  <div class="danyuan3 sowpoint">
+    <!--  -->
+    {{ if sowConfirmDateNum > sowSubmitDateNum && sowSubmitDateNum > sowStarDateNum }}
+        <div class="lefthand"></div><div class="yuan" title="SOW发起时间:{{sowStarDate}}&#10;SOW提交时间:{{sowSubmitDate}}&#10;SOW确认时间:{{sowConfirmDate}}&#10;"></div><div class="heighthand"></div>
+    {{ else if sowSubmitDateNum > sowStarDateNum && sowConfirmDateNum < sowSubmitDateNum }}
+        <div class="lefthand"></div><div class="yuan" title="SOW发起时间:{{sowStarDate}}&#10;SOW提交时间:{{sowSubmitDate}}&#10;"></div><div class="heighthand"></div>
+    {{ else }}
+        <div class="lefthand"></div><div class="yuan" title="SOW发起时间:{{sowStarDate}}&#10;"></div><div class="heighthand"></div>
+    {{ /if }}
+    <!--  -->
+    <div class="describe">
+      <div class="title">SOW确认</div>
+      {{ if sowConfirmDateNum > sowStarDateNum && sowConfirmDateNum > sowSubmitDateNum }}
+          <div class="time">{{ sowConfirmDate.substring(2,10).replace(/\-/g,"/") }}</div>
+      {{ else }}
+          <div class="time">未开始</div>
+      {{/if}}
+    </div>
+  </div>
+  {{ else }}
+  <!-- sow置灰 -->
+    <div class="danyuan3 sowpoint">
+      <div class="lefthand bgcg1"></div><div class="yuan bgcg3"></div><div class="heighthand"></div>
+      <div class="describe">
+        <div class="title">sow确认</div>
+        <div class="time"></div>
+      </div>
+    </div>
+  {{ /if }}
+  {{ if byRfqs && byRfqs != '' }}
+    {{ include 'rfqTemp' $value }}
+  {{ else }}
+    {{ include 'refGray' $value }}
+  {{ /if }}
+</script>
+<!-- rfq 和 Bidderlist 和 第1轮报价 -->
+<script type="text/html" id="rfqTemp">
+  <ul>
+    {{ each byRfqs }}
+    <li class="rfqbranch{{$index}}">
+      {{ if $value.rfqNo }}
+      <div class="danyuan3 rfqpoint">
+        <div class="lefthand"></div><div class="yuan"></div><div class="heighthand"></div>
+        <div class="describe">
+          <div class="title">RFQ提交</div>
+          <div class="time">{{ $value.rfqSubmitDate ? $value.rfqSubmitDate.substring(2,10).replace(/\-/g,"/") : '未开始' }}</div>
+        </div>
+      </div>
+      {{ else }}
+      <!-- rfq置灰 -->
+      <div class="danyuan3 rfqpoint">
+        <div class="lefthand bgcg1"></div><div class="yuan bgcg3"></div><div class="heighthand"></div>
+        <div class="describe">
+          <div class="title">RFQ提交</div>
+          <div class="time"></div>
+        </div>
+      </div>
+      {{ /if }}
+      {{ if $value.rfqNo && $value.bidderListNo }}
+      <div class="danyuan2">
+        <div class="lefthand"></div><div class="yuan"></div><div class="heighthand"></div>
+        <div class="describe">
+          <div class="title">Bidderlist审核</div>
+          <div class="time">{{ $value.bidderListApproveDate ? $value.bidderListApproveDate.substring(2,10).replace(/\-/g,"/") : '未开始' }}</div>
+        </div>
+      </div>
+      {{ else }}
+      <!-- 置灰 -->
+      <div class="danyuan2">
+          <div class="lefthand bgcg1"></div><div class="yuan bgcg2"></div><div class="heighthand"></div>
+          <div class="describe">
+            <div class="title">Bidderlist审核</div>
+            <div class="time"></div>
+          </div>
+        </div>
+      {{ /if }}
+      {{ if $value.byOffers.length>0 && $value.byOffers[0].offerDate }}
+      <div class="danyuan3">
+        <div class="lefthand"></div><div class="yuan">1</div><div class="heighthand"></div>
+        <div class="describe">
+          <div class="title">第1轮报价</div>
+          <div class="time">{{ $value.byOffers[0].offerDate ? $value.byOffers[0].offerDate.substring(2,10).replace(/\-/g,"/") : '未开始' }}</div>
+        </div>
+      </div>
+      {{ else }}
+      <!-- 1轮报价置灰 -->
+      <div class="danyuan3">
+        <div class="lefthand bgcg1"></div><div class="yuan bgcg3">1</div><div class="heighthand"></div>
+        <div class="describe">
+          <div class="title">第1轮报价</div>
+          <div class="time"></div>
+        </div>
+      </div>
+      {{ /if }}
+      {{ include 'taTemp' $value }}
+
+    </li>
+    {{ /each }}
+  </ul>
+  
+
+</script>
+<!-- ta -->
+<script type="text/html" id="taTemp">
+  {{ if taStarDate }}
+  <div class="danyuan3 tapoint">
+    <!--  -->
+    {{ if taConfirmDateNum > taSubmitDateNum && taSubmitDateNum > taStarDateNum }}
+        <div class="lefthand"></div><div class="yuan" title="TA发起时间:{{taStarDate}}&#10;TA提交时间:{{taSubmitDate}}&#10;TA确认时间:{{taConfirmDate}}&#10;"></div><div class="heighthand"></div>
+    {{ else if taSubmitDateNum > taStarDateNum && taConfirmDateNum < taSubmitDateNum }}
+        <div class="lefthand"></div><div class="yuan" title="TA发起时间:{{taStarDate}}&#10;TA提交时间:{{taSubmitDate}}&#10;"></div><div class="heighthand"></div>
+    {{ else }}
+        <div class="lefthand"></div><div class="yuan" title="TA发起时间:{{taStarDate}}&#10;"></div><div class="heighthand"></div>
+    {{ /if }}
+    <!--  -->
+    <div class="describe">
+      <div class="title">TA</div>
+      {{ if taConfirmDateNum > taStarDateNum && taConfirmDateNum > taSubmitDateNum }}
+          <div class="time">{{ taConfirmDate.substring(2,10).replace(/\-/g,"/") }}</div>
+      {{ else }}
+          <div class="time">未开始</div>
+      {{/if}}
+      <!-- <div class="time">{{ taConfirmDate ? taConfirmDate.substring(2,10).replace(/\-/g,"/") : '未开始' }}</div> -->
+    </div>
+  </div>
+  {{ else }}
+  <!-- TA置灰 -->
+  <div class="danyuan3 tapoint">
+    <div class="lefthand bgcg1"></div><div class="yuan bgcg3">TA</div><div class="heighthand"></div>
+    <div class="describe">
+      <div class="title">TA</div>
+      <div class="time"></div>
+    </div>
+  </div>
+  {{ /if }}
+  <!-- {{ if false }}
+      <div class="danyuan3 zzpoint">
+        <div class="lefthand"></div><div class="yuan">n</div><div class="heighthand"></div>
+        <div class="describe">
+          <div class="title">最终报价轮次待定</div>
+          <div class="time"></div>
+        </div>
+      </div>
+  {{ /if }} -->
+  {{ if byOffers.length>=2 }}
+    {{ include 'offersTemp' $value }}
+  {{ else }}
+    {{ include 'tfTemp' $value }}
+  {{ /if }}
+</script>
+
+<!-- 多轮报价 -->
+<script type="text/html" id="offersTemp">
+  {{ each byOffers as $value $index }}
+  {{ if $index > 0 }}
+    {{ if $value.offerDate }}
+      <div class="danyuan3 bjpoint">
+        <div class="lefthand"></div><div class="yuan">{{ $index + 1 }}</div><div class="heighthand"></div>
+        <div class="describe">
+          <div class="title">第{{ $index + 1 }}轮报价</div>
+          <div class="time">{{ $value.offerDate ? $value.offerDate.substring(2,10).replace(/\-/g,"/") : '未开始' }}</div>
+        </div>
+      </div>
+    {{ else }}
+    <!-- 多轮置灰 -->
+    <div class="danyuan3 zzpoint">
+        <div class="lefthand bgcg1"></div><div class="yuan bgcg3">n</div><div class="heighthand"></div>
+        <div class="describe">
+          <div class="title">最终报价轮次待定</div>
+          <div class="time"></div>
+        </div>
+      </div>
+    {{ /if }}
+  {{ /if }}
+  {{ /each }}
+  <!-- 多轮报价end -->
+  {{ include 'tfTemp' $value }}
+
+</script>
+
+<!-- TF审核  -->
+<script type="text/html" id="tfTemp">
+  {{ if byTfs && byTfs != '' }}
+  <ul>
+    {{ each byTfs }}
+    <li>
+      {{ if $value.tfNo }}
+        <div class="danyuan1 tfpoint">
+          <div class="lefthand"></div><div class="yuan"></div><div class="heighthand"></div>
+          <div class="describe">
+            <div class="title">TF审核</div>
+            <div class="time">{{ $value.tfApproveDate ? $value.tfApproveDate.substring(2,10).replace(/\-/g,"/") : '未开始' }}</div>
+          </div>
+        </div>
+      {{ else }}
+      <!-- TF置灰 -->
+        <div class="danyuan1 tfpoint">
+          <div class="lefthand bgcg1"></div><div class="yuan bgcg1"></div><div class="heighthand"></div>
+          <div class="describe">
+            <div class="title">TF审核</div>
+            <div class="time"></div>
+          </div>
+        </div>
+      {{ /if }}
+      {{ include 'contractTemp' $value }}
+
+    </li>
+    {{ /each }}
+  </ul>
+  {{ else }}
+    {{ include 'tfGray' $value }}
+  {{ /if }}
+</script>
+<script type="text/html" id="duolun">
+    <!-- /// -->
+{{ if $value.false }}
+
+{{ /if }}
+</script>
+<script type="text/html" id="contractTemp">
+  {{ if byContracts && byContracts != '' }}
+  <ul>
+    {{ each byContracts }}
+    <li>
+      {{ if $value.contractNo }}
+      <div class="danyuan2 htpoint">
+        <div class="lefthand"></div><div class="yuan"></div><div class="heighthand"></div>
+        <div class="describe">
+          <div class="title">合同审核</div>
+          <div class="time">{{ $value.approveDate ? $value.approveDate.substring(2,10).replace(/\-/g,"/") : '未开始' }}</div>
+        </div>
+      </div>
+      {{ else }}
+      <!-- 合同审核置灰 -->
+      <div class="danyuan2 htpoint">
+          <div class="lefthand bgcg1"></div><div class="yuan bgcg2"></div><div class="heighthand"></div>
+          <div class="describe">
+            <div class="title">合同审核</div>
+            <div class="time"></div>
+          </div>
+        </div>
+      {{ /if }}
+      {{ if $value.contractNo && $value.approveDate }}
+      <div class="danyuan3">
+        <div class="lefthand"></div><div class="yuan"></div><div class="heighthand"></div>
+        <div class="describe">
+          <div class="title">合同归档</div>
+          <div class="time">{{ $value.pigeonholeDate ? $value.pigeonholeDate.substring(2,10).replace(/\-/g,"/") : '未开始' }}</div>
+        </div>
+      </div>
+      {{ else }}
+      <div class="danyuan3">
+        <div class="lefthand bgcg1"></div><div class="yuan bgcg3"></div><div class="heighthand"></div>
+        <div class="describe">
+          <div class="title">合同归档</div>
+          <div class="time"></div>
+        </div>
+      </div>
+      {{ /if }}
+    </li>
+    {{ /each }}
+  </ul>
+  {{ else }}
+  <!-- 合同置灰 -->
+    <div class="danyuan2">
+      <div class="lefthand bgcg1"></div><div class="yuan bgcg2"></div><div class="heighthand"></div>
+      <div class="describe">
+        <div class="title">合同审核</div>
+        <div class="time"></div>
+      </div>
+    </div>
+    <div class="danyuan3">
+      <div class="lefthand bgcg1"></div><div class="yuan bgcg3"></div><div class="heighthand"></div>
+      <div class="describe">
+        <div class="title">合同归档</div>
+        <div class="time"></div>
+      </div>
+    </div>
+  {{ /if }}
+</script>
+<!-- ref及以下置灰 -->
+<script type="text/html" id="refGray">
+  <!-- ref及以下置灰 -->
+  <div class="danyuan3 point">
+    <div class="lefthand bgcg1"></div><div class="yuan bgcg3"></div><div class="heighthand"></div>
+    <div class="describe">
+      <div class="title">RFQ提交</div>
+      <div class="time"></div>
+    </div>
+  </div>
+  <div class="danyuan2">
+    <div class="lefthand bgcg1"></div><div class="yuan bgcg2"></div><div class="heighthand"></div>
+    <div class="describe">
+      <div class="title">Bidderlist审核</div>
+      <div class="time"></div>
+    </div>
+  </div>
+  <div class="danyuan3">
+    <div class="lefthand bgcg1"></div><div class="yuan bgcg3">1</div><div class="heighthand"></div>
+    <div class="describe">
+      <div class="title">第1轮报价</div>
+      <div class="time"></div>
+    </div>
+  </div>
+  <div class="danyuan3">
+    <div class="lefthand bgcg1"></div><div class="yuan bgcg3">TA</div><div class="heighthand"></div>
+    <div class="describe">
+      <div class="title">TA</div>
+      <div class="time"></div>
+    </div>
+  </div>
+  <div class="danyuan3">
+    <div class="lefthand bgcg1"></div><div class="yuan bgcg3">N</div><div class="heighthand"></div>
+    <div class="describe">
+      <div class="title">最终报价轮次待定</div>
+      <div class="time"></div>
+    </div>
+  </div>
+  <div class="danyuan1">
+    <div class="lefthand bgcg1"></div><div class="yuan bgcg1"></div><div class="heighthand"></div>
+    <div class="describe">
+      <div class="title">TF审核</div>
+      <div class="time"></div>
+    </div>
+  </div>
+  <div class="danyuan2">
+    <div class="lefthand bgcg1"></div><div class="yuan bgcg2"></div><div class="heighthand"></div>
+    <div class="describe">
+      <div class="title">合同审核</div>
+      <div class="time"></div>
+    </div>
+  </div>
+  <div class="danyuan3">
+    <div class="lefthand bgcg1"></div><div class="yuan bgcg3"></div><div class="heighthand"></div>
+    <div class="describe">
+      <div class="title">合同归档</div>
+      <div class="time"></div>
+    </div>
+  </div>
+      
+</script>
+<!-- tf及以下置灰 -->
+<script type="text/html" id="tfGray">
+  <!-- tf及以下置灰 -->
+  <div class="danyuan1">
+    <div class="lefthand bgcg1"></div><div class="yuan bgcg1"></div><div class="heighthand"></div>
+    <div class="describe">
+      <div class="title">TF审核</div>
+      <div class="time"></div>
+    </div>
+  </div>
+  <div class="danyuan2">
+    <div class="lefthand bgcg1"></div><div class="yuan bgcg2"></div><div class="heighthand"></div>
+    <div class="describe">
+      <div class="title">合同审核</div>
+      <div class="time"></div>
+    </div>
+  </div>
+  <div class="danyuan3">
+    <div class="lefthand bgcg1"></div><div class="yuan bgcg3"></div><div class="heighthand"></div>
+    <div class="describe">
+      <div class="title">合同归档</div>
+      <div class="time"></div>
+    </div>
+  </div>
+</script>
+<!-- end -->
+
+<script type="text/html" id="baojia">
+
+
+
+</script>
+<script>
+  $(function () {
+    $.ajax({
+      url: './json/json1.json',
+      type: "get",
+      dataType: "json",
+      cache: false,
+      success: function (data) {
+        var jsonData = data
+        //数据处理
+        // jsonData.prdisDateShow = jsonData.prdisDate.substring(0, 10)
+        // jsonData.sowConfirmDateShow = jsonData.sowConfirmDate.substring(0, 10)
+        console.log(jsonData)
+        //数据处理end
+
+        //渲染
+        // document.body.innerHTML = result;
+        var result = template("prSowTemp", jsonData);
+        $('#formwork').html(result)
+        // 渲染end
+
+        //json数据循环
+        function getJsonLength(jsonData) {
+          var jsonLength = 0;
+          for (var item in jsonData) {
+            jsonLength++;
+          }
+          return jsonLength;
+        }
+
+        //pr置灰
+        // if (!jsonData.prId) {
+        //   $('.prpoint.danyuan1>.yuan').addClass('bgcg1')
+        // }
+        //sow置灰
+        // if (jsonData.sowStarDate == '' && data.byRfqs == '') {
+        //   $('.sowpoint.danyuan3').children('.yuan').addClass('bgcg2').siblings('.lefthand').addClass('bgcg1')
+        //   $('head').append('<style>.sowpoint.danyuan3>.lefthand:before{background:gray;}</style>')
+        // }
+        //rfq置灰
+
+        //Bidderlist置灰
+
+
+
+
+
+        //置灰end
+
+
+        // 报价问题
+        for (let i = 0; i < getJsonLength(jsonData.byRfqs); i++) {
+          let istfNo = false;
+          for (let j = 0; j < getJsonLength(jsonData.byRfqs[i].byTfs); j++) {
+            if (jsonData.byRfqs[i].byTfs[j].tfNo) {
+              istfNo = true;
+            }
+          }
+
+          for (let m = 0; m < getJsonLength(jsonData.byRfqs[i].byOffers); m++) {
+            // const element = array[m];
+
+            if (istfNo) {
+              $('.rfqbranch' + i).children('.zzpoint').children('.yuan').html('').removeClass('bgcg3 yuan').addClass('line')
+              $('.rfqbranch' + i).children('.zzpoint').find('.title').html('')
+              $('.rfqbranch' + i).children('.zzpoint').children('.lefthand').removeClass('bgcg1')
+              // $('.rfqbranch' + i).children('div:nth-child(7)').remove()
+            } else {
+              $('.rfqbranch' + i).children('.zzpoint:not(":last")').children('.yuan').html('').removeClass('bgcg3 yuan').addClass('line bgcg1')
+              $('.rfqbranch' + i).children('.zzpoint:not(":last")').find('.title').html('')
+            }
+
+          }
+        }
+        // 报价问题end
+
+
+      },
+      error: function (e) {
+        const str = JSON.stringify(e)
+        alert(str)
+      }
+    });
+
+  })
+</script>
