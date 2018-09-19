@@ -1,0 +1,297 @@
+{
+  "prAcceptDate": "2018-01-17 18:20:09.0",
+  "subject": "2017-01-18NGP和NPR接口测试单据（K类非项目性费用性）",
+  "sowConfirmDateNum": "",
+  "byRfqs": [
+    {
+      "prAcceptDate": "2018-01-17 18:20:09.0",
+      "rfqDesc": "测试DK类RFQ",
+      "rfqMoney": "7084.4706",
+      "subject": "2017-01-18NGP和NPR接口测试单据（K类非项目性费用性）",
+      "prId": 2007827,
+      "rfqId": "2001929",
+      "prType": "1",
+      "sowSubmitDate": "",
+      "taSubmitDate": "",
+      "bidderListNo": "GBID02002363",
+      "prNo": "HRPA180118",
+      "rfqSubmitDate": "2018-01-17 18:20:41.0",
+      "reqReason": "test",
+      "taStarDate": "",
+      "department": "PAT测试专用",
+      "sowConfirmDate": "",
+      "prdisDate": "2018-01-17 18:18:43.0",
+      "bidderListStatus": "3",
+      "rfqNo": "GRFQ02001929",
+      "grantDate": "2018-01-17 19:01:10.0",
+      "buyerName": "",
+      "requestor": "WPSJQ Test002,门户测试(200002)",
+      "bidderlistCreateDate": "2018-01-17 18:29:30.0",
+      "byOffers": [
+        {
+          "taSubmitDate": "",
+          "round": "1",
+          "offerDate": "",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        },
+        {
+          "taSubmitDate": "",
+          "round": "",
+          "offerDate": "",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        },
+        {
+          "taSubmitDate": "",
+          "round": "",
+          "offerDate": "",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        },
+        {
+          "taSubmitDate": "",
+          "round": "",
+          "offerDate": "",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        },
+        {
+          "taSubmitDate": "",
+          "round": "",
+          "offerDate": "",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        },
+        {
+          "taSubmitDate": "",
+          "round": "",
+          "offerDate": "",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        }
+      ],
+      "byTfs": [
+        {
+          "tfStatus": "11",
+          "tfNo": "GTRF02000612",
+          "tfApproveDate": "2018-01-17 19:29:09.0",
+          "byContracts": [
+            {
+              "contractStatus": "8",
+              "approveDate": "",
+              "contractNo": "PS11007184",
+              "pigeonholeDate": ""
+            },
+            {
+              "contractStatus": "8",
+              "approveDate": "",
+              "contractNo": "PS11007185",
+              "pigeonholeDate": ""
+            }
+          ],
+          "tfId": "2000612"
+        }
+      ],
+      "bidderListApproveDate": "2018-01-17 19:00:16.0",
+      "taConfirmDate": "",
+      "sowStarDate": ""
+    },
+    {
+      "prAcceptDate": "2018-01-17 18:20:09.0",
+      "rfqDesc": "测试PR可视化",
+      "rfqMoney": "22419.78",
+      "subject": "2017-01-18NGP和NPR接口测试单据（K类非项目性费用性）",
+      "prId": 2007827,
+      "rfqId": "2001930",
+      "prType": "1",
+      "sowSubmitDate": "",
+      "taSubmitDate": "",
+      "bidderListNo": "GBID02002365",
+      "prNo": "HRPA180118",
+      "rfqSubmitDate": "2018-01-17 18:28:50.0",
+      "reqReason": "test",
+      "taStarDate": "",
+      "department": "PAT测试专用",
+      "sowConfirmDate": "",
+      "prdisDate": "2018-01-17 18:18:43.0",
+      "bidderListStatus": "3",
+      "rfqNo": "GRFQ02001930",
+      "grantDate": "2018-01-17 19:25:21.0",
+      "buyerName": "",
+      "requestor": "WPSJQ Test002,门户测试(200002)",
+      "bidderlistCreateDate": "2018-01-17 18:29:58.0",
+      "byOffers": [
+        {
+          "taSubmitDate": "",
+          "round": "1",
+          "offerDate": "",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        },
+        {
+          "taSubmitDate": "",
+          "round": "2",
+          "offerDate": "20180118192300",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        },
+        {
+          "taSubmitDate": "",
+          "round": "",
+          "offerDate": "",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        },
+        {
+          "taSubmitDate": "",
+          "round": "",
+          "offerDate": "",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        },
+        {
+          "taSubmitDate": "",
+          "round": "",
+          "offerDate": "",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        },
+        {
+          "taSubmitDate": "",
+          "round": "",
+          "offerDate": "",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        }
+      ],
+      "byTfs": [
+        {
+          "tfStatus": "11",
+          "tfNo": "GTRF02000613",
+          "tfApproveDate": "2018-01-17 19:29:20.0",
+          "byContracts": [
+            {
+              "contractStatus": "8",
+              "approveDate": "",
+              "contractNo": "PS11007186",
+              "pigeonholeDate": ""
+            },
+            {
+              "contractStatus": "8",
+              "approveDate": "",
+              "contractNo": "PS11007187",
+              "pigeonholeDate": ""
+            }
+          ],
+          "tfId": "2000613"
+        }
+      ],
+      "bidderListApproveDate": "2018-01-17 19:00:26.0",
+      "taConfirmDate": "",
+      "sowStarDate": ""
+    },
+    {
+      "prAcceptDate": "2018-01-17 18:20:09.0",
+      "rfqDesc": "测试大于40万的目标价审批",
+      "rfqMoney": "545727.7996",
+      "subject": "2017-01-18NGP和NPR接口测试单据（K类非项目性费用性）",
+      "prId": 2007827,
+      "rfqId": "2001931",
+      "prType": "1",
+      "sowSubmitDate": "",
+      "taSubmitDate": "2018-01-25 17:46:31.0",
+      "bidderListNo": "GBID02002385",
+      "prNo": "HRPA180118",
+      "rfqSubmitDate": "2018-01-17 18:30:40.0",
+      "reqReason": "test",
+      "taStarDate": "2018-01-25 17:46:31.0",
+      "department": "PAT测试专用",
+      "sowConfirmDate": "",
+      "prdisDate": "2018-01-17 18:18:43.0",
+      "bidderListStatus": "3",
+      "rfqNo": "GRFQ02001931",
+      "grantDate": "2018-01-25 17:50:36.0",
+      "buyerName": "",
+      "requestor": "WPSJQ Test002,门户测试(200002)",
+      "bidderlistCreateDate": "2018-01-25 17:46:31.0",
+      "byOffers": [
+        {
+          "taSubmitDate": "",
+          "round": "1",
+          "offerDate": "",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        },
+        {
+          "taSubmitDate": "",
+          "round": "2",
+          "offerDate": "20180119111600",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        },
+        {
+          "taSubmitDate": "20180125174631",
+          "round": "3",
+          "offerDate": "20180126112200",
+          "taConfirmDate": "20180125174631",
+          "taStarDate": "20180125174631"
+        },
+        {
+          "taSubmitDate": "",
+          "round": "4",
+          "offerDate": "20180119173600",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        },
+        {
+          "taSubmitDate": "",
+          "round": "5",
+          "offerDate": "20180126174600",
+          "taConfirmDate": "",
+          "taStarDate": ""
+        }
+      ],
+      "byTfs": [
+        {
+          "tfStatus": "11",
+          "tfNo": "GTRF02000615",
+          "tfApproveDate": "",
+          "byContracts": [
+            {
+              "contractStatus": "9",
+              "approveDate": "2018-01-19 14:33:00.0",
+              "contractNo": "PS11007191",
+              "pigeonholeDate": ""
+            }
+          ],
+          "tfId": "2000615"
+        },
+        {
+          "tfStatus": "13",
+          "tfNo": "GTRF02000622",
+          "tfApproveDate": "",
+          "byContracts": [],
+          "tfId": "2000622"
+        }
+      ],
+      "bidderListApproveDate": "2018-01-25 17:49:43.0",
+      "taConfirmDate": "2018-01-25 17:46:31.0",
+      "sowStarDate": ""
+    }
+  ],
+  "prId": 2007827,
+  "maxbyOfferNum": 6,
+  "buyerName": "宫一平,Gong Yiping",
+  "sowStarDateNum": "",
+  "requestor": "WPSJQ Test002,门户测试(200002)",
+  "bidderlistCreateDate": "",
+  "sowSubmitDate": "",
+  "prNo": "HRPA180118",
+  "reqReason": "test",
+  "department": "PAT测试专用",
+  "sowSubmitDateNum": "",
+  "sowConfirmDate": "",
+  "prdisDate": "2018-01-17 18:18:43.0",
+  "sowStarDate": ""
+}
